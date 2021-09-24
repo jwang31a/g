@@ -1,0 +1,32 @@
+0) Base-X=x amount of values in each digit, the place values are powers of x, with the ones place starting with x^0, the tens place x^1, etc.
+Base 2 would be 2 possible values/digit base 10=10 possible values/digit.
+
+1) Binary is a system of displaying information in the form of 0s and 1s, on/off, true/false.
+It is a base 2 system.
+It's an easy way to share a value, and computers interpret binary and return information that is useful for us. This is because computer parts work with on/off values, and not anything else.
+
+2) Binary -> decimal
+Create number variable to store answer, set this variable to 0.
+Start with the rightmost/last digit in number.
+Begin multiplying by 2^0, then 2^1, for the digit to the left, etc.
+Store the values from the step before and add them up in the storage variable.
+Return storage variable as answer.
+
+For example, Binary number 1101 = 13.
+With this algorithm, it would start with the last digit, multiply by 2^0, get 1, and move on to the next digit, etc, until it does this to all the digits. 
+The variable will record 1+0+4+8, which is 13.
+
+3) Decimal -> binary
+Create number variable to store binary value, set this variable to 0. (Set all variables to 0)
+Set up loop to compare values of base 2 to decimal number.
+The greatest base 2 value below decimal number will be recorded, then subtracted from decimal number.
+Add 10^n, where n is the power of the base 2 number, to the variable.
+Loop will ty next variable, make sure difference >= 0, subtarct power, add 10^n.
+Continue until decimal # = 0. 
+Return binary #.
+
+For example, decimal number 40 = 101000.
+Algorithm will try to subtract 2^0, 2^1, etc.
+It will try 2^6, but 2^6 is greater than 40, so it will subtract 2^5 instead.
+The other loop will subtract 2^n, store 10^n in the variable, then do n=n-1.
+This continues until decimal # = 0, binary returned.
