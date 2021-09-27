@@ -1,0 +1,39 @@
+Loops using a while statement are similar to those from python.
+While the conditional is true, the statements in the braces (the body of the loop) will be executed.
+If the condition is false, the body is skipped and the next statement is executed.
+
+The body of the loop should change one of the variables so that the condition becomes false and the loop terminates.
+Otherwise, the loop will be infinite.
+
+Loops are good for generating tables.
+For example, it's much easier for a computer to calculate sine than calculating it by hand.
+For some operations, computers use tables of values for an approximate answer, then perform computations to improve the approximation.
+There can be error in those tables, which can cause problems.
+
+One way to write code is write the code for a method inside main, then test it.
+After we know that code works, we can move it to another method, then test it again.
+If it's appropriate, replace literal values with variables and parameters.
+The second step is encapsulation, and the third is generalization.
+
+Format specifiers such as \%4d will format the output, and can be used to create tables.
+Generalization makes code easier to use and reuse, but also to write.
+
+The for loop loops based on a conditions that depends on a variable, and inside the loop, that variable is updated.
+For loops take three components in parentheses: the initializer, the condition, and an update.
+If the condition is false, the loop ends.
+At the end of each iteration, the update runs, and step 2 is run again.
+All of the loop related statements are at the top of the loop.
+
+If we want to display the initializer, it will not work inside the loop.
+Instead, we will need to print it outside of the loop.
+
+++ is the increment operator and has the same function of x = x + 1 and -- is the decrement operator, which has the same function as x = x - 1.
+
+While and for are pretest loops, which means that they test the condition first and at the beginning of each pass through the loop.
+The do-while loop is a posttest loop, which is useful when the body of the loop needs to be run at least once.
+
+In loops, if else statements can be used to test input.
+An easier way of doing this is by using a break statement.
+If an input is not right, the loop will break.
+In a while loop, true as a conditional will mean that the loop will run forever, until it reaches a break statement.
+There is also a continue statement, which will move on to the next iteration.
