@@ -1,0 +1,53 @@
+When using a value method, the place where void would normally be would be the data type that the value is.
+For example, if we want a floating point number to be returned, the void would need to be replaced with double.
+At the end, there needs to be a return statement.
+Temporary variables can make the method easier to debug, however are not necessary.
+The return type of this type of method has to be the same value type that is declared.
+For example, if the value type is double, then it will need to return a double.
+
+Dead code is code that appears after a return statement (in the same block).
+This is code that can never be reached, and the error resulting from this will be unreachable statement.
+When making a conditional statement with return statements, make sure that every possible path reaches a return statement.
+
+A good way to write code is using incremental development.
+Start with a working program and make small changes, so that if there is an error, you know exactly where to find it.
+Use variables to hold intermediate values, using print statements or with debuggers.
+When the program is working, consolidate multiple statements into compound expressions (if it doesn't make the program harder to read).
+
+An outline for a method is sometimes called a stub.
+It includes the method signature and a return statement.
+We should think about testing before developing new method, so that we can figure out how to implement it.
+After completing the stub, start adding lines of code one line at a time, then recompile and run the program.
+Code that helps build the program but is not part of the final product is called scaffolding.
+Such examples are temporary print statements inside a methods to make sure the program works.
+
+We can build new methods using existing methods.
+Functional decomposition is breaking a complex computation into simple methods, testing the methods in isolation, then composing the methods to perform the computation.
+(Maybe this is like the use of helper functions in python?)
+
+If two methods do the same thing, then they should have the same name.
+This is called overloading, and is legal in Java as long as each version takes different parameters.
+When an overloaded methods is invoked, Java will figure out which one to invoke, because of the parameters needed.
+This is useful, however can be confusing when multiple methods have the same name.
+
+Methods can return boolean values.
+Boolean methods generally have names that are yes/no questions.
+Boolean methods do not need to have conditional statements; a simple return statement should be fine because it will output the true/false value with or without an if statement.
+
+Documentation comments should be written using /**, so that the purpose of each class and method can be understood between different people.
+Javadoc supports tags that begin with @.
+For example, we can use the @return tag to provide extra information about a return value.
+
+Since we have methods that can return values, we have a Turing complete programming language. Java can compute anything computable, for any reasonable definition of "computable".
+This is called the Church-Turing thesis.
+
+A recursive definition is similar to a circular definition, since the definition refers to the thing being defined.
+Many functions are defined recursively, since that is the easiest way.
+If we want to write a method to find the factorial, we can call the method being defined in the definition.
+
+Following the flow of execution can help read programs, but the leap of faith can work better because we assume that a method already works and returns the right value.
+For example, if we've tested a method thoroughly enough to know that the method will return the intended value, then we can use the method without assuming that there could be something wrong with it.
+We already do it with print statements, and other methods.
+
+For example, if we tried to go through the flow of execution for a method that returns the sum of the Fibonacci sequence for n terms, it quickly becomes overwhelming.
+With a leap of faith, we cam see that the sum is the result.
