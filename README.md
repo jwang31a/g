@@ -1,1 +1,1 @@
-# g
+# generic-repository-name
