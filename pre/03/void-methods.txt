@@ -1,0 +1,68 @@
+Notes for void methods:
+Using methods from other classes is called invoking.
+Cannot find symbol is a common error when invoking methods (say from math).
+The error will something like "class test", which means it cannot find the method in the current class.
+This is because it is looking for the method in the current class, not the math class.
+
+We can also create new methods that don't use main.
+This is kind of like making a helper function in python, since it creates a new method that does the work of other predefined methods.
+The flow of execution is not top to bottom; instead, it starts with the first statement of main.
+Whenever a method is executed, it goes back to where that method is defined, and runs the definition of that method.
+For example:
+
+public class NewLine {
+  public static void newLine() {
+    System.out.println();
+  }
+
+  public static void threeLine() {
+    newLine();
+    newLine();
+    newLine();
+  }
+
+  public static void main(String[] args) {
+    System.out.println("First Line.");
+    threeLine();
+    System.out.println("Second Line.");
+  }
+}
+
+In this code, the flow of execution does not go from top to bottom.
+It starts when the first main method is executed, but when the method threeLine is executed, it goes back to where it is defined.
+It then goes to where the method newLine is defined, then runs that definition.
+(NewLine and newLine are not the same, as java is case sensitive)
+
+Within a method, we will have to provide an argument.
+When we define the method, we will have to create our own argument.
+That argument needs to be of the same type, so for example, sin will need double, println will need a String.
+
+Methods can also take multiple parameters.
+When we do this, we have to define each parameter individually.
+int hour, minute will not work because this format is only for variable declarations.
+Instead, we will have to do int hour, int minute.
+
+Two different methods can have parameters/variables with the same name, but are not the same because they are not in the same storage locations.
+An easy way to keep track of these values is a stack diagram.
+
+Each method will have its own bar, with the values of the parameters and variables.
+
+Documentation is an important part of java, as the language provides a deep documentation of all the classes and methods.
+Learning how to read this documentation is a good way to learn new methods.
+Writing good documentation for others is also good practice.
+
+Chapter 4 Exercises:
+Exercise 1)
+1) main prints out "No, I "
+then goes to method zoop, which invokes baffle, then prints "You wugga ", then invokes baffle again.
+When baffle is invoked, it stops the execution of that methods and takes a detour to ping, which will print "."
+When all of that is executed, it goes back to main, prints out "I ", then invokes baffle again.
+
+The output should be:
+No, I wug.
+You wugga wug.
+I wug.
+
+2) 
+
+3) It will probably either loop forever, as baffle invokes ping at the end, or it will create an error.

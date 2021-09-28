@@ -1,0 +1,66 @@
+The relational operators of java are pretty much the same as the ones from python.
+==, != <, >, >=, <=
+The result of these operators will be either true or false, and are a part of the data type boolean (they are they only boolean values).
+The => and =< do not exist.
+== is a comparison operator, make sure we do not confuse this with =, which is an assignment operator.
+
+The two sides of a relational operator have to be compatible.
+The two values being compared need to be of the same type.
+We cannot compare strings to integers.
+
+== and != can be used with strings (however they do something else).
+equals method should be used instead.
+
+Java has tree logical operators: &&, ||, !, which stand for and, or, and not, respectively.
+Java will do something called a short circuit evaluation, which will skip the second operand when it knows the answer.
+This will save time.
+For example:
+true || anything is always true, and false || anything will always be false, so there is no use to evaluating the operand anything.
+Keep in mind De Morgan's laws:
+!(A && B) is the same as !A || !B
+!(A || B) is the same as !A && !B
+Negating a logical expression is the same as negating each term and changing the operator.
+! takes precedence over && and || (it goes first)
+
+De Morgan's laws also relate to relational operators.
+!(x < 5 && y == 3)  is the same as  x >= 5 || y != 3
+!(x >= 1 || y != 7)  is the same as  x < 1 && y == 7
+
+Conditional statements are pretty much the same as the ones from python.
+They will require a condition (the expression in the parentheses), and if it true, the statements in the braces will be executed, if not, it will skip that block of code.
+The simplest one is if.
+
+There are also if else statements.
+For branches that only have one statement, braces are not necessary, however, it is good practice to prevent errors.
+Indentation and braces are good for organization of conditionals.
+
+We can chain if and else statements forever, however, it can be difficult to read when it gets longer.
+Indentation in this case is good for organization and readability.
+We can also nest conditionals (putting conditionals within conditionals).
+This can help with more complex decisions.
+
+To store true/false variables, we will need to create a boolean variable.
+we can do it like this:
+boolean flag;
+flag = true;
+boolean testResult = false;
+The first line declares the variable, the second assigns a value, and the third does both at the same time.
+We can also put relational operators in the assignment of a value to a boolean, since it will store the result of the comparison.
+
+Variables defined in this way are called flags, because it signals the presence or absence of a condition.
+
+We can use the return statement to terminate a methods before the end is reached.
+One reason is if an error is detected.
+
+This return stetement can be used to validate an input to make sure that it will work with the method.
+
+We can use recursion.
+This will use a method repeatedly until it cannot be used anymore (using conditionals to do so).
+
+Stack diagrams for recursive methods are slightly different.
+It will show the progress of a variable.
+The last frame (the bottom one on the stack diagram) is called the base case, as it does not make a recursive call.
+If there is no base case in a recursive method, then the stack would grow forever, resulting in the StackOverflowError.
+
+We can use recursive methods to find the binary representation of the number by repeatedly dividing that number by two.
+The remainders from each step will be a digit in that binary representation of that number.

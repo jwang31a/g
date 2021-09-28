@@ -1,0 +1,103 @@
+Arrays in Java are like lists in Python, but more primitive.
+They are a sequence of values, and the values are called elements.
+All of the values in an array must be of the same type.
+We have to declare a variable with array type and then create the array itself.
+For example, int[] counts; is an integer array, and double[] values; is a double array.
+
+To create the array itself, we need to use the new operator.
+counts = new int[4];
+values = new double[size];
+The first assignment makes count refer to an array of four integers.
+The amount of elements in values depends on the value of size.
+
+We can also declare and create the variable on the same line.
+int[] counts = new int[4];
+double[] values = new double[size];
+Any integer expression for the size of an array is allowed, as long as it is nonnegative.
+An array with zero elements is allowed.
+
+The array and the variable that refers to it are two different things.
+We can assign a different variable to refer to the same array, and we can change to the value of counts to refer to a different array.
+
+Arrays are indexed, meaning they start at 0, not 1.
+The [] operator selects elements from the array.
+For example, counts[0] = 7 assigns a value 7 to the 0th term of the array.
+Any expression as an index will work, as long as it is type int.
+
+One way to index an array is with a loop variable.
+
+We can use println to display an array, but it doesn't display any useful information.
+One way to display the elements of an array is:
+
+public static void printArray(int[] a) {
+    System.out.print("{" + a[0]);
+    for (int i = 1; i < a.length; i++) {
+        System.out.print(", " + a[i]);
+    }
+    System.out.println("}");
+}
+
+However, this is very long, and there is an easier way.
+In java.util.Arrays, there are methods that work with arrays.
+We can use:
+
+System.out.println(Arrays.toString(a))
+
+And it will output the array in a string format, using square brackets instead of curly brackets.
+We will have to import java.util.Arrays before we can do this, but this is much easier than the block of code.
+
+When we make an assignment to an array variable, it copies the reference, not the array.
+To actually copy the array, we will have to create a new array and copy the elements from the old one to the old one.
+
+double[] b = new double[3];
+for (int i = 0; i < 3; i++) {
+    b[i] = a[i];
+}
+
+Another option is to use java.util.Arrays.
+
+double[] b = Arrays.copyOf(a, 3);
+
+The second parameter is the number of elements we want to copy, so this can be used to copy part of an array as well.
+
+Looping through the elements of an array is called a traversal.
+Another common pattern is a search, which traverses an array looking for a particular element.
+Another traversal is a reduce operation, which reduces an array of values down to a single value.
+Such traversals are sums, products, minimum, and maximum.
+A variable that contains the sum of the elements as the array is traversed is called an accumulator.
+
+Most computer programs do the same thing every time they run; these programs are deterministic.
+This can be good, but sometimes, we want a program to be unpredictable, or nondeterministic.
+There are algorithms that can generate pseudorandom numbers.
+java.util.Random will generate pseudorandom numbers.
+The method nextInt will take an integer argument, n, and returns a random integer between 0 and n-1 (inclusive).
+
+Every value should appear at least approximately the same amount of times.
+We test this buy generating a large number of values, storing them in an array, and counting the number of times each value occurs.
+
+We can present value in the form of a histogram.
+For example, for exam scores, we can create counters to keep track of how many students scored in the 90s, 80s, etc.
+We can traverse the array and count the number of elements that fall in a given range.
+We want to make sure that the values do not get counted twice.
+
+If we wanted to create code for a high number of ranges, then we would have to write a lot more code than would be necessary.
+Instead of creating the counters one by one, we can use an array as the counter.
+We can then go through the array and it will add to the value in the array when a value appears.
+We can optimize it further by making a single pass through the array.
+
+Java provides an alternative syntax that makes code more compact.
+Instead of this:
+
+for (int i = 0; i < values.length; i++) {
+    int value = values[i];
+    System.out.println(value);
+}
+
+We have this:
+
+for (int value : values) {
+    System.out.println(value);
+}
+
+This is called an enhanced for loop.
+It is read as for each value in values.
