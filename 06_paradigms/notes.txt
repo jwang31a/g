@@ -1,0 +1,20 @@
+Print statements for Scheme, NetLogo, and Python:
+Scheme: 
+print "hello world"
+
+NLogo:
+write "hello world"
+
+Python:
+print("hello world")
+
+The three languages are similar since they all use two components: the print statement, and the string that is being printed.
+The string is in quotations all three times, because this indicates that the characters are in string form, and not anything else.
+
+For NetLogo, the print statement is a bit different, because it's not called print, but instead it's called write. 
+This could be because there really isn't too much of a point in using NetLogo to display data in the form of words, since I think it's mostly a visual language, with most of the code probably referring to the visual elements of the language.
+Also, the thing called print probably does something similar, but still different.
+
+Compared to java, all three of these languages are very easy, since we only have to type 3 short words for a print statement.
+In java, we have to do System.out.println("string"), which is a lot longer, and looks a lot more complicated.
+Not only that, but for java, we have to define the method, as well as the class, so that adds on the work we have to do to execute a simple print statement.
