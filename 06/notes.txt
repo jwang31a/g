@@ -1,0 +1,12 @@
+Scheme:
+print "Hello world"
+
+NetLogo:
+write "Hello world"
+
+Python:
+print("Hello world")
+
+All of these are fairly simple, consisting of two parts: the print statement and the string that is being printed.
+The string is always in double quotations to indicate that it is a string.
+The print statement is only one word, "print".
