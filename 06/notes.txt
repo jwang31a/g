@@ -10,3 +10,6 @@ print("Hello world")
 All of these are fairly simple, consisting of two parts: the print statement and the string that is being printed.
 The string is always in double quotations to indicate that it is a string.
 The print statement is only one word, "print".
+
+NetLogo is a bit different, as instead of a print statement, it uses a write statement. I think this could be because of something to do with the use of the language, since NetLogo seems to be more of a visual language, using the grid of patches more than math.
+It might also be because the print statement does something similar, but not the exact same in NetLogo.
