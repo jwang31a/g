@@ -1,11 +1,14 @@
-public class Greet {
+public class Greet1 {
 	public static void main(String[] args) {
-		Greet("person 1");
-		Greet("person 2");
-		Greet("person 3");
+		greet("person 1");
+		greet("person 2");
+		greet("person 3");
 	}
 	
-	public static String greet(String) {
-		System.out.println("Why, hello there, " + String + ". How do you do?");
+	public static String greet(String string) {
+		String output = "";
+		output = "Why, hello there, " + string + ". How do you do?";
+		System.out.println(output);
+		return(output);
 	}
 }
