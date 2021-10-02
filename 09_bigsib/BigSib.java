@@ -1,6 +1,6 @@
 public class BigSib {
 	public static void main(String[] args) {
-		
+		Greet()
 	}
 	public static String greet(String string) {
 		String output = "";
