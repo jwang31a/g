@@ -1,7 +1,7 @@
 public class BigSib {
 	public static void main(String[] args) {
-		Greet()
 	}
+	
 	public static String greet(String string) {
 		String output = "";
 		output = "Why, hello there, " + string + ". How do you do?";
