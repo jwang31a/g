@@ -1,6 +1,6 @@
 public class BigSib {
 	public static void main(String[] args) {
-		greet("freshman")
+		greet("freshman");
 	}
 	
 	public static String greet(String string) {
