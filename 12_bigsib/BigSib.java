@@ -1,12 +1,12 @@
 public class BigSib {
 	public static String greet(String string) {
 		String output = "";
-		output = richard.setHelloMsg + string;
+		output = string;
 		System.out.println(output);
 		return(output);
 	}
 	
-	public static String greet(String string) {
+	public static String setHelloMsg(String string) {
 		String output = "";
 		output = string;
 		return(output);
