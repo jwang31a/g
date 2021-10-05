@@ -1,5 +1,5 @@
 public class BigSib {
-	public static String greet(String string) {
+	public static String greet(String strin) {
 		String output = "";
 		output = string;
 		System.out.println(output);
