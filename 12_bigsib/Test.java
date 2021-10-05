@@ -1,4 +1,4 @@
-public class BigSib {
+public class Test {
 	public static void main(String[] args) {
 		greet("freshman");
 	}
