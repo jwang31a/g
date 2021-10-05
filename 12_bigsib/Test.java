@@ -6,7 +6,7 @@ public class Test {
 	public static String greet(String string) {
 		String output = "";
 		output = string;
-		System.out.println(output)
+		System.out.println(output);
 		return(output);
 	}
 }
