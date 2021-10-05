@@ -7,6 +7,5 @@ public class Greet {
 
 		greeting = richard.greet("freshman");
 		System.out.println(greeting);
-
 	} 
 } 
