@@ -12,21 +12,17 @@
 public class Greet {
  	public static void main( String[] args ){
  		String greeting;
- 		BigSib richard = new BigSib();
-
-		richard.BigSib("Word up");
+ 		BigSib richard = new BigSib("Word up");
+		
 		greeting = richard.greet("freshman");
 		System.out.println(greeting);
 		
-		richard.BigSib("Salutations");
 		greeting = richard.greet("Dr. Spaceman");
 		System.out.println(greeting);
 
-		richard.BigSib("Hey ya");
 		greeting = richard.greet("Kong Fooey");
 		System.out.println(greeting);
 
-		richard.BigSib("Sup");
 		greeting = richard.greet("mom");
 		System.out.println(greeting);
 	}
