@@ -12,7 +12,7 @@
 public class Greet {
  	public static void main( String[] args ){
  		String greeting;
- 		BigSib richard = new BigSib(String input);
+ 		BigSib richard = new BigSib(String);
 
 		richard.BigSib("Word up");
 		greeting = richard.greet("freshman");
