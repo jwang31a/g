@@ -8,6 +8,6 @@ public class BigSib {
 	
 	public String setHelloMsg(String string) {
 		HelloMsg = string;
-		return(HelloMsg)
+		return(HelloMsg);
 	}
 }
