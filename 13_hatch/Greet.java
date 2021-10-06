@@ -12,21 +12,21 @@
 public class Greet {
  	public static void main( String[] args ){
  		String greeting;
- 		BigSib richard = new BigSib("Word up");
+ 		BigSib richard1 = new BigSib("Word up");
 		
-		greeting = richard.greet("freshman");
+		greeting = richard1.greet("freshman");
 		System.out.println(greeting);
 		
-		BigSib richard = new BigSib("Salutations");
-		greeting = richard.greet("Dr. Spaceman");
+		BigSib richard2 = new BigSib("Salutations");
+		greeting = richard2.greet("Dr. Spaceman");
 		System.out.println(greeting);
 
-		BigSib richard = new BigSib("Hey ya");
-		greeting = richard.greet("Kong Fooey");
+		BigSib richard3 = new BigSib("Hey ya");
+		greeting = richard3.greet("Kong Fooey");
 		System.out.println(greeting);
 
-		BigSib richard = new BigSib("Sup");
-		greeting = richard.greet("mom");
+		BigSib richard4 = new BigSib("Sup");
+		greeting = richard4.greet("mom");
 		System.out.println(greeting);
 	}
 }
