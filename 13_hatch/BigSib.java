@@ -1,14 +1,8 @@
 public class BigSib {
-	private String HelloMsg1 = "";
-	private String HelloMsg2 = "";
-	private String HelloMsg3 = "";
-	private String HelloMsg4 = "";
+	private String HelloMsg = "";
 	
 	public BigSib() {
-		HelloMsg1 = "Word up";
-		HelloMsg2 = "Salutations";
-		HelloMsg3 = "Hey ya";
-		HelloMsg4 = "Sup";
+		HelloMsg  = "Word up";
 	}
 	
 	public String greet(String string) {
