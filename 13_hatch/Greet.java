@@ -14,10 +14,10 @@ public class Greet {
  		String greeting;
  		BigSib richard = new BigSib();
 
+		richard.HelloMsg = "Word up";
 		greeting = richard.greet("freshman");
 		System.out.println(greeting);
 		
-
 		greeting = richard.greet("Dr. Spaceman");
 		System.out.println(greeting);
 
