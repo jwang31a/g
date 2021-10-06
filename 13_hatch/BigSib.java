@@ -1,8 +1,8 @@
 public class BigSib {
 	public String HelloMsg = "";
 	
-	public BigSib() {
-		HelloMsg  = "Word up";
+	public BigSib(String input) {
+		HelloMsg  = input;
 	}
 	
 	public String greet(String string) {
