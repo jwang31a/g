@@ -6,6 +6,9 @@
 
 //Discoveries:
 //Constructor method is very useful, and will help with condensing code down.
+//Constructors can have inputs or arguments.
+//It can kind of take the place of another method.
+//Constructors are called with the new operator.
 
 //QCC
 
