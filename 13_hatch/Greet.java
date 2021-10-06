@@ -14,19 +14,19 @@ public class Greet {
  		String greeting;
  		BigSib richard = new BigSib();
 
-		richard.HelloMsg = "Word up";
+		richard.BigSib("Word up");
 		greeting = richard.greet("freshman");
 		System.out.println(greeting);
 		
-		richard.HelloMsg = "Salutations";
+		richard.BigSib("Salutations");
 		greeting = richard.greet("Dr. Spaceman");
 		System.out.println(greeting);
 
-		richard.HelloMsg = "Hey ya";
+		richard.BigSib("Hey ya");
 		greeting = richard.greet("Kong Fooey");
 		System.out.println(greeting);
 
-		richard.HelloMsg = "Sup";
+		richard.BigSib("Sup");
 		greeting = richard.greet("mom");
 		System.out.println(greeting);
 	}
