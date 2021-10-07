@@ -11,18 +11,15 @@ QCC
 */
 
 public class BigSib {
-	private String HelloMsg1 = "";
-	private String HelloMsg2 = "";
-	private String HelloMsg3 = "";
-	private String HelloMsg4 = "";
-	public String[] list = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
+	private String HelloMsg1 = "Word up";
+	private String HelloMsg2 = "Salutations";
+	private String HelloMsg3 = "Hey ya";
+	private String HelloMsg4 = "Sup";
+	public String[] list = {}
 	public String output = "";
 	
 	public BigSib() {
-		HelloMsg1 = HelloMsg1.concat("Word up");
-		HelloMsg1 = HelloMsg1.concat("Salutations");
-		HelloMsg1 = HelloMsg1.concat("Hey ya");
-		HelloMsg1 = HelloMsg1.concat("Sup");
+		String[] HelloMsg = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
 	}
 	
 	public BigSib(int input, String string) {
