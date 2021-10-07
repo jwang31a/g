@@ -10,7 +10,7 @@ public class Test {
 		HelloMsg3 = "Hey ya";
 		HelloMsg4 = "Sup";
 	}
-	public static void main(String[] args) {
+	public void main(String[] args) {
     	System.out.println(HelloMsg1);
     	System.out.println(HelloMsg1);
     	System.out.println(HelloMsg1);
