@@ -11,9 +11,13 @@ public class Test {
 		HelloMsg4 = "Sup";
 	}
 	public void main(String[] args) {
-    	System.out.println(HelloMsg1);
-    	System.out.println(HelloMsg1);
-    	System.out.println(HelloMsg1);
-    	System.out.println(HelloMsg1);
+    		returns();
   	}
+	
+	public String returns() {
+		System.out.println(HelloMsg1);
+    		System.out.println(HelloMsg1);
+    		System.out.println(HelloMsg1);
+    		System.out.println(HelloMsg1);
+	}
 }
