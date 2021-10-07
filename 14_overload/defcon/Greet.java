@@ -15,16 +15,16 @@ public class Greet {
  		String greeting;
 		
  		BigSib richard = new BigSib();
-		greeting = richard.HelloMsg1 + " " + "freshman"
+		greeting = richard.HelloMsg1 + " " + "freshman";
 		System.out.println(greeting);
 		
-		greeting = richard.HelloMsg2 + " " + "Dr. Spaceman"
+		greeting = richard.HelloMsg2 + " " + "Dr. Spaceman";
 		System.out.println(greeting);
 
-		greeting = richard.HelloMsg3 + " " + "Kong Fooey"
+		greeting = richard.HelloMsg3 + " " + "Kong Fooey";
 		System.out.println(greeting);
 
-		greeting = richard.HelloMsg4 + " " + "mom"
+		greeting = richard.HelloMsg4 + " " + "mom";
 		System.out.println(greeting);
 	}
 }
