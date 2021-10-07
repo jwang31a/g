@@ -17,7 +17,7 @@ public class Greet {
 		
 		System.out.println(richard.list[0]);
 		
- 		BigSib richard1 = new BigSib(0,"Word up");
+ 		/*BigSib richard1 = new BigSib(0,"Word up");
 		greeting = richard1.output;
 		System.out.println(greeting);
 		
@@ -31,6 +31,6 @@ public class Greet {
 
 		BigSib richard4 = new BigSib(3,"Sup");
 		greeting = richard4.output;
-		System.out.println(greeting);
+		System.out.println(greeting);*/
 	}
 }
