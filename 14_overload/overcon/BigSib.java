@@ -23,7 +23,7 @@ public class BigSib {
 		HelloMsg2 = "Salutations";
 		HelloMsg3 = "Hey ya";
 		HelloMsg4 = "Sup";
-		String[] HelloMsg = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
+		HelloMsg = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
 	}
 	
 	public BigSib(int input, String string) {
