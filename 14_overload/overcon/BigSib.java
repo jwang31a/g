@@ -28,6 +28,6 @@ public class BigSib {
 	
 	public BigSib(int input, String string) {
 		String output = "";
-		output = HelloMsg[input - 1] + " " + string;
+		output = HelloMsg[input] + " " + string;
 	}
 }
