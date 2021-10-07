@@ -13,21 +13,22 @@ QCC
 public class Greet {
  	public static void main( String[] args ){
  		String greeting;
+		BigSib richard = new BigSib();
 		
- 		BigSib richard1 = new BigSib("Word up");
-		greeting = richard1.greet("freshman");
+ 		BigSib richard1 = new BigSib(1,"Word up");
+		greeting = richard1.output;
 		System.out.println(greeting);
 		
-		BigSib richard2 = new BigSib("Salutations");
-		greeting = richard2.greet("Dr. Spaceman");
+		BigSib richard2 = new BigSib(2,"Salutations");
+		greeting = richard2.output;
 		System.out.println(greeting);
 
-		BigSib richard3 = new BigSib("Hey ya");
-		greeting = richard3.greet("Kong Fooey");
+		BigSib richard3 = new BigSib(3,"Hey ya");
+		greeting = richard3.output;
 		System.out.println(greeting);
 
-		BigSib richard4 = new BigSib("Sup");
-		greeting = richard4.greet("mom");
+		BigSib richard4 = new BigSib(4,"Sup");
+		greeting = richard4.output;
 		System.out.println(greeting);
 	}
 }
