@@ -23,7 +23,6 @@ public class BigSib {
 	}
 	
 	public BigSib(int input, String string) {
-		String output = "";
 		output = list[input] + " " + string;
 	}
 }
