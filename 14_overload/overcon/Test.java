@@ -10,7 +10,7 @@ public class Test {
 		HelloMsg3 = "Hey ya";
 		HelloMsg4 = "Sup";
 	}
-	public void main(String[] args) {
+	public static void main(String[] args) {
     		returns();
   	}
 	
