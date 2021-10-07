@@ -19,10 +19,10 @@ public class BigSib {
 	public String output = "";
 	
 	public BigSib() {
-		HelloMsg1 = "Word up";
-		HelloMsg2 = "Salutations";
-		HelloMsg3 = "Hey ya";
-		HelloMsg4 = "Sup";
+		HelloMsg1 = HelloMsg1.concat("Word up");
+		HelloMsg1 = HelloMsg1.concat("Salutations");
+		HelloMsg1 = HelloMsg1.concat("Hey ya");
+		HelloMsg1 = HelloMsg1.concat("Sup");
 	}
 	
 	public BigSib(int input, String string) {
