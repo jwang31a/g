@@ -13,7 +13,7 @@ QCC
 public class BigSib {
 	private String HelloMsg = "";
 	
-	public BigSib(string input) {
+	public BigSib(String input) {
 		HelloMsg = input;
 	}
 	
