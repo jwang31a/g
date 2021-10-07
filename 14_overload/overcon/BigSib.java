@@ -19,10 +19,10 @@ public class BigSib {
 	public String output = "";
 	
 	public BigSib(String one, String two, String three, String four) {
-		String HelloMsg1 = one;
-		String HelloMsg2 = two;
-		String HelloMsg3 = three;
-		String HelloMsg4 = four;
+		HelloMsg1 = one;
+		HelloMsg2 = two;
+		HelloMsg3 = three;
+		HelloMsg4 = four;
 		String[] list = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
 	}
 	
