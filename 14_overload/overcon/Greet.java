@@ -15,7 +15,7 @@ public class Greet {
  		String greeting;
 		BigSib richard = new BigSib();
 		
- 		BigSib richard1 = new BigSib(1,"freshman");
+ 		BigSib richard1 = new BigSib(0,"freshman");
 		greeting = richard1.output;
 		System.out.println(greeting);
 		
