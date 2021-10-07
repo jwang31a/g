@@ -19,7 +19,7 @@ public class BigSib {
 	public String output = "";
 	
 	public BigSib() {
-		String[] HelloMsg = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
+		String[] HelloMsg = HelloMsg.add(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
 	}
 	
 	public BigSib(int input, String string) {
