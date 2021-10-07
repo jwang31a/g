@@ -11,15 +11,22 @@ QCC
 */
 
 public class BigSib {
-	private String HelloMsg = "";
+	public String HelloMsg1 = "";
+	public String HelloMsg2 = "";
+	public String HelloMsg3 = "";
+	public String HelloMsg4 = "";
+	String[] HelloMsg = {};
 	
-	public BigSib(String input) {
-		HelloMsg = input;
+	public BigSib() {
+		HelloMsg1 = "Word up";
+		HelloMsg2 = "Salutations";
+		HelloMsg3 = "Hey ya";
+		HelloMsg4 = "Sup";
+		HelloMsg = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
 	}
 	
-	public String greet(String string) {
+	public BigSib(int input, String string) {
 		String output = "";
-		output = HelloMsg + " " + string;
-		return(output);
+		output = HelloMsg[input - 1] + " " + string;
 	}
 }
