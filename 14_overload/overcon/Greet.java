@@ -15,11 +15,6 @@ public class Greet {
  		String greeting;
 		BigSib richard = new BigSib();
 		
-		System.out.println(BigSib.HelloMsg[0]);
-		System.out.println(BigSib.HelloMsg[1]);
-		System.out.println(BigSib.HelloMsg[2]);
-		System.out.println(BigSib.HelloMsg[3]);
-		
  		BigSib richard1 = new BigSib(0,"Word up");
 		greeting = richard1.output;
 		System.out.println(greeting);
