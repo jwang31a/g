@@ -14,7 +14,7 @@ public class Greet {
  	public static void main( String[] args ){
  		String greeting;
 		
- 		BigSib richard1 = new BigSib("Word up");
+ 		BigSib richard1 = new BigSib();
 		greeting = richard1.greet("freshman");
 		System.out.println(greeting);
 		
