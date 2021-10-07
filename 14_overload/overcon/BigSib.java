@@ -16,7 +16,7 @@ public class BigSib {
 	private String HelloMsg3 = "";
 	private String HelloMsg4 = "";
 	String[] HelloMsg = {};
-	public String output = ""
+	public String output = "";
 	
 	public BigSib() {
 		HelloMsg1 = "Word up";
