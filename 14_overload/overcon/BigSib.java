@@ -15,11 +15,11 @@ public class BigSib {
 	private String HelloMsg2 = "Salutations";
 	private String HelloMsg3 = "Hey ya";
 	private String HelloMsg4 = "Sup";
-	public String[] list = {};
+	public String[] list = {"","","",""};
 	public String output = "";
 	
 	public BigSib() {
-		String[] HelloMsg = HelloMsg.add(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
+		String[] HelloMsg = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
 	}
 	
 	public BigSib(int input, String string) {
