@@ -10,12 +10,14 @@ Discoveries:
 QCC
 */
 
+import java.util.ArrayList;
+
 public class BigSib {
 	private String HelloMsg1 = "";
 	private String HelloMsg2 = "";
 	private String HelloMsg3 = "";
 	private String HelloMsg4 = "";
-	
+	private String[] list = {};
 	public String output = "";
 	
 	public BigSib(String one, String two, String three, String four) {
@@ -25,10 +27,13 @@ public class BigSib {
 		HelloMsg4 = four;
 	}
 	
-	private String[] list = {HelloMsg1,HelloMsg2,HelloMsg3,HelloMsg4};
+	public static void main(String[] args) {
+		ArrayList list1 = new ArrayList();
+		list1.add(HelloMsg1)
+	}
 	
 	public BigSib(int input, String string) {
-		System.out.println(list[input]);
+		System.out.println(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
 		output = list[input] + " " + string;
 	}
 }
