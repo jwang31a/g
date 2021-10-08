@@ -13,7 +13,6 @@ QCC
 public class Greet {
  	public static void main( String[] args ){
  		String greeting;
-		BigSib richard = new BigSib("Word up","Salutations","Hey ya","Sup");
 		
  		BigSib richard1 = new BigSib(0,"freshman");
 		greeting = richard1.output;
