@@ -22,8 +22,7 @@ public class BigSib {
 		HelloMsg1 = one;
 		HelloMsg2 = two;
 		HelloMsg3 = three;
-		HelloMsg4 = four;r
-		return(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
+		HelloMsg4 = four;
 	}
 	
 	public BigSib(int input, String string) {
