@@ -27,7 +27,7 @@ public class BigSib {
 		HelloMsg4 = four;
 	}
 	
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add(HelloMsg1);
 		list = list1
