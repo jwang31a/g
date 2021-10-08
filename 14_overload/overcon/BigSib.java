@@ -13,7 +13,7 @@ QCC
 public class BigSib {
 	private String HelloMsg = "";
 	private String greeting = ""
-	private String output = "";
+	public String output = "";
 	
 	public BigSib(String input1, String input2) {
 		HelloMsg = input1;
