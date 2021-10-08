@@ -6,8 +6,12 @@ use default and overloaded constructor to set the value for a variable.
 2021-10-07
 
 Discoveries:
+Overloaded constructors can really help with simplifying code. 
+As long as the arguments of a constructor are different between constructors, these are interpreted as different methods.
 
-QCC
+QCC:
+I'm not sure if the .concat method is necessary, but I just used it for safety reasons. 
+How does overloading work in Java?
 */
 
 public class BigSib {
