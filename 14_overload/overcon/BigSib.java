@@ -23,10 +23,10 @@ public class BigSib {
 		HelloMsg2 = two;
 		HelloMsg3 = three;
 		HelloMsg4 = four;
-		list[] = HelloMsg1;
-		list[] = HelloMsg2;
-		list[] = HelloMsg3;
-		list[] = HelloMsg4;
+		list[0] = HelloMsg1;
+		list[1] = HelloMsg2;
+		list[2] = HelloMsg3;
+		list[3] = HelloMsg4;
 	}
 	
 	public BigSib(int input, String string) {
