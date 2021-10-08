@@ -15,7 +15,7 @@ public class BigSib {
 	private String HelloMsg2 = "";
 	private String HelloMsg3 = "";
 	private String HelloMsg4 = "";
-	private String[] list = {HelloMsg1,HelloMsg2,HelloMsg3,HelloMsg4};
+	
 	public String output = "";
 	
 	public BigSib(String one, String two, String three, String four) {
@@ -24,6 +24,8 @@ public class BigSib {
 		HelloMsg3 = three;
 		HelloMsg4 = four;
 	}
+	
+	private String[] list = {HelloMsg1,HelloMsg2,HelloMsg3,HelloMsg4};
 	
 	public BigSib(int input, String string) {
 		System.out.println(list[input]);
