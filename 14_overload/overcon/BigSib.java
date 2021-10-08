@@ -30,7 +30,7 @@ public class BigSib {
 	public void main(String[] args) {
 		ArrayList list1 = new ArrayList();
 		list1.add(HelloMsg1);
-		list = list1
+		list = list1;
 	}
 	
 	public BigSib(int input, String string) {
