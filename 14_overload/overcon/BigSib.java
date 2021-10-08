@@ -15,9 +15,10 @@ public class BigSib {
 	private String greeting = "";
 	public String output = "";
 	
-	public BigSib(String input1, String input2) {
-		HelloMsg = HelloMsg.concat(input1);
-		greeting = greeting.concat(input2);
+	public String input(String input1, String input2) {
+		HelloMsg = input1;
+		greeting = input2;
+		return({HelloMsg, greeting})
 	}
 	
 	public BigSib() {
