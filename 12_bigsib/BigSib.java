@@ -11,7 +11,6 @@ public class BigSib {
 	
 	public String setHelloMsg(String string) {
 		HelloMsg = string;
-		return(HelloMsg);
 		// The point of this method is to set the value of a variable, which is how we can use this variable in greet and get a valid answer.
 	}
 }
