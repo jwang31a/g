@@ -15,7 +15,7 @@ public class BigSib {
 	private String HelloMsg2 = "Salutations";
 	private String HelloMsg3 = "Hey ya";
 	private String HelloMsg4 = "Sup";
-	public String[] list = {HelloMsg1,HelloMsg2,HelloMsg3,HelloMsg4};
+	private String[] list = {HelloMsg1,HelloMsg2,HelloMsg3,HelloMsg4};
 	public String output = "";
 	
 	public BigSib(int input, String string) {
