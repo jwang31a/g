@@ -12,7 +12,7 @@ QCC
 
 public class BigSib {
 	private String HelloMsg = "";
-	private String greeting = ""
+	private String greeting = "";
 	public String output = "";
 	
 	public BigSib(String input1, String input2) {
