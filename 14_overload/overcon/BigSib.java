@@ -18,7 +18,7 @@ public class BigSib {
 	public static String input(String input1, String input2) {
 		HelloMsg = input1;
 		greeting = input2;
-		return({HelloMsg, greeting});
+		return(HelloMsg, greeting);
 	}
 	
 	public BigSib() {
