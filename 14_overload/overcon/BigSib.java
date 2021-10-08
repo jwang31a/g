@@ -16,11 +16,11 @@ public class BigSib {
 	public String output = "";
 	
 	public BigSib(String input1, String input2) {
-		HelloMsg = input1;
-		greeting = input2;
+		HelloMsg = HelloMsg.concat(input1);
+		greeting = greeting.concat(input2);
 	}
 	
 	public BigSib() {
-		output = HelloMsg + " " + greeting;
+		output = output.concat(HelloMsg + " " + greeting);
 	}
 }
