@@ -15,7 +15,7 @@ public class BigSib {
 	private String HelloMsg2 = "";
 	private String HelloMsg3 = "";
 	private String HelloMsg4 = "";
-	public String[] list = {"","","",""};
+	public String[] list = {};
 	public String output = "";
 	
 	public BigSib(String one, String two, String three, String four) {
@@ -23,7 +23,7 @@ public class BigSib {
 		HelloMsg2 = two;
 		HelloMsg3 = three;
 		HelloMsg4 = four;
-		String[] list = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
+		String[] list = list.add(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
 	}
 	
 	public BigSib(int input, String string) {
