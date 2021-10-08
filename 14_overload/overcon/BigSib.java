@@ -23,7 +23,10 @@ public class BigSib {
 		HelloMsg2 = two;
 		HelloMsg3 = three;
 		HelloMsg4 = four;
-		String[] list = list.add(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
+		String[] list = list.add(HelloMsg1);
+		String[] list = list.add(HelloMsg2);
+		String[] list = list.add(HelloMsg3);
+		String[] list = list.add(HelloMsg4);
 	}
 	
 	public BigSib(int input, String string) {
