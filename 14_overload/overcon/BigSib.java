@@ -34,7 +34,7 @@ public class BigSib {
 	}
 	
 	public BigSib(int input, String string) {
-		System.out.println(list1);
+		System.out.println(list);
 		output = list[input] + " " + string;
 	}
 }
