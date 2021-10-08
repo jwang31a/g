@@ -30,6 +30,7 @@ public class BigSib {
 	}
 	
 	public BigSib(int input, String string) {
+		System.out.println(list[input]);
 		output = list[input] + " " + string;
 	}
 }
