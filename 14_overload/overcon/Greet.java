@@ -14,22 +14,26 @@ public class Greet {
  	public static void main( String[] args ){
  		String greeting;
 		
-		BigSib.input("Word up", "freshman");
+		BigSib.input("Word up");
+		BigSib.greet("freshman");
 		BigSib richard1 = new BigSib();
 		greeting = richard1.output;
 		System.out.println(greeting);
 		
-		BigSib.input("Salutations", "Dr. Spaceman");
+		BigSib.input("Salutations");
+		BigSib.greet("Dr. Spaceman");
 		BigSib richard2 = new BigSib();
 		greeting = richard2.output;
 		System.out.println(greeting);
 
-		BigSib.input("Hey ya", "Kong Fooey");
+		BigSib.input("Hey ya");
+		BigSib.greet("Kong Fooey");
 		BigSib richard3 = new BigSib();
 		greeting = richard3.output;
 		System.out.println(greeting);
 
-		BigSib.input("Sup", "mom");
+		BigSib.input("Sup");
+		BigSib.greet("mom");
 		BigSib richard4 = new BigSib();
 		greeting = richard4.output;
 		System.out.println(greeting);
