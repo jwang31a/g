@@ -15,18 +15,22 @@ public class Greet {
  		String greeting;
 		
 		BigSib richard = new BigSib("Word up", "freshman");
+		BigSib richard1 = new BigSib();
 		greeting = richard1.output;
 		System.out.println(greeting);
 		
 		BigSib richard = new BigSib("Salutations", "Dr. Spaceman");
+		BigSib richard2 = new BigSib();
 		greeting = richard2.output;
 		System.out.println(greeting);
 
 		BigSib richard = new BigSib("Hey ya", "Kong Fooey");
+		BigSib richard3 = new BigSib();
 		greeting = richard3.output;
 		System.out.println(greeting);
 
 		BigSib richard = new BigSib("Sup", "mom");
+		BigSib richard4 = new BigSib();
 		greeting = richard4.output;
 		System.out.println(greeting);
 	}
