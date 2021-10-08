@@ -10,8 +10,6 @@ Discoveries:
 QCC
 */
 
-import java.util.ArrayList;
-
 public class BigSib {
 	private String HelloMsg1 = "";
 	private String HelloMsg2 = "";
@@ -20,17 +18,16 @@ public class BigSib {
 	private String[] list = {};
 	public String output = "";
 	
-	public BigSib(String one, String two, String three, String four) {
+	public String setHelloMsg(String one, String two, String three, String four) {
 		HelloMsg1 = one;
 		HelloMsg2 = two;
 		HelloMsg3 = three;
 		HelloMsg4 = four;
+		return(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
 	}
 	
-	public void main(String[] args) {
-		ArrayList list1 = new ArrayList();
-		list1.add(HelloMsg1);
-		list = list1;
+	public BigSib() {
+		String[] list = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4}
 	}
 	
 	public BigSib(int input, String string) {
