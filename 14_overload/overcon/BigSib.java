@@ -11,10 +11,10 @@ QCC
 */
 
 public class BigSib {
-	private String HelloMsg1;
-	private String HelloMsg2;
-	private String HelloMsg3;
-	private String HelloMsg4;
+	private String HelloMsg1 = "";
+	private String HelloMsg2 = "";
+	private String HelloMsg3 = "";
+	private String HelloMsg4 = "";
 	private String[] list = {HelloMsg1,HelloMsg2,HelloMsg3,HelloMsg4};
 	public String output = "";
 	
