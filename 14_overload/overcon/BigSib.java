@@ -29,11 +29,12 @@ public class BigSib {
 	
 	public static void main(String[] args) {
 		ArrayList list1 = new ArrayList();
-		list1.add(HelloMsg1)
+		list1.add(HelloMsg1);
+		list = list1
 	}
 	
 	public BigSib(int input, String string) {
-		System.out.println(HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4);
+		System.out.println(list1);
 		output = list[input] + " " + string;
 	}
 }
