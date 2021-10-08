@@ -11,8 +11,8 @@ QCC
 */
 
 public class BigSib {
-	private String HelloMsg = "";
-	private String greeting = "";
+	private static String HelloMsg = "";
+	private static String greeting = "";
 	public String output = "";
 	
 	public static String input(String input1, String input2) {
