@@ -11,26 +11,16 @@ QCC
 */
 
 public class BigSib {
-	private String HelloMsg1 = "";
-	private String HelloMsg2 = "";
-	private String HelloMsg3 = "";
-	private String HelloMsg4 = "";
-	private String[] list = {};
-	public String output = "";
+	private String HelloMsg = "";
+	private String greeting = ""
+	private String output = "";
 	
-	public String[] setHelloMsg(String one, String two, String three, String four) {
-		HelloMsg1 = one;
-		HelloMsg2 = two;
-		HelloMsg3 = three;
-		HelloMsg4 = four;
-		String[] list = {HelloMsg1, HelloMsg2, HelloMsg3, HelloMsg4};
-		return(list);
+	public BigSib(String input1, String input2) {
+		HelloMsg = input1;
+		greeting = input2;
 	}
 	
-	}
-	
-	public BigSib(int input, String string) {
-		System.out.println(list);
-		output = list[input] + " " + string;
+	public BigSib() {
+		output = HelloMsg + " " + greeting;
 	}
 }
