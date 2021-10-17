@@ -66,10 +66,10 @@ public class Test {
     Test acct1 = new Test();
     
     acct1.setName("test name");
-    acct1.setPassWd("testpassword");
+    acct1.setPasswd("testpassword");
     acct1.setPin(1234);
-    acct1.setAccNum(123456789);
-    acct1.setAccBalance(1);
+    acct1.setAcctNum(123456789);
+    acct1.setBalance(1);
     
     acct1.outputInfo();
   }
