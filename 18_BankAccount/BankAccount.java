@@ -1,5 +1,5 @@
 /**
-   Jun Hong Wang
+   Jun Hong Wang, Brian K., Nada Hameed
    APCS pd6
    HW18 -- CPA-One
    2021-10-17
@@ -11,11 +11,11 @@
    QCC:
    For the PIN, I tried to do it with a short, but the compiler kept thinking it was a integer, so it changed it to a short.
    
-   Q2 Response:
+   Team NBJ's Latest and Greatest Q2 Response:
    When we create a new instance of a class, we say new ClassName(), and since ClassName() has parentheses, it is a method.
    We didn't define this method the code but Java includes it for us, which is why we can use it.
    
-   Q3 Response:
+   Team NBJ's Latest and Greatest Q3 Response:
    We can override the toString method by rewriting the toString method, and it will output a string representation of an object.
    
 **/
