@@ -18,7 +18,7 @@
    withdrawing money
 **/
 
-public class BankAccount {
+public class Test {
   private String fullName = "";
   private String password = "";
   private short pin = "";
