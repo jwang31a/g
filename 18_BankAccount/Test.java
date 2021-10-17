@@ -34,7 +34,8 @@ public class Test {
 
   
   public static void main( String[] args ) {
-    System.out.println(setName);
+    setName("test name");
+    System.out.println(fullName);
   }
 
 }
