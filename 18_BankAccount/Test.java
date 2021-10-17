@@ -21,9 +21,9 @@
 public class Test {
   private String fullName = "";
   private String password = "";
-  private short pin = "";
-  private int accNum = "";
-  private double accBal = "";
+  private short pin = 0;
+  private int accNum = 0;
+  private double accBal = 0;
   
   public String setName( String newName ) {
     fullName = newName;
@@ -34,7 +34,7 @@ public class Test {
 
   
   public static void main( String[] args ) {
-    Ssytem.out.println(setName);
+    System.out.println(setName);
   }
 
 }
