@@ -58,8 +58,8 @@ public class Test {
   
   public String toString() {
     String a = pin + accNum + accBal;
-    System.out.println(a)
-    return(a)
+    System.out.println(a);
+    return(a);
   }
   
   public static void main( String[] args ) {
