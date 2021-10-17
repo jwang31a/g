@@ -69,7 +69,10 @@ public class Test {
     acct1.setPasswd("testpassword");
     acct1.setPin(1234);
     acct1.setAcctNum(123456789);
-    acct1.setBalance(1);
+    acct1.setBalance(100);
+
+    acct1.deposit(99.99);
+    acct1.withdraw(9.99);
     
     acct1.outputInfo();
   }
