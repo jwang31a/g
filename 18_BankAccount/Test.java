@@ -37,7 +37,7 @@ public class Test {
 
   public int setAcctNum( int newAcctNum ) {
     accNum = newAcctNum;
-    return NewAcctNum;
+    return accNum;
   }
 
   public double setBalance( double newBalance ) {
