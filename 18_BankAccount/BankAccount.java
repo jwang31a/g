@@ -5,15 +5,22 @@
    2021-10-17
    
    DISCO:
+   We understood how we can know that Java provides a constructor for us, because when we create a new instance of an object, it does something, even when the method used isn't defined.
+   System.out.print will output a string representation of an object.
    
    QCC:
+   For the PIN, I tried to do it with a short, but the compiler kept thinking it was a integer, so it changed it to a short.
    
    Q2 Response:
+   When we create a new instance of a class, we say new ClassName(), and since ClassName() has parentheses, it is a method.
+   We didn't define this method the code but Java includes it for us, which is why we can use it.
    
    Q3 Response:
+   We can override the toString method by rewriting the toString method, and it will output a string representation of an object.
+   
 **/
 
-public class Test {
+public class BankAccount {
   private String fullName = "";
   private String password = "";
   private int pin = 0;
@@ -57,13 +64,13 @@ public class Test {
 
   
   public void outputInfo() {
-   System.out.println(fullName);
-   System.out.println(accNum);
-   System.out.println(accBal);
+    System.out.println(fullName);
+    System.out.println(accNum);
+    System.out.println(accBal);
   }
   
   public static void main( String[] args ) {
-    Test acct1 = new Test();
+    BankAccount acct1 = new BankAccount();
     
     acct1.setName("test name");
     acct1.setPasswd("testpassword");
@@ -76,5 +83,4 @@ public class Test {
     
     acct1.outputInfo();
   }
-
 }
