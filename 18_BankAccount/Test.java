@@ -26,7 +26,7 @@ public class Test {
   }
   
   public String toString() {
-    return(fullname + "\n" + password + "\n" + pin + "\n" + accNum + "\n" + accBal)
+    return(fullname + "\n" + password + "\n" + pin + "\n" + accNum + "\n" + accBal);
   }
   
   public static void main( String[] args ) {
