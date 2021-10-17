@@ -63,7 +63,15 @@ public class Test {
   }
   
   public static void main( String[] args ) {
-    outputInfo();
+    BankAccount acct1 = new Bankaccount();
+    
+    acct1.setName("test name);
+    acct1.setPassWd("testpassword);
+    acct1.setPin(1234);
+    acct1.setNum(123456789);
+    acct1.setAccBal(1);
+    
+    acct1.outputInfo();
   }
 
 }
