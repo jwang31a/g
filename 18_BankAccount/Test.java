@@ -16,7 +16,7 @@
 public class Test {
   private String fullName = "";
   private String password = "";
-  private short pin = 0;
+  private int pin = 0;
   private int accNum = 0;
   private double accBal = 0;
   
@@ -30,7 +30,7 @@ public class Test {
     return password;
   }
   
-  public short setPin( short newPin ) {
+  public int setPin( int newPin ) {
     pin = newPin;
     return pin;
   }
