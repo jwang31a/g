@@ -1,8 +1,8 @@
 /**
-   Clyde "Thluffy" Sinclair
-   APCS pd0
-   HW18 -- building a more meaningful class
-   2021-10-18
+   Jun Hong Wang
+   APCS pd6
+   HW18 -- CPA-One
+   2021-10-17
    
    instance variables for storing...
    account holder's full name
@@ -19,11 +19,16 @@
 **/
 
 public class BankAccount {
-
-  //instance variables
-  //---------------------------------------------
-
-
+  private String fullName = "";
+  private String password = "";
+  private short pin = "";
+  private int accNum = "";
+  private double accBal = "";
+  
+   
+   
+   
+  
   //mutators
   public String setName( String newName ) {
     // INSERT YOUR CODE HERE
