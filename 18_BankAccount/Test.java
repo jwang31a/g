@@ -20,7 +20,7 @@ public class Test {
   private int accNum = 0;
   private double accBal = 0;
   
-  public String setName( String newName ) {
+  public static String setName( String newName ) {
     fullName = newName;
     return fullName;
   }
@@ -28,7 +28,7 @@ public class Test {
 
 
   
-  public void main( String[] args ) {
+  public static void main( String[] args ) {
     setName("test name");
     System.out.println(fullName);
   }
