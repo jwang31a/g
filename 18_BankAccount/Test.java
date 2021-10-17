@@ -56,14 +56,14 @@ public class Test {
   }
 
   
-  public String toString() {
-    String a = pin + accNum + accBal;
-    System.out.println(a);
-    return(a);
+  public void outputInfo() {
+   System.out.println(fullName);
+   System.out.println(accNum);
+   System.out.println(accBal);
   }
   
   public static void main( String[] args ) {
-    toString();
+    outputInfo();
   }
 
 }
