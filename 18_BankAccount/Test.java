@@ -24,14 +24,14 @@ public class Test {
     fullName = newName;
     return fullName;
   }
-
-
-
+  
+  public String toString() {
+    return(fullname + "\n" + password + "\n" + pin + "\n" + accNum + "\n" + accBal)
+  }
   
   public static void main( String[] args ) {
-    String a = "";
-    a = toString(fullName) + "\n";
-    System.out.print(a);
+    BankAccount acc1 = newBankAccount();
+    System.out.println(acc1);
   }
 
 }
