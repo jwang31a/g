@@ -25,13 +25,45 @@ public class Test {
     return fullName;
   }
   
+  public String setPasswd( String newPasswd ) {
+    password = newPasswd;
+    return password;
+  }
+  
+  public short setPin( short newPin ) {
+    pin = newPin;
+    return pin;
+  }
+
+  public int setAcctNum( int newAcctNum ) {
+    accNum = newAcctNum;
+    return NewAcctNum;
+  }
+
+  public double setBalance( double newBalance ) {
+    accBal = newBalance; 
+    return accBal;
+  }
+  
+  // -------------------------------------------------------------------------
+  
+  public void deposit( double depositAmount ) {
+    accBal = accBal + depositAmount;
+  }
+
+  public void withdraw( double withdrawAmount ) {
+    accBal = accBal - withdrawAmount;
+  }
+
+  
   public String toString() {
-    return(fullname + "\n" + password + "\n" + pin + "\n" + accNum + "\n" + accBal);
+    String a = pin + accNum + accBal;
+    System.out.println(a)
+    return(a)
   }
   
   public static void main( String[] args ) {
-    BankAccount acc1 = newBankAccount();
-    System.out.println(acc1);
+    toString();
   }
 
 }
