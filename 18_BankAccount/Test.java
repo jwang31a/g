@@ -29,7 +29,9 @@ public class Test {
 
   
   public static void main( String[] args ) {
-    setName("test name");
+    String a = "";
+    a = toString(fullName) + "\n";
+    System.out.print(a)
   }
 
 }
