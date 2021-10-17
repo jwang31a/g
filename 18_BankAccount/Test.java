@@ -4,18 +4,13 @@
    HW18 -- CPA-One
    2021-10-17
    
-   instance variables for storing...
-   account holder's full name
-   account password
-   4-digit PIN
-   9-digit account number
-   account balance
+   DISCO:
    
-   and methods for...
-   setting each attribute
-   printing out all of an account’s info at once
-   depositing money
-   withdrawing money
+   QCC:
+   
+   Q2 Response:
+   
+   Q3 Response:
 **/
 
 public class Test {
@@ -33,7 +28,7 @@ public class Test {
 
 
   
-  public static void main( String[] args ) {
+  public void main( String[] args ) {
     setName("test name");
     System.out.println(fullName);
   }
