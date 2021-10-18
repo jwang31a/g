@@ -72,7 +72,7 @@ public class BankAccount {
     System.out.println(fullName);
     System.out.println(accNum);
     System.out.println(accBal);
-    System.out.println("\r\n")
+    System.out.println("\r\n");
   }
   
   public static void main( String[] args ) {
@@ -91,6 +91,6 @@ public class BankAccount {
     
     BankAccount acct2 = new BankAccount();
     
-    acct2.setName("test name2")
+    acct2.setName("test name2");
   }
 }
