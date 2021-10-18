@@ -72,6 +72,7 @@ public class BankAccount {
     System.out.println(fullName);
     System.out.println(accNum);
     System.out.println(accBal);
+    System.out.println("\r\n")
   }
   
   public static void main( String[] args ) {
@@ -80,12 +81,16 @@ public class BankAccount {
     acct1.setName("test name");
     acct1.setPasswd("testpassword");
     acct1.setPin((short)1234);
-    acct1.setAcctNum(1234567890);
+    acct1.setAcctNum(123456789);
     acct1.setBalance(100);
 
     acct1.deposit(99.99);
     acct1.withdraw(9.99);
     
     acct1.outputInfo();
+    
+    BankAccount acct2 = new BankAccount();
+    
+    acct2.setName("test name2")
   }
 }
