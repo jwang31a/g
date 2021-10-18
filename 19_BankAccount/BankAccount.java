@@ -43,12 +43,12 @@ public class BankAccount {
   }
 
   public int setAcctNum( int newAcctNum ) {
-    if (100000000 <= newAcctNum && newAcctNum <= 999999998) {
-      accNum = newAcctNum;
-    } else {
+    if (!(100000000 <= newAcctNum && newAcctNum <= 999999998)) {
       accNum = 999999999;
-      System.out.println("Invalid account number, account number must be a 9 digit number from 100000000 to 999999998")
+      System.out.println("Invalid account number, account number must be a 9 digit number from 100000000 to 999999998");
+      return(accNum);
     }
+    accNum = newAcctNum;
     return accNum;
   }
 
