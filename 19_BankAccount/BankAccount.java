@@ -83,6 +83,17 @@ public class BankAccount {
     System.out.println(accBal);
     System.out.println("\r\n");
   }
+   
+  public String toString() {
+    String retStr = "\nAccount info:\n=======================";
+    retStr = retStr + "\nName: " + fullname;
+    retStr = retStr + "\nPassword: " + password;
+    retStr = retStr + "\nPIN: " + pin;
+    retStr = retStr + "\nAccount Number: " + accNum;
+    retStr = retStr + "\nBalance: " + accBal;
+    retStr = retStr + "\n=======================";
+    return retStr;
+  }
   
   public static void main( String[] args ) {
     BankAccount acct1 = new BankAccount();
@@ -96,7 +107,7 @@ public class BankAccount {
     acct1.deposit(99.99);
     acct1.withdraw(9.99);
     
-    acct1.outputInfo();
+    System.out.println(acct1.toString());
     
     BankAccount acct2 = new BankAccount();
     
@@ -109,6 +120,6 @@ public class BankAccount {
     acct2.deposit(500000000.1);
     acct2.withdraw(100000000.1);
     
-    acct2.outputInfo();
+    System.out.println(acct2.toString());
   }
 }
