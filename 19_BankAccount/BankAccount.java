@@ -69,10 +69,13 @@ public class BankAccount {
   }
 
   public void withdraw( double withdrawAmount ) {
+    if (!(withdrawAmount > accBal)) {
+      return(System.out.println("Invalid withdraw amount, withdraw amount higher than account balance."));
+    }
     accBal = accBal - withdrawAmount;
+    return(accBal)
   }
 
-  
   public void outputInfo() {
     System.out.println(fullName);
     System.out.println(accNum);
