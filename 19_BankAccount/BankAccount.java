@@ -74,7 +74,7 @@ public class BankAccount {
     }
     accBal = accBal - withdrawAmount;
     String output = AccBal;
-    return(accBal);
+    return(output);
   }
 
   public void outputInfo() {
