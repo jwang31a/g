@@ -1,7 +1,7 @@
 /**
    Team NBJ, Jun Hong Wang, Brian K., Nada Hameed
    APCS pd6
-   HW19 -- Mo Money Mo Problems
+   HW19 -- Mo Money Mo Problems... MORE AWESOME
    2021-10-18
    
    DISCO:
