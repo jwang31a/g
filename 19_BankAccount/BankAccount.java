@@ -77,12 +77,17 @@ public class BankAccount {
     String output = Double.toString(accBal);
     return(output);
   }
-
-  public void outputInfo() {
-    System.out.println(fullName);
-    System.out.println(accNum);
-    System.out.println(accBal);
-    System.out.println("\r\n");
+   
+  public boolean authenticate(int accnum, short accpin) {
+   if (accnum == accNum) {
+      if (accpin == pin) {
+         return(True);
+      } else {
+         return(False);
+      }
+   } else {
+      return(False);
+   }
   }
    
   public String toString() {
@@ -99,28 +104,36 @@ public class BankAccount {
   public static void main( String[] args ) {
     BankAccount acct1 = new BankAccount();
     
-    acct1.setName("test name");
-    acct1.setPasswd("testpassword");
-    acct1.setPin((short)1234);
-    acct1.setAcctNum(123456789);
-    acct1.setBalance(100);
+    if (acct1.authenticate(123456789, 1234) == True) {
+      acct1.setName("test name");
+      acct1.setPasswd("testpassword");
+      acct1.setPin((short)1234);
+      acct1.setAcctNum(123456789);
+      acct1.setBalance(100);
 
-    acct1.deposit(99.99);
-    acct1.withdraw(200.13);
+      acct1.deposit(99.99);
+      acct1.withdraw(200.13);
     
-    System.out.println(acct1.toString());
+      System.out.println(acct1.toString());
+    } else {
+      return("Invalid credentials")
+    }
     
     BankAccount acct2 = new BankAccount();
     
-    acct2.setName("test name2");
-    acct2.setPasswd("testpassword");
-    acct2.setPin((short) 4321);
-    acct2.setAcctNum(987654321);
-    acct2.setBalance(100000000);
+    if (acct2.authenticate(987654321, 4321) == True) {
+      acct2.setName("test name2");
+      acct2.setPasswd("testpassword");
+      acct2.setPin((short) 4321);
+      acct2.setAcctNum(987654321);
+      acct2.setBalance(100000000);
     
-    acct2.deposit(500000000.1);
-    acct2.withdraw(100000000.1);
+      acct2.deposit(500000000.1);
+      acct2.withdraw(100000000.1);
     
-    System.out.println(acct2.toString());
+      System.out.println(acct2.toString());
+    } else {
+      return("Invalid credentials")
+    }
   }
 }
