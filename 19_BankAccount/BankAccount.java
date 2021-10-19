@@ -128,7 +128,7 @@ public class BankAccount {
      
     if (acct2.authenticate(987654321, (short) 1234) == true) {
       acct2.deposit(99.99);
-      acct2.withdraw(200.13);
+      acct2.withdraw(13.12);
       System.out.println(acct2.toString());
     } else {
       System.out.println("Invalid credentials");
