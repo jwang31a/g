@@ -81,12 +81,12 @@ public class BankAccount {
   public boolean authenticate(int accnum, short accpin) {
    if (accnum == accNum) {
       if (accpin == pin) {
-         return(True);
+         return(true);
       } else {
-         return(False);
+         return(false);
       }
    } else {
-      return(False);
+      return(false);
    }
   }
    
@@ -104,7 +104,7 @@ public class BankAccount {
   public static void main( String[] args ) {
     BankAccount acct1 = new BankAccount();
     
-    if (acct1.authenticate(123456789, (short) 1234) == True) {
+    if (acct1.authenticate(123456789, (short) 1234) == true) {
       acct1.setName("test name");
       acct1.setPasswd("testpassword");
       acct1.setPin((short)1234);
