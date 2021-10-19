@@ -116,7 +116,7 @@ public class BankAccount {
     
       System.out.println(acct1.toString());
     } else {
-      return("Invalid credentials");
+      System.out.println("Invalid credentials");
     }
     
     BankAccount acct2 = new BankAccount();
@@ -133,7 +133,7 @@ public class BankAccount {
     
       System.out.println(acct2.toString());
     } else {
-      return("Invalid credentials");
+      System.out.println("Invalid credentials");
     }
   }
 }
