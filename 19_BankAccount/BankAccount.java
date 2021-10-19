@@ -1,15 +1,15 @@
 /**
-   Jun Hong Wang, Brian K., Nada Hameed
+   Team NBJ, Jun Hong Wang, Brian K., Nada Hameed
    APCS pd6
    HW18 -- CPA-One
-   2021-10-17
+   2021-10-18
    
    DISCO:
-   We understood how we can know that Java provides a constructor for us, because when we create a new instance of an object, it does something, even when the method used isn't defined.
-   System.out.print will output a string representation of an object.
+   We found out how to use short to change the input from an integer to a short.
+   We also reviewed conditionals, and implemented them in our code.
    
    QCC:
-   For the PIN, I tried to do it with a short, but the compiler kept thinking it was a integer, so it changed it to a short.
+   Is there another way to incorporate the short instead of putting short inside parentheses in the argument of the method?
    
    Team NBJ's Latest and Greatest Q2 Response:
    When we create a new instance of a class, we say new ClassName(), and since ClassName() has parentheses, it is a method.
