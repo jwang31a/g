@@ -40,7 +40,7 @@ public class BankAccount {
   public short setPin( short newPin ) {
     if (!(1000 <= newPin && newAcctNum <= 9998)) {
       pin = 9999;
-      System.out.println("Invalid pin number, pin number must be a 4 digit number from 1000 to 9998, 9999 is not a valid pin number.")
+      System.out.println("Invalid pin number, pin number must be a 4 digit number from 1000 to 9998, 9999 is not a valid pin number.");
     }
      
     pin = newPin;
