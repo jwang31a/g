@@ -112,7 +112,7 @@ public class BankAccount {
 
     if (acct1.authenticate(123456789, (short) 1234) == true) {
       acct1.deposit(99.99);
-      acct1.withdraw(200.13);
+      acct1.withdraw(13.12);
       System.out.println(acct1.toString());
     } else {
       System.out.println("Invalid credentials");
@@ -124,10 +124,10 @@ public class BankAccount {
     acct2.setPasswd("testpassword");
     acct2.setPin((short)4321);
     acct2.setAcctNum(987654321);
-    acct2.setBalance(100);
+    acct2.setBalance(500000000);
      
-    if (acct2.authenticate(987654321, (short) 1234) == true) {
-      acct2.deposit(99.99);
+    if (acct2.authenticate(987654321, (short) 4321) == true) {
+      acct2.deposit(100000000);
       acct2.withdraw(13.12);
       System.out.println(acct2.toString());
     } else {
