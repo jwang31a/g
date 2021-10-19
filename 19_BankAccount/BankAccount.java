@@ -38,6 +38,11 @@ public class BankAccount {
   }
   
   public short setPin( short newPin ) {
+    if (!(1000 <= newPin && newAcctNum <= 9998)) {
+      pin = 9999;
+      System.out.println("Invalid pin number, pin number must be a 4 digit number from 1000 to 9998, 9999 is not a valid pin number.")
+    }
+     
     pin = newPin;
     return pin;
   }
@@ -45,9 +50,9 @@ public class BankAccount {
   public int setAcctNum( int newAcctNum ) {
     if (!(100000000 <= newAcctNum && newAcctNum <= 999999998)) {
       accNum = 999999999;
-      System.out.println("Invalid account number, account number must be a 9 digit number from 100000000 to 999999998");
-      return(accNum);
+      System.out.println("Invalid account number, account number must be a 9 digit number from 100000000 to 999999998, 999999999 is not a valid account number.");
     }
+    
     accNum = newAcctNum;
     return accNum;
   }
