@@ -104,33 +104,41 @@ public class BankAccount {
   public static void main( String[] args ) {
     BankAccount acct1 = new BankAccount();
     
-    if (acct1.authenticate(123456789, (short) 1234) == true) {
-      acct1.setName("test name");
-      acct1.setPasswd("testpassword");
-      acct1.setPin((short)1234);
-      acct1.setAcctNum(123456789);
-      acct1.setBalance(100);
+    acct1.setName("test name");
+    acct1.setPasswd("testpassword");
+    acct1.setPin((short)1234);
+    acct1.setAcctNum(123456789);
+    acct1.setBalance(100);
 
+    acct1.deposit(99.99);
+    acct1.withdraw(200.13);
+    
+    System.out.println(acct1.toString());
+     
+    if (acct1.authenticate(123456789, (short) 1234) == true) {
       acct1.deposit(99.99);
       acct1.withdraw(200.13);
-    
       System.out.println(acct1.toString());
     } else {
       System.out.println("Invalid credentials");
     }
-    
+       
     BankAccount acct2 = new BankAccount();
     
-    if (acct2.authenticate(987654312, (short) 4321) == true) {
-      acct2.setName("test name2");
-      acct2.setPasswd("testpassword");
-      acct2.setPin((short) 4321);
-      acct2.setAcctNum(987654321);
-      acct2.setBalance(100000000);
+    acct2.setName("test name");
+    acct2.setPasswd("testpassword");
+    acct2.setPin((short)4321);
+    acct2.setAcctNum(987654321);
+    acct2.setBalance(100);
+
+    acct2.deposit(99.99);
+    acct2.withdraw(200.13);
     
-      acct2.deposit(500000000.1);
-      acct2.withdraw(100000000.1);
-    
+    System.out.println(acct2.toString());
+     
+    if (acct2.authenticate(987654321, (short) 1234) == true) {
+      acct2.deposit(99.99);
+      acct2.withdraw(200.13);
       System.out.println(acct2.toString());
     } else {
       System.out.println("Invalid credentials");
