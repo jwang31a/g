@@ -73,7 +73,7 @@ public class BankAccount {
       return(System.out.println("Invalid withdraw amount, withdraw amount higher than account balance."));
     }
     accBal = accBal - withdrawAmount;
-    return(accBal)
+    return(accBal);
   }
 
   public void outputInfo() {
