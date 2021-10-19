@@ -69,7 +69,7 @@ public class BankAccount {
   }
 
   public String withdraw( double withdrawAmount ) {
-     if (!(withdrawAmount > accBal)) {
+    if (!(withdrawAmount < accBal)) {
       System.out.println("Invalid withdraw amount, withdraw amount higher than account balance.");
       return("");
     }
