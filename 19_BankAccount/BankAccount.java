@@ -106,7 +106,7 @@ public class BankAccount {
     acct1.setBalance(100);
 
     acct1.deposit(99.99);
-    acct1.withdraw(9.99);
+    acct1.withdraw(200.13);
     
     System.out.println(acct1.toString());
     
