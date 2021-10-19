@@ -121,7 +121,7 @@ public class BankAccount {
     
     BankAccount acct2 = new BankAccount();
     
-    if (acct2.authenticate(987654321, 4321) == True) {
+    if (acct2.authenticate(987654312, 4321) == True) {
       acct2.setName("test name2");
       acct2.setPasswd("testpassword");
       acct2.setPin((short) 4321);
