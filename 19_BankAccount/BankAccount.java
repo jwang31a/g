@@ -86,7 +86,7 @@ public class BankAccount {
    
   public String toString() {
     String retStr = "\nAccount info:\n=======================";
-    retStr = retStr + "\nName: " + fullname;
+    retStr = retStr + "\nName: " + fullName;
     retStr = retStr + "\nPassword: " + password;
     retStr = retStr + "\nPIN: " + pin;
     retStr = retStr + "\nAccount Number: " + accNum;
