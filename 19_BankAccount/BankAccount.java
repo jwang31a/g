@@ -104,7 +104,7 @@ public class BankAccount {
   public static void main( String[] args ) {
     BankAccount acct1 = new BankAccount();
     
-    if (acct1.authenticate(123456789, 1234) == True) {
+    if (acct1.authenticate(123456789, (short) 1234) == True) {
       acct1.setName("test name");
       acct1.setPasswd("testpassword");
       acct1.setPin((short)1234);
@@ -121,7 +121,7 @@ public class BankAccount {
     
     BankAccount acct2 = new BankAccount();
     
-    if (acct2.authenticate(987654312, 4321) == True) {
+    if (acct2.authenticate(987654312, (short) 4321) == True) {
       acct2.setName("test name2");
       acct2.setPasswd("testpassword");
       acct2.setPin((short) 4321);
