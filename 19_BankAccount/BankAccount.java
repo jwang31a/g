@@ -92,5 +92,14 @@ public class BankAccount {
     BankAccount acct2 = new BankAccount();
     
     acct2.setName("test name2");
+    acct2.setPasswd("testpassword");
+    acct2.setPin((short) 4321);
+    acct2.setAcctNum(987654321);
+    acct2.setBalance(100000000);
+    
+    acct2.deposit(500000000.1);
+    acct2.withdraw(100000000.1);
+    
+    acct2.outputInfo();
   }
 }
