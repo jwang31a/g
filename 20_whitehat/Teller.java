@@ -17,29 +17,29 @@ public class Teller {
   public static void main( String[] args ) {
     BankAccount ba = new BankAccount();
     System.out.println(ba.toString());
-  //prints errors
+  
     
     short badPin = 0100;
     ba.setName("badPepe");
     ba.setPasswd("PepeIsBad");
     ba.setPin(badPin);
     ba.setAcctNum(000000001);
-    System.out.println(ba.toString());
     ba.setBalance(100000000);
     ba.deposit (0);
     ba.withdraw(0);
     System.out.println("Authentication " + ba.authenticate(0000000001, "PepeIsBad"));
-    
-//prints full info
+    System.out.println(ba.toString());
+
   short pin = 1234;
     ba.setName("Pepe");
     ba.setPasswd("PepeIsGod");
     ba.setPin(pin);
     ba.setAcctNum(123456789);
-    System.out.println(ba.toString());
+    
     ba.setBalance(10000000.00);
     ba.deposit(0);
     ba.withdraw(0);
     System.out.println("Authentication " + ba.authenticate(123456789, "PepeIsGod"));
+    System.out.println(ba.toString());
   }
 }
