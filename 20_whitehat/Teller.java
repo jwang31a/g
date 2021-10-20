@@ -7,7 +7,9 @@
   DISCO:
   I don't think this is intended, but setting the account balance, and depositing into the account can be done regardless of if authenicate works or not. Not only that, but I'm not sure if their withdraw and deposit methods work as intended.
   We also went through their code, and the pins 1000 and 9998 aren't valid, when they should be.
+  
   QCC:
+  The toString method that prints out all of the account information feels like it's in the wrong place, and it might print out outdated information.
   
   What operations are possible from BankAccount's main method but not Teller's?
   Initially, authenticate() was a private method, only accessible from BankAccount.java, but we changed it to public so it could be accessed here.
@@ -36,7 +38,7 @@ public class Teller {
     ba.setPin(pin);
     ba.setAcctNum(123456789);
     
-    ba.setBalance(10000000.00);
+    ba.setBalance(20000000.00);
     ba.deposit(0);
     ba.withdraw(0);
     System.out.println("Authentication " + ba.authenticate(123456789, "PepeIsGod"));
