@@ -27,8 +27,8 @@ public class Stats {
 			output = a;
 		} else if (a < b) {
 			output = b;
-		return output;
 		}
+		return output;
 	}
 	
 		public static double max(double a, double b) {
@@ -37,8 +37,9 @@ public class Stats {
 			output = a;
 		} else if (a < b) {
 			output = b;
-		return output;
 		}
+		return output;
+		
  	}
 	
 	/**
