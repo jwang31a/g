@@ -25,7 +25,7 @@ public class Stats {
 		int output;
 		if (a > b) {
 			output = a;
-		} else if (a < b) {
+		} elif (a < b) {
 			output = b;
 		} else (a == b) {
 			output = a;
