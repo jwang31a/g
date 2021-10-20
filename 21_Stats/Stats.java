@@ -49,7 +49,12 @@ public class Stats {
 		
  	}
 	
-	// I don't know if there is any other way to get a square root, since the sqrt() and pow() methods take doubles for an input, and we can't put that into an int.
+	/** 
+	I don't know if there is any other way to get a square root, since the sqrt() and pow() methods return doubles, and I can't put that into a int variable.
+	I kept getting this error:
+	error: incompatible types: possible lossy conversion from double to int
+	**/
+	
  	public static int geoMean(int a, int b) {
 		int product = a * b;
 		int output = Math.pow(product, 1/2);
