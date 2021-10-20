@@ -43,10 +43,10 @@ public class Stats {
 
   //main method for testing functionality
   public static void main( String[] args ) {
-    // should output 1.5, but it seems like it rounds down?
-    System.out.println(Stats.mean(1,2));
-		
-		// should output 1.5
-		System.out.println(Stats.mean(1,2));
+	  // should output 1.5, but it seems like it rounds down?
+	  System.out.println(Stats.mean(1,2));
+	  
+	  // should output 1.5
+	  System.out.println(Stats.mean(1,2));
   }
 }//end class
