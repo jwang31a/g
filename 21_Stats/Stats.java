@@ -7,7 +7,12 @@
    xtra: harmonic mean is the reciprocal of the
    arithmetic mean of the reciprocals
    
-   No TypeCasting
+   No TypeCasting (assigning value of one primitive type to another primitive type)
+   
+   Disco:
+   It seems that when there is a floating-point number in an int, the int will round down.
+   
+   QCC:
  **/
 
 import java.util.Math;
@@ -32,7 +37,7 @@ public class Stats {
 		return output;
 	}
 	
-		public static double max(double a, double b) {
+	public static double max(double a, double b) {
 		double output = 0;
 		if (a >= b) {
 			output = a;
