@@ -22,8 +22,6 @@
   A common issue between BankAccounts is that we don't account for depositing negative numbers, and this pretty much allows us to steal from accounts. 
   In the first account, we were able to empty the bank account using this.
   
-  
-  
   What operations are possible from BankAccount's main method but not Teller's?
   Initially, authenticate() was a private method, only accessible from BankAccount.java, but we changed it to public so it could be accessed here.
   This might be the only thing that can only be accessed from BankAccount but not Teller.
