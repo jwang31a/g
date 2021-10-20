@@ -16,12 +16,12 @@ public class Stats {
 	  int output = (a + b) / 2;
 	  return output;
   }
-
-  /**
+  
   public static double mean(double a, double b) {
-		
+	  double output = (a + b) / 2;
   }
-
+	
+/**
   public static int max(int a, int b) {
 
   }
@@ -59,6 +59,8 @@ public class Stats {
   public static void main( String[] args ) {
     // should output 1.5, but it seems like it rounds down?
     System.out.println(Stats.mean(1,2));
+		
+		// should output 1.5
+		System.out.println(Stats.mean(1,2));
   }
-
 }//end class
