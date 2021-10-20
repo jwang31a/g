@@ -87,10 +87,13 @@ public class Stats {
 	/**
  	public static int geoMean(int a, int b, int c) {
  	}
+	**/
 	
  	public static double geoMean(double a, double b, double c) {
+		double output = Math.pow((a * b * c), 1/3);
+		return output;
  	}
-**/
+
 
   //main method for testing functionality
   public static void main( String[] args ) {
@@ -107,7 +110,7 @@ public class Stats {
 	  System.out.println(Stats.max(1,12.34));
 	  
 	  // should output sqrt(12) in decimal form, or about 3.464
-	  System.out.println(Stats.geoMean(3,4));
+	  System.out.println(Stats.geoMean(3.0,4.0));
 	  
 	  // should output the biggest one of the three, or 3 (also with other test examples)
 	  System.out.println(Stats.max(1,2,3));
@@ -117,7 +120,9 @@ public class Stats {
 	  // output the biggest float of the three (with extra test examples)
 	  System.out.println(Stats.max(1.1,2.4,1279.8));
 	  System.out.println(Stats.max(2.4,-2.4,0.1));
-	  System.out.println(Stats.max(1.1,1279.8,1279.9));
 	  System.out.println(Stats.max(-2.4,-2.5,-0.1));
+	  
+	  // geometric mean of three inputs, should return about 6.88
+	  System.out.println(Stats.geoMean(1.1,15.6,19.0));
   }
 }//end class
