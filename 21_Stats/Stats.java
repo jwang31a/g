@@ -58,6 +58,6 @@ public class Stats {
 	  System.out.println(Stats.mean(1.0,2.0));
 	  
 	  // should return the bigger of the two numbers
-	  System.out.println(Stats.max(1,100))
+	  System.out.println(Stats.max(1,100));
   }
 }//end class
