@@ -14,6 +14,8 @@
    Not only that, but integers will automatically round/evaulate non-integer values. For example, when I wanted to take the cube root for geoMean(0), 1/3 was evaluated to 0, and it took the 0th power, which always returns 1.
    
    QCC:
+   I wasn't able to do the geoMean() methods, since I kept getting the lossy conversion from double to int error.
+   I think
  **/
 
 import java.lang.Math;
@@ -57,7 +59,7 @@ public class Stats {
 	
  	public static int geoMean(int a, int b) {
 		int product = a * b;
-		int output = Math.pow(product, 1.0/2.0);
+		int output = Math.round(Math.pow(product, 1.0/2.0));
 		return output;
  	}
 	
@@ -96,7 +98,7 @@ public class Stats {
 	**/
  	public static int geoMean(int a, int b, int c) {
 		int product = a * b * c;
-		int output = Math.pow(product, (1.0/3.0));
+		int output = Math.round(Math.pow(product, (1.0/3.0)));
 		return output;
  	}
 	
