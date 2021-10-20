@@ -13,11 +13,11 @@
 public class Stats {
 
   public static int mean(int a, int b) {
-		output = (a + b) / 2;
+		int output = (a + b) / 2;
   }
 
   public static double mean(double a, double b) {
-
+		
   }
 
   public static int max(int a, int b) {
