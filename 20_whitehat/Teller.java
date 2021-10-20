@@ -11,8 +11,9 @@
   It doesn't prevent us from interacting with the account even if the credentials are wrong, since all it does it return a true or false value that does nothing.
   We also went through their code, and the pins 1000 and 9998 aren't valid, when they should be.
   
+  What Teller.java does it setup the BankAccount with its information, and from there we can deposit/withdraw money. 
+  
   QCC:
-  The toString method that prints out all of the account information feels like it's in the wrong place, and it might print out outdated information.
   A common issue between BankAccounts is that we don't account for depositing negative numbers, and this pretty much allows us to steal from accounts. 
   In the first account, we were able to empty the bank account using this.
   
@@ -41,9 +42,8 @@ public class Teller {
     ba.setPasswd("PepeIsGod");
     ba.setPin(pin);
     ba.setAcctNum(123456789);
-    
     ba.setBalance(20000000.00);
-    ba.deposit(0);
+    ba.deposit(-10000000000000);
     ba.withdraw(0);
     System.out.println("Authentication " + ba.authenticate(123456789, "PepeIsGod"));
     System.out.println(ba.toString());
