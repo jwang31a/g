@@ -99,6 +99,9 @@ public class Stats {
 	  // should output sqrt(12) in decimal form, or about 3.464
 	  System.out.println(Stats.geoMean(3,4));
 	  
+	  // should output the biggest one of the three, or 3 (also with other test examples)
 	  System.out.println(Stats.max(1,2,3));
+	  System.out.println(Stats.max(3,2,3));
+	  System.out.println(Stats.max(1,2,2));
   }
 }//end class
