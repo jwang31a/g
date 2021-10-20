@@ -141,6 +141,9 @@ public class Stats {
 	  System.out.println(Stats.max(2.4,-2.4,0.1));
 	  System.out.println(Stats.max(-2.4,-2.5,-0.1));
 	  
+	  // geometric mean of three inputs, returns int
+	  System.out.println(Stats.geoMean(3,4,5));
+	  
 	  // geometric mean of three inputs, should return about 6.88
 	  System.out.println(Stats.geoMean(1.1,15.6,19.0));
   }
