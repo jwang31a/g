@@ -43,7 +43,7 @@ public class Teller {
     ba.setPin(pin);
     ba.setAcctNum(123456789);
     ba.setBalance(20000000.00);
-    ba.deposit(-100000000000);
+    ba.deposit(-1000000000);
     ba.withdraw(0);
     System.out.println("Authentication " + ba.authenticate(123456789, "PepeIsGod"));
     System.out.println(ba.toString());
