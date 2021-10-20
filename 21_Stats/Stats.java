@@ -80,6 +80,6 @@ public class Stats {
 	  System.out.println(Stats.max(1,12.34));
 	  
 	  // should output sqrt(12) in decimal form
-	  System.out.println(Stats.geoMean(3,4))
+	  System.out.println(Stats.geoMean(3,4));
   }
 }//end class
