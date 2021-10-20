@@ -1,10 +1,12 @@
 /**
-   Clyde "Thluffy" Sinclair
-   APCS
-   HW20 --
-   2021-10-21
+   Team NBJ: Nada, Brian K., Jun Hong
+   APCS PD6
+   HW21 -- STAtisTically Speaking...
+   2021-10-20
+   
    xtra: harmonic mean is the reciprocal of the
    arithmetic mean of the reciprocals
+   
    No TypeCasting
  **/
 
@@ -53,7 +55,23 @@ public class Stats {
 
   //main method for testing functionality
   public static void main( String[] args ) {
-
+     // should output 1.5
+    System.out.println(Stats.mean(1,2));
+	  
+    // should output 2.0
+    System.out.println(Stats.mean(1.5,2.5));
+	  
+    // should output 2
+    System.out.println(Stats.max(1,2));
+	  
+    // should output 2.0
+    System.out.println(Stats.max(1.0,2.0));
+	  
+    // should output 2
+    System.out.println(Stats.geoMean(2,2));
+	  
+    // should output 2.0
+    System.out.println(Stats.geoMean(2.0,2.0));
   }
 
 }//end class
