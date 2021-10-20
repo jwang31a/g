@@ -13,7 +13,7 @@
 public class Stats {
 
   public static int mean(int a, int b) {
-		output = (int a + int b) / 2
+		output = (a + b) / 2
   }
 
   public static double mean(double a, double b) {
