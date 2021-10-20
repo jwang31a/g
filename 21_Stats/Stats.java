@@ -113,5 +113,10 @@ public class Stats {
 	  System.out.println(Stats.max(1,2,3));
 	  System.out.println(Stats.max(3,2,3));
 	  System.out.println(Stats.max(1,2,2));
+	  
+	  // output the biggest float of the three (with extra test examples)
+	  System.out.println(Stats.max(1.1,2.4,1279.8));
+	  System.out.println(Stats.max(2.4,2.4,1279.8));
+	  System.out.println(Stats.max(1.1,1279.8,1279.8));
   }
 }//end class
