@@ -43,10 +43,9 @@ public class Stats {
 		
  	}
 	
-	
+	// I don't know if there is any other way to get a square root, since the sqrt() and pow() methods take doubles for an input, and we can't put that into an int.
  	public static int geoMean(int a, int b) {
-		double preOutput = Math.sqrt((a * b) * (a * b));
-		int output = preOutput;
+		int output = Math.sqrt((a * b) * (a * b));
 		return output;
  	}
 	/**
