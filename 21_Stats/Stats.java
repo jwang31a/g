@@ -10,6 +10,7 @@
    No TypeCasting
  **/
 
+import java.util.Math
 public class Stats {
 	public static int mean(int a, int b) {
 		int output = (a + b) / 2;
@@ -42,10 +43,12 @@ public class Stats {
 		
  	}
 	
-	/**
- 	public static int geoMean(int a, int b) {
- 	}
 	
+ 	public static int geoMean(int a, int b) {
+		int output = Math.pow((a * b), 2);
+		return output;
+ 	}
+	/**
  	public static double geoMean(double a, double b) {
  	}
 	
@@ -75,5 +78,8 @@ public class Stats {
 	  
 	  // should return 12.34
 	  System.out.println(Stats.max(1,12.34));
+	  
+	  // should output sqrt(12) in decimal form
+	  System.out.println(Stats.geoMean(3,4))
   }
 }//end class
