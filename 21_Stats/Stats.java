@@ -13,7 +13,7 @@
 public class Stats {
 
   public static int mean(int a, int b) {
-		int output = (a + b) / 2;
+	  int output = (a + b) / 2;
 	  return output;
   }
 
@@ -57,7 +57,7 @@ public class Stats {
 
   //main method for testing functionality
   public static void main( String[] args ) {
-     // should output 1.5
+    // should output 1.5, but it seems like it rounds down?
     System.out.println(Stats.mean(1,2));
   }
 
