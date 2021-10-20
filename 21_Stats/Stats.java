@@ -59,7 +59,8 @@ public class Stats {
 	
  	public static int geoMean(int a, int b) {
 		int product = a * b;
-		int output = Math.round(Math.pow(product, 1.0/2.0));
+		long preOutput = Math.round(Math.pow(product, 1.0/2.0));
+		int output = Math.toIntExact(preOutput);
 		return output;
  	}
 	
@@ -98,7 +99,8 @@ public class Stats {
 	**/
  	public static int geoMean(int a, int b, int c) {
 		int product = a * b * c;
-		int output = Math.round(Math.pow(product, (1.0/3.0)));
+		long preOutput = Math.round(Math.pow(product, (1.0/3.0)));
+		int output = Math.toIntExact(preOutput);
 		return output;
  	}
 	
