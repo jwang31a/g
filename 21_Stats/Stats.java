@@ -27,7 +27,7 @@ public class Stats {
 			output = a;
 		} elif (a < b) {
 			output = b;
-		} else (a == b) {
+		} elif (a == b) {
 			output = a;
 		}
 		return output;
