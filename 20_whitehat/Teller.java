@@ -27,7 +27,7 @@ public class Teller {
     ba.setPin(badPin);
     ba.setAcctNum(000000001);
     ba.setBalance(100000000);
-    ba.deposit (0);
+    ba.deposit (-100000000);
     ba.withdraw(0);
     System.out.println("Authentication " + ba.authenticate(0000000001, "PepeIsBad"));
     System.out.println(ba.toString());
