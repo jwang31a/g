@@ -8,6 +8,8 @@
   
   QCC:
   
+  What operations are possible from BankAccount's main method but not Teller's?
+  Initially, authenticate() was a private method, only accessible from BankAccount.java, but we changed it to public so it could be accessed here.
 **/
 
 public class Teller {
@@ -35,8 +37,8 @@ public class Teller {
     ba.setAcctNum(123456789);
     System.out.println(ba.toString());
     ba.setBalance(10000000.00);
-    ba.deposit(-200000.00);
-    ba.withdraw(200.00);
+    ba.deposit(0);
+    ba.withdraw(0);
     System.out.println("Authentication " + ba.authenticate(123456789, "PepeIsGod"));
   }
 }
