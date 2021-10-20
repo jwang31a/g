@@ -71,10 +71,20 @@ public class Stats {
 		}
 		return output;
  	}
-	/**
+	
  	public static double max(double a, double b, double c) {
+		double output = 0;
+		if (a >= b && a >= c) {
+			output = a;
+		} else if (b >= a && b >= c) {
+			output = b;
+		} else if (c >= a && c >= b) {
+			output = c;
+		}
+		return output;
  	}
 	
+	/**
  	public static int geoMean(int a, int b, int c) {
  	}
 	
