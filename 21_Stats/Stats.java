@@ -60,10 +60,18 @@ public class Stats {
 		return output;
  	}
 	
-	/**
  	public static int max(int a, int b, int c) {
+		output = 0;
+		if (a >= b && a >= c) {
+			output = a;
+		} else if (b >= a && b >= c) {
+			output = b;
+		} else if (c >= a && c >= b) {
+			output = c;
+		}
+		return output;
  	}
-	
+	/**
  	public static double max(double a, double b, double c) {
  	}
 	
@@ -88,7 +96,9 @@ public class Stats {
 	  // should return 12.34
 	  System.out.println(Stats.max(1,12.34));
 	  
-	  // should output sqrt(12) in decimal form
+	  // should output sqrt(12) in decimal form, or about 3.464
 	  System.out.println(Stats.geoMean(3,4));
+	  
+	  System.out.println(Stats.)
   }
 }//end class
