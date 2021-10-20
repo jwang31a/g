@@ -15,7 +15,8 @@
    
    QCC:
    I wasn't able to do the geoMean() methods, since I kept getting the lossy conversion from double to int error.
-   I think
+   Instead of doing that, I converted a double into a long, then long into int through rounding.
+   I had to import Math, so I could use power (for square and cube root), and I had to use it for rounding.
  **/
 
 import java.lang.Math;
