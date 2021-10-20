@@ -90,7 +90,8 @@ public class Stats {
 	**/
 	
  	public static double geoMean(double a, double b, double c) {
-		double output = Math.pow((a * b * c), (1/3));
+		double product = a * b * c;
+		double output = Math.pow(product, (1/3));
 		return output;
  	}
 
