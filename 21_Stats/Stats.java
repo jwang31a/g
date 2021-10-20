@@ -47,6 +47,6 @@ public class Stats {
 	  System.out.println(Stats.mean(1,2));
 	  
 	  // should output 1.5
-	  System.out.println(Stats.mean(1,2));
+	  System.out.println(Stats.mean(1.0,2.0));
   }
 }//end class
