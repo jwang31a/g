@@ -53,10 +53,13 @@ public class Stats {
 		int output = Math.sqrt((a * b) * (a * b));
 		return output;
  	}
-	/**
+	
  	public static double geoMean(double a, double b) {
+		double output = Math.sqrt((a * b) * (a * b));
+		return output;
  	}
 	
+	/**
  	public static int max(int a, int b, int c) {
  	}
 	
