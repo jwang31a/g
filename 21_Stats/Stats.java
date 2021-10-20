@@ -22,7 +22,7 @@ public class Stats {
 	}
 	
 	public static int max(int a, int b) {
-		int output;
+		int output = 0;
 		if (a > b) {
 			output = a;
 		} else if (a < b) {
