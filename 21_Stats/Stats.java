@@ -125,6 +125,9 @@ public class Stats {
 	  // should return 12.34
 	  System.out.println(Stats.max(1,12.34));
 	  
+	  // geo mean of two integers
+	  System.out.println(Stats.geoMean(3,4));
+	  
 	  // should output sqrt(12) in decimal form, or about 3.464
 	  System.out.println(Stats.geoMean(3.0,4.0));
 	  
