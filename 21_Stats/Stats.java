@@ -13,7 +13,7 @@
 public class Stats {
 
   public static int mean(int a, int b) {
-
+		output = (int a + int b) / 2
   }
 
   public static double mean(double a, double b) {
@@ -57,21 +57,6 @@ public class Stats {
   public static void main( String[] args ) {
      // should output 1.5
     System.out.println(Stats.mean(1,2));
-	  
-    // should output 2.0
-    System.out.println(Stats.mean(1.5,2.5));
-	  
-    // should output 2
-    System.out.println(Stats.max(1,2));
-	  
-    // should output 2.0
-    System.out.println(Stats.max(1.0,2.0));
-	  
-    // should output 2
-    System.out.println(Stats.geoMean(2,2));
-	  
-    // should output 2.0
-    System.out.println(Stats.geoMean(2.0,2.0));
   }
 
 }//end class
