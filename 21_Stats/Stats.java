@@ -10,7 +10,7 @@
    No TypeCasting
  **/
 
-import java.util.Math
+import java.util.Math;
 public class Stats {
 	public static int mean(int a, int b) {
 		int output = (a + b) / 2;
