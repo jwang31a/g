@@ -23,28 +23,38 @@ public class Stats {
 	
 	public static int max(int a, int b) {
 		int output = 0;
-		if (a > b) {
+		if (a >= b) {
 			output = a;
 		} else if (a < b) {
 			output = b;
-		} else if (a == b) {
-			output = a;
-		}
 		return output;
 	}
-/**
+	
  	public static double max(double a, double b) {
+		double output = 0;
+		if (a >= b) {
+			output = a;
+		} else if (a < b) {
+			output = b;
+		return output;
  	}
+	
+	/**
  	public static int geoMean(int a, int b) {
  	}
+	
  	public static double geoMean(double a, double b) {
  	}
+	
  	public static int max(int a, int b, int c) {
  	}
+	
  	public static double max(double a, double b, double c) {
  	}
+	
  	public static int geoMean(int a, int b, int c) {
  	}
+	
  	public static double geoMean(double a, double b, double c) {
  	}
 **/
@@ -57,7 +67,10 @@ public class Stats {
 	  // should output 1.5, outputs correct mean
 	  System.out.println(Stats.mean(1.0,2.0));
 	  
-	  // should return the bigger of the two numbers
+	  // should return the bigger of the two numbers, 100
 	  System.out.println(Stats.max(1,100));
+	  
+	  // should return 12.34
+	  System.out.println(Stats.max(1,12.34));
   }
 }//end class
