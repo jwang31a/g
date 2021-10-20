@@ -7,6 +7,8 @@
   DISCO:
   I don't think this is intended, but setting the account balance, and depositing into the account can be done regardless of if authenicate works or not. Not only that, but I'm not sure if their withdraw and deposit methods work as intended.
   In the first bank account, we were able to subtract money, even when our credentials were false.
+  Upon further inspection, authenticate doesn't seem to do anything other than verifying that the account number and password ara valid. 
+  It doesn't prevent us from interacting with the account even if the credentials are wrong, since all it does it return a true or false value that does nothing.
   We also went through their code, and the pins 1000 and 9998 aren't valid, when they should be.
   
   QCC:
@@ -23,7 +25,6 @@ public class Teller {
     BankAccount ba = new BankAccount();
     System.out.println(ba.toString());
   
-    
     short badPin = 0100;
     ba.setName("badPepe");
     ba.setPasswd("PepeIsBad");
@@ -35,7 +36,7 @@ public class Teller {
     System.out.println("Authentication " + ba.authenticate(0000000001, "PepeIsBad"));
     System.out.println(ba.toString());
 
-  short pin = 1234;
+    short pin = 1234;
     ba.setName("Pepe");
     ba.setPasswd("PepeIsGod");
     ba.setPin(pin);
