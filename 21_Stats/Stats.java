@@ -57,7 +57,7 @@ public class Stats {
 	
  	public static int geoMean(int a, int b) {
 		int product = a * b;
-		int output = Math.pow(product, 1/2);
+		int output = Math.pow(product, 1.0/2.0);
 		return output;
  	}
 	
@@ -91,9 +91,14 @@ public class Stats {
  	}
 	
 	/**
- 	public static int geoMean(int a, int b, int c) {
- 	}
+	I had the same error I had above with the other geoMean() method, since I don't know how I can put a double into a int without the error.
+	
 	**/
+ 	public static int geoMean(int a, int b, int c) {
+		int product = a * b * c;
+		int output = Math.pow(product, (1.0/3.0));
+		return output;
+ 	}
 	
  	public static double geoMean(double a, double b, double c) {
 		double product = a * b * c;
