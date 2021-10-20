@@ -5,6 +5,7 @@
   2021-10-19
   
   DISCO:
+  I don't think this is intended, but setting the account balance, and depositing into the account can be done regardless of if authenicate works or not. Not only that, but I'm not sure if their withdraw and deposit methods work as intended.
   
   QCC:
   
@@ -27,7 +28,7 @@ public class Teller {
     ba.setBalance(1000.00);
     ba.deposit (200.00);
     ba.withdraw(10000.99);
-    System.out.println("Authentication " + ba.authenticate(123456789, "PepeIsGod"));
+    System.out.println("Authentication " + ba.authenticate(0000000001, "PepeIsBad"));
     
 //prints full info
   short pin = 1234;
