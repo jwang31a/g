@@ -61,7 +61,7 @@ public class Stats {
  	}
 	
  	public static int max(int a, int b, int c) {
-		output = 0;
+		int output = 0;
 		if (a >= b && a >= c) {
 			output = a;
 		} else if (b >= a && b >= c) {
