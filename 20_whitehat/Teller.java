@@ -6,6 +6,7 @@
   
   DISCO:
   I don't think this is intended, but setting the account balance, and depositing into the account can be done regardless of if authenicate works or not. Not only that, but I'm not sure if their withdraw and deposit methods work as intended.
+  In the first bank account, we were able to subtract money, even when our credentials were false.
   We also went through their code, and the pins 1000 and 9998 aren't valid, when they should be.
   
   QCC:
