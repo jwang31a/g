@@ -11,6 +11,7 @@
    
    Disco:
    It seems that when there is a floating-point number in an int, the int will round down.
+   Not only that, but integers will automatically round/evaulate non-integer values. For example, when I wanted to take the cube root for geoMean(0), 1/3 was evaluated to 0, and it took the 0th power, which always returns 1.
    
    QCC:
  **/
