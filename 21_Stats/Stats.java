@@ -99,6 +99,6 @@ public class Stats {
 	  // should output sqrt(12) in decimal form, or about 3.464
 	  System.out.println(Stats.geoMean(3,4));
 	  
-	  System.out.println(Stats.)
+	  System.out.println(Stats.max(1,2,3));
   }
 }//end class
