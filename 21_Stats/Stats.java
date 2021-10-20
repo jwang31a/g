@@ -56,7 +56,7 @@ public class Stats {
 	**/
 	
  	public static double geoMean(double a, double b) {
-		double output = Math.sqrt((a * b) * (a * b));
+		double output = Math.sqrt((a * b));
 		return output;
  	}
 	
