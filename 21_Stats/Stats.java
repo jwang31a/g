@@ -28,15 +28,17 @@ public class Stats {
 		} else if (a < b) {
 			output = b;
 		return output;
+		}
 	}
 	
- 	public static double max(double a, double b) {
+		public static double max(double a, double b) {
 		double output = 0;
 		if (a >= b) {
 			output = a;
 		} else if (a < b) {
 			output = b;
 		return output;
+		}
  	}
 	
 	/**
