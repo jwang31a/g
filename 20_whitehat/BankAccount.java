@@ -86,7 +86,7 @@ public class BankAccount{
     return retStr;
   }
 
-private boolean authenticate( int accNum, String pass ) {
+public boolean authenticate( int accNum, String pass ) {
   if ((accNum == acctNum) && (pass == passwd)) {
     return (true);
   } else {
