@@ -19,6 +19,7 @@ public class Stats {
   
   public static double mean(double a, double b) {
 	  double output = (a + b) / 2;
+	  return output;
   }
 	
 /**
