@@ -56,6 +56,8 @@ public class Stats {
 	I don't know if there is any other way to get a square root, since the sqrt() and pow() methods return doubles, and I can't put that into a int variable.
 	I kept getting this error:
 	error: incompatible types: possible lossy conversion from double to int
+	
+	Fix the code so it doesn't use typecasting or other long methods.
 	**/
 	
  	public static int geoMean(int a, int b) {
@@ -97,6 +99,7 @@ public class Stats {
 	/**
 	I had the same error I had above with the other geoMean() method, since I don't know how I can put a double into a int without the error.
 	
+	Fix the code so it doesn't use typecasting or other long methods.
 	**/
  	public static int geoMean(int a, int b, int c) {
 		int product = a * b * c;
