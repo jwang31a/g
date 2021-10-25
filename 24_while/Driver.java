@@ -1,8 +1,8 @@
 // Snowball - Brian Li + Robert, Jun Hong Wang + Bob
-// APCS
-// HW23 -- Coin and Driver
-// 2021-10-22
-// time spent: 1.0 hours
+// APCS PD6
+// HW24 -- Get It While You Can
+// 2021-10-25
+// time spent: 5 minutes (so far)
 
 /*
 DISCO
