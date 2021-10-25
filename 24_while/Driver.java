@@ -52,7 +52,7 @@ public class Driver {
           matchCtr++;
         }
       }
-      System.out.println(x, y, matchCtr);
+      System.out.println(x);
 
 /* 
       //test toString() methods of each Coin
