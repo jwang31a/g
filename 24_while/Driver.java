@@ -54,7 +54,7 @@ public class Driver {
       System.out.println("wayne: " + wayne);
     
       // test equals() method WITH WHILE LOOP
-      while (x < yours.headsCtr && y < matchCtr && y >= 65536 && y % 2005 == 0){
+      while (x < yours.getFlipCtr() && y < matchCtr && y >= 65536 && y % 2005 == 0){
         if ( yours.equals(wayne) ) {
           System.out.println( "Matchee matchee!" );
           matchCtr++;
