@@ -30,8 +30,8 @@ public class Driver {
   public static void main( String[] args ) {
     
       int x, y, matchCtr;
-      x = 0;
-      y = 0;
+      x = 1234;
+      y = 12345;
       matchCtr = 0;
       
       //build Objects from blueprint specified by class Coin
