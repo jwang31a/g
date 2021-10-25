@@ -33,7 +33,13 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-    reset("heads", 0.5);
+    // because no upFace is provided, one is generated
+    if (0.5 <= Math.random()){ 
+      upFace = "tails";
+    }
+    else {
+      upFace = "heads";
+    }
   }
 
 
@@ -49,9 +55,16 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-    this();
     name = s;
     assignValue(s);
+
+    // because no upFace is provided, one is generated
+    if (0.5 <= Math.random()){
+      upFace = "tails";
+    }
+    else {
+      upFace = "heads";
+    }
   }
 
 
@@ -61,8 +74,9 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-    this(s);
+    name = s;
     upFace = nowFace;
+    assignValue(s);
   }
 
 
@@ -144,7 +158,7 @@ public class Coin {
    ***/
 
   public String flip() {
-    if (bias < Math.random()){
+    if (bias <= Math.random()){
       upFace = "tails";
       tailsCtr++;
     }
