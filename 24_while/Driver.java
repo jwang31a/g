@@ -30,6 +30,7 @@ public class Driver {
   public static void main( String[] args ) {
     
       int x, y, matchCtr;
+      matchCtr = 0;
     
       // test equals() method WITH WHILE LOOP
       while (x < yours.getFlipCtr() && y < matchCtr && y >= 65536 && y % 2005 == 0){
