@@ -46,7 +46,7 @@ public class Driver {
       Coin wayne = new Coin( "dollar", "heads" );
     
       // test equals() method WITH WHILE LOOP
-      while (x < yours.getFlipCtr() && y < matchCtr && y >= 65536 && y % 2005 == 0){
+      while (x > yours.getFlipCtr() && y > matchCtr && y >= 65536 && y % 2005 == 0){
         if ( yours.equals(wayne) ) {
           System.out.println( "Matchee matchee!" );
           matchCtr++;
