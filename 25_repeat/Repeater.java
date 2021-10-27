@@ -4,12 +4,15 @@ APCS
 HW25: Do I repeat myself?
 2021--10--26
 time spent: 1 hr
+
 DISCO:
 rediscovered how to use static methods/what they mean
+
 QCC:
 Is there a way to not need to system.out.println()?
 is there a "better" (faster) loop?
 **/
+
 public class Repeater{
 
   static String fenceW(int numPosts){
@@ -31,7 +34,7 @@ public class Repeater{
       while (numPosts>1){
         output+="|--";
         numPosts-=1;
-       }
+      }
         output+="|";
         if (numPosts<=0){
           output=" " ;
