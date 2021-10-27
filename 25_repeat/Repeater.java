@@ -21,7 +21,7 @@ public class Repeater{
     }
   }
   
-  staticString fenceR(int numPosts){
+  static String fenceR(int numPosts){
     while (numPosts>1){
       output+="|--";
       numPosts-=1;
