@@ -40,5 +40,5 @@ public class Repeater{
     fenceR(0);
     fenceR(1);
     fenceR(2);
-   }
+  }
 }
