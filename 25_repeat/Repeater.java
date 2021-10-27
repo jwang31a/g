@@ -27,14 +27,14 @@ public class Repeater{
   
   static String fenceR(int numPosts){
     String output = "|";
-    while (numPosts>1){
-      output+="|--";
-      numPosts-=1;
-    }
-    output+="|";
-    if (numPosts==0){
-      output=" " ;
-    }
+      while (numPosts>1){
+        output+="|--";
+        numPosts-=1;
+       }
+        output+="|";
+        if (numPosts==0){
+          output=" " ;
+        }
     return output;
   }
 
