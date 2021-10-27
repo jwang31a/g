@@ -1,7 +1,7 @@
 public class Repeater{
   String output="|";
   
-  static String getOutput() {
+  public String getOutput() {
     return(output);
   }
   
