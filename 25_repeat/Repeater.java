@@ -12,7 +12,7 @@ public class Repeater{
     else{
       if (numPosts != 0){
         output+="--|";
-        fenceW(n-1);
+        fenceW(numPosts-1);
       }
       else{
         output=" ";
