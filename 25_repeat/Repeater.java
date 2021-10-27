@@ -5,23 +5,23 @@ public class Repeater{
     return(output);
   }
   
-  String fenceW(int numPosts){
-  if(numPosts-1==0){
-    System.out.println(output);
-  }
-  else{
-    if (numPosts != 0){
-      output+="--|";
-      fenceW(n-1);
+  static String fenceW(int numPosts){
+    if(numPosts-1==0){
+      System.out.println(output);
     }
     else{
-      output=" ";
-      return output;
+      if (numPosts != 0){
+        output+="--|";
+        fenceW(n-1);
+      }
+      else{
+        output=" ";
+        return output;
+      }
     }
   }
-}
   
-  String fenceR(int numPosts){
+  staticString fenceR(int numPosts){
     while (numPosts>1){
       output+="|--";
       numPosts-=1;
