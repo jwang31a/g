@@ -2,7 +2,7 @@ public class Repeater{
   String output="|";
   
   static String getOutput() {
-    return(output)
+    return(output);
   }
   
   String fenceW(int numPosts){
