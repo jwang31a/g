@@ -1,5 +1,10 @@
 public class Repeater{
   String output="|";
+  
+  static String getOutput() {
+    return(output)
+  }
+  
   String fenceW(int numPosts){
   if(numPosts-1==0){
     System.out.println(output);
@@ -12,9 +17,9 @@ public class Repeater{
     else{
       output=" ";
       return output;
-     }
     }
   }
+}
   
   String fenceR(int numPosts){
     while (numPosts>1){
