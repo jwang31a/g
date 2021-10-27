@@ -39,11 +39,11 @@ public class Repeater{
   }
 
   public static void main (String [] args){
-    fenceW(0);
-    fenceW(1);
-    fenceW(2);
-    fenceR(0);
-    fenceR(1);
-    fenceR(2);
+    System.out.println(fenceW(0));
+    System.out.println(fenceW(1));
+    System.out.println(fenceW(2));
+    System.out.println(fenceR(0));
+    System.out.println(fenceR(1));
+    System.out.println(fenceR(2));
   }
 }
