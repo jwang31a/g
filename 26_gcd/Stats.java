@@ -56,7 +56,6 @@ public class Stats {
 	*/
 	
 	//using while loop
-	/*
 	public static int gcdEW(int a, int b) {
 		int output = 0;
 		if (a == b) {
@@ -64,24 +63,20 @@ public class Stats {
 		} else if (a < b) {
 			while (b % a != 0 && a % a != 0) {
 				a = a - 1;
-				if (b % a == 0 && a % a == 0) {
-					break;
-				}
+				output = a;
 			}
 			output = a;
 		} else if (b < a) {
 			while (a % b != 0 && b % b != 0) {
 				b = b - 1;
-				if (a % b == 0 && b % b == 0) {
-					break;
-				}
+				output = b;
 			}
 			output = b;
 		}
 		return output;
 	}
-	*/
 	
+	/*
 	public static int gcdEW(int a, int b) {
 		int output = 0;
 		int orig = 0;
@@ -106,6 +101,7 @@ public class Stats {
 		}
 		return output;
 	}
+	*/
 	
 	public static void main(String[] args) {
 		System.out.println(gcd(6,8));
