@@ -2,7 +2,7 @@ public class Rof {
 	public String fenceF(int posts) {
 		String result = "|";
 		for (int postCounter = 1; postCounter < posts; postCounter++) {
-			result += "--|"
+			result += "--|";
 		}
 		return result;
 	}
@@ -18,7 +18,7 @@ public class Rof {
 
 	public String reverseR(String s){
 		if (s.length()==1){
-			return s
+			return s;
 		}
 		return reverseR(s.substring(1))+s[0];
 	}
