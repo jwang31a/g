@@ -65,11 +65,13 @@ public class Stats {
 		} else if (a < b) {
 			while (b % a != 0 && a % a != 0) {
 				a = a - 1;
+				System.out.println(a);
 			}
 			output = a;
 		} else if (b < a) {
 			while (a % b != 0 && b % b != 0) {
 				b = b - 1;
+				System.out.println(a);
 			}
 			output = b;
 		}
