@@ -20,7 +20,7 @@ public class Stats {
 		
 		while (d != a || d != b) {
 			if (a % d == 0 && b % d == 0) {
-				output = d
+				output = d;
 			}
 			d++;
 		}
