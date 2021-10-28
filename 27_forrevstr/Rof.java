@@ -8,7 +8,7 @@ public class Rof {
 		return result;
 	}
 	
-	//reversing string using for loop
+	//reversing string using for loop, this works
 	public static String reverseF(String s) {
 		String result = "";
 		for (int character = s.length(); character>=0;character--){
@@ -22,7 +22,7 @@ public class Rof {
 		
 	}
 	
-	//reversing string using recursion, not working right now
+	//reversing string using recursion, not working right now (not working on this right now)
 	/*
 	public static String reverseR(String s){
 		if (s.length()==1){
