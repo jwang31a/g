@@ -64,7 +64,7 @@ public class Stats {
 			output = a;
 		} else if (a < b) {
 			while (b % a != 0 && a % a != 0) {
-				a = a - 1
+				a = a - 1;
 			}
 			output = a;
 		} else if (b < a) {
