@@ -67,7 +67,7 @@ public class Stats {
 				gcdER(a-1, b);
 			}
 		} else if (b < a) {
-			orig = b
+			orig = b;
 			if (a % b == 0 && orig % b == 0) {
 				output = b;
 			} else {
