@@ -17,13 +17,15 @@ public class Rof {
 		return result;
 		
 	}
-
+	
+	/*
 	public static String reverseR(String s){
 		if (s.length()==1){
 			return s;
 		}
 		return reverseR(s.substring(1))+s[0];
 	}
+	*/
 	
 	public static void main(String[] args) {
 		System.out.println(fenceF(3));
