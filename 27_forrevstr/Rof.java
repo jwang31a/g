@@ -11,12 +11,9 @@ public class Rof {
 	//reversing string using for loop
 	public static String reverseF(String s) {
 		String result = "";
-		char[] ch = s.toCharArray();
-		System.out.println(ch);
 		for (int character = s.length()-1; character>=0;character--){
-			result+=ch[character];
+			result+=s.substring(0,1);
 		}
-		result = ch.toString();
 		return result;
 		
 	}
