@@ -22,7 +22,7 @@ public class Stats {
 			if (a % d == 0 && b % d == 0) {
 				output = d;
 			}
-			d++;
+			d += 1;
 		}
 		return output;
 	}
