@@ -57,15 +57,18 @@ public class Stats {
 		int output = 0;
 		if (a == b) {
 			output = a;
+			System.out.println(output);
 		} else if (a < b) {
 			if (b % a == 0) {
 				output = a;
+				System.out.println(output);
 			} else {
 				gcdER(a-1, b);
 			}
 		} else if (b < a) {
 			if (a % b == 0) {
 				output = b;
+				System.out.println(output);
 			} else {
 				gcdER(a, b-1);
 			}
