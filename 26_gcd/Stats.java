@@ -72,7 +72,7 @@ public class Stats {
 			output = a;
 		} else if (b > a) {
 			orig = b;
-			while (a % b != 0 %% orig % b != 0) {
+			while (a % b != 0 && orig % b != 0) {
 				output = b;
 				b--;
 			}
