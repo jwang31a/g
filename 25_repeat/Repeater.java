@@ -43,10 +43,10 @@ public class Repeater{
   }
 
   public static void main (String [] args){
-    System.out.println(fenceW(0));
+    System.out.println(fenceW(5));
     System.out.println(fenceW(1));
     System.out.println(fenceW(2));
-    System.out.println(fenceR(0));
+    System.out.println(fenceR(5));
     System.out.println(fenceR(1));
     System.out.println(fenceR(2));
   }
