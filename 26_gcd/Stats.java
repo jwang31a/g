@@ -84,7 +84,7 @@ public class Stats {
 	}
 	*/
 	
-	public static int gcdER(int a, int b) {
+	public static int gcdEW(int a, int b) {
 		int output = 0;
 		int orig = 0;
 		if (a == b) {
