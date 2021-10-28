@@ -9,7 +9,7 @@ public class Rof {
 
 	public static String reverseF(String s) {
 		String result = "";
-		char[] ch = s.ToCharArray();
+		char[] ch = s.toCharArray();
 		for (int character = s.length()-1; character>=0;character--){
 			result+=ch[character];
 		}
