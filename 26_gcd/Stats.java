@@ -92,6 +92,7 @@ public class Stats {
 			while (b % a != 0 && orig % a != 0) {
 				a -= 1;
 				output = a;
+				System.out.println(b % a);
 			}
 		} else if (a > b) {
 			orig = b;
@@ -100,9 +101,6 @@ public class Stats {
 				output = b;
 			}
 		}
-		System.out.println(orig);
-		System.out.println(a);
-		System.out.println(b);
 		return output;
 	}
 	
