@@ -29,7 +29,7 @@ public class Rof {
 		if (s.length()==1){
 			return s;
 		}
-		return reverseR(s.substring(1))+s.substring(0));
+		return reverseR(s.substring(1)+s.substring(0));
 	}
 	
 	public static void main(String[] args) {
