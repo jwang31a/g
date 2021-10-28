@@ -29,6 +29,6 @@ public class Stats {
 	
 	
 	public static void main(String[] args) {
-		gcd(8,16);
+		gcd(1,2);
 	}
 }
