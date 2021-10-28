@@ -75,6 +75,7 @@ public class Stats {
 				b = b - 1;
 				if (a % b == 0 && b % b == 0) {
 					break;
+				}
 			}
 			output = b;
 		}
