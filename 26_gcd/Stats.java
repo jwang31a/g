@@ -38,7 +38,7 @@ public class Stats {
 				return(a);
 			}
 		} else {
-			if (a % b = 0 ) {
+			if (a % b == 0 ) {
 				return(b);
 			}
 		}
