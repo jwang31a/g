@@ -55,17 +55,20 @@ public class Stats {
 	
 	public static int gcdER(int a, int b) {
 		int output = 0;
+		int orig = 0;
 		if (a == b) {
 			output = a;
-			System.out.println(output);
 		} else if (a < b) {
-			if (b % a == 0) {
+			orig = a;
+			if (b % a == 0 && orig % a == 0) {
 				output = a;
+				System.out.println(output);
 			} else {
 				gcdER(a-1, b);
 			}
 		} else if (b < a) {
-			if (a % b == 0) {
+			orig = b
+			if (a % b == 0 && orig % b == 0) {
 				output = b;
 			} else {
 				gcdER(a, b-1);
