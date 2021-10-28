@@ -70,7 +70,7 @@ public class Stats {
 				a--;
 			}
 			output = a;
-		} else if (b > a) {
+		} else if (b < a) {
 			orig = b;
 			while (a % b != 0 && orig % b != 0) {
 				output = b;
