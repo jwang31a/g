@@ -99,7 +99,7 @@ public class Stats {
 			orig = b;
 			while (a % b!= 0 && orig % b != 0) {
 				b--;
-				output = b
+				output = b;
 			}
 		}
 		return output;
