@@ -8,9 +8,16 @@ HW26: GCD Three Ways
 DISCO:
 
 QCC:
-	
-ALGO:
+All three of my methods compile without errors, but they don't do what I want them to do. 
+For example, the while loop method just skips over the loops completely, and I'm not sure why. 
 
+ALGO:
+The first algorithm is the only algorithm that actually works.
+We take an input, integers a and b. 
+We define two integer variables, output and d, and initialize them to 1.
+For the while loop to run, it checks if d is not equal to a and b.
+Inside the while loop, it checks if a mod d and b mod d are 0, and if it is, then output will be set to d, and d will be returned.
+If it isn't, then d increases by 1, and it goes through another run of the loop.
  **/
 
 public class Stats {
