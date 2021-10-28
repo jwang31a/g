@@ -22,5 +22,8 @@ public class for {
 		}
 		return reverseR(s.substring(1))+s[0];
 	}
-
+	
+	public static void main(String[] args) {
+		System.out.println(fenceF(3));
+	}
 }
