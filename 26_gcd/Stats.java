@@ -30,7 +30,7 @@ public class Stats {
 	
 	//recursive method
 	public static int gcdER(int a, int b) {
-		int output;
+		int output = 0;
 		if (a == b) {
 			output = a;
 		} else if (a < b) {
