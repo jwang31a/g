@@ -32,8 +32,7 @@ public class Stats {
 	public static int gcdER(int a, int b) {
 		if (a == b) {
 			return(a);
-		} 
-		if (a < b) {
+		} else if (a < b) {
 			if (b % a == 0) {
 				return(a);
 			} else {
