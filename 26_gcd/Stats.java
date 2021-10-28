@@ -102,6 +102,9 @@ public class Stats {
 				output = b;
 			}
 		}
+		System.out.println(orig);
+		System.out.println(a);
+		System.out.println(b);
 		return output;
 	}
 	
