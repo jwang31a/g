@@ -29,6 +29,7 @@ public class Stats {
 	}
 	
 	//recursive method
+	/* 
 	public static int gcdER(int a, int b) {
 		int output = 0;
 		if (a == b) {
@@ -45,6 +46,25 @@ public class Stats {
 			if (a % b == 0 ) {
 				output = b;
 				return(output);
+			} else {
+				gcdER(a, b-1);
+			}
+		}
+	}
+	*/
+	
+	public static int gcdER(int a, int b) {
+		if (a == b) {
+			return(a);
+		} else if (a < b) {
+			if (b % a == 0) {
+				return(a);
+			} else {
+				gcdER(a-1, b);
+			}
+		} else if (b < a) {
+			if (a % b == 0) {
+				return(b);
 			} else {
 				gcdER(a, b-1);
 			}
