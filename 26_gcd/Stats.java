@@ -92,13 +92,13 @@ public class Stats {
 		} else if (a < b) {
 			orig = a;
 			while (b % a != 0 && orig % a != 0) {
-				a--;
+				a -= 1;
 				output = a;
 			}
 		} else if (a > b) {
 			orig = b;
 			while (a % b!= 0 && orig % b != 0) {
-				b--;
+				b -= 1;
 				output = b;
 			}
 		}
