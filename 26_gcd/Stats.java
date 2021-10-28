@@ -31,6 +31,7 @@ public class Stats {
 	}
 	
 	//recursive method (doesn't work)
+	/*
 	public static int gcdER(int a, int b) {
 		int output = 0;
 		int orig = 0;
@@ -54,6 +55,7 @@ public class Stats {
 		}
 		return(output);
 	}
+	*/
 	
 	//using while loop
 	public static int gcdEW(int a, int b) {
@@ -67,6 +69,14 @@ public class Stats {
 				output = a;
 				a--;
 			}
+			output = a;
+		} else if (b > a) {
+			orig = b;
+			while (a % b != 0 %% orig % b != 0) {
+				output = b;
+				b--;
+			}
+			output = b;
 		}
 		return output;
 	}
@@ -74,5 +84,6 @@ public class Stats {
 	public static void main(String[] args) {
 		System.out.println(gcd(6,8));
 		System.out.println(gcdER(6,8));
+		System.out.println(gcdEW(6,8));
 	}
 }
