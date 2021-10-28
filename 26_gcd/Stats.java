@@ -53,21 +53,24 @@ public class Stats {
 		}
 		return(output);
 	}
-	
+	*/
 	
 	//using while loop, doesn't work
 	public static int gcdEW(int a, int b) {
 		int output = 0;
+		int orig = 0;
 		if (a == b) {
 			output = a;
 		} else if (a < b) {
-			while (b % a != 0 && a % a != 0) {
+			orig = a;
+			while (b % a != 0 && orig % a != 0) {
 				a = a - 1;
 				output = a;
 			}
 			output = a;
 		} else if (b < a) {
-			while (a % b != 0 && b % b != 0) {
+			orig = b;
+			while (a % b != 0 && orig % b != 0) {
 				b = b - 1;
 				output = b;
 			}
@@ -75,7 +78,7 @@ public class Stats {
 		}
 		return output;
 	}
-	*/
+	
 	
 	public static void main(String[] args) {
 		System.out.println(gcd(6,8));
