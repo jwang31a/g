@@ -15,8 +15,6 @@ ALGO:
 
 public class Stats {
 	//brute force method, using while loop
-	
-	
 	public static int gcd(int a, int b) {
 		int output = 1;
 		int d = 1;
@@ -88,7 +86,7 @@ public class Stats {
 		int output = 0;
 		int orig = 0;
 		if (a == b) {
-			return a;
+			output = a;
 		} else if (a < b) {
 			orig = a;
 			while (b % a != 0 && orig % a != 0) {
