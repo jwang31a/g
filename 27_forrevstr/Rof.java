@@ -34,6 +34,8 @@ public class Rof {
 	
 	public static void main(String[] args) {
 		System.out.println(fenceF(3));
+		System.out.println(fenceF(10));
 		System.out.println(reverseF("joe mama"));
+		System.out.println(reverseF(reverseF("reversed reverse")));
 	}
 }
