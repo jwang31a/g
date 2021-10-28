@@ -11,7 +11,7 @@ public class Rof {
 	//reversing string using for loop
 	public static String reverseF(String s) {
 		String result = "";
-		for (int character = s.length()-1; character>=0;character--){
+		for (int character = s.length(); character>=0;character--){
 			result+=s.substring(character - 1,character);
 		}
 		return result;
