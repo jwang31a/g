@@ -33,20 +33,22 @@ public class Stats {
 		int output = 0;
 		if (a == b) {
 			output = a;
+			return(output);
 		} else if (a < b) {
 			if (b % a == 0) {
 				output = a;
+				return(output);
 			} else {
 				gcdER(a-1, b);
 			}
 		} else if (b < a) {
 			if (a % b == 0 ) {
 				output = b;
+				return(output);
 			} else {
 				gcdER(a, b-1);
 			}
 		}
-		return(output);
 	}
 	
 	public static void main(String[] args) {
