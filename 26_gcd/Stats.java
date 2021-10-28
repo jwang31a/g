@@ -53,9 +53,9 @@ public class Stats {
 		}
 		return(output);
 	}
-	*/
 	
-	//using while loop
+	
+	//using while loop, doesn't work
 	public static int gcdEW(int a, int b) {
 		int output = 0;
 		if (a == b) {
@@ -72,32 +72,6 @@ public class Stats {
 				output = b;
 			}
 			output = b;
-		}
-		return output;
-	}
-	
-	/*
-	public static int gcdEW(int a, int b) {
-		int output = 0;
-		int orig = 0;
-		if (a == b) {
-			output = a;
-		}
-		if (a < b) {
-			orig = a;
-			while (b % a != 0 && orig % a != 0) {
-				a -= 1;
-				output = a;
-				System.out.println(b % a);
-			}
-		} 
-		if (a > b) {
-			orig = b;
-			while (a % b!= 0 && orig % b != 0) {
-				b -= 1;
-				output = b;
-				System.out.println(a % b);
-			}
 		}
 		return output;
 	}
