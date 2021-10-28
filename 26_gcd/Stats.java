@@ -18,7 +18,7 @@ public class Stats {
 		int output = 1;
 		int d = 1;
 		
-		while (d != a || d != b) {
+		while (d != a && d != b) {
 			if (a % d == 0 && b % d == 0) {
 				output = d;
 			}
