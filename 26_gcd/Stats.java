@@ -39,7 +39,7 @@ public class Stats {
 			} else {
 				gcdER(a-1, b);
 			}
-		} else {
+		} else if (b < a) {
 			if (a % b == 0 ) {
 				return(b);
 			} else {
