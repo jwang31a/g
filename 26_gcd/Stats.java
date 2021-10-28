@@ -106,6 +106,6 @@ public class Stats {
 	public static void main(String[] args) {
 		System.out.println(gcd(6,8));
 		//System.out.println(gcdER(6,8));
-		System.out.println(gcdEW(6,15));
+		System.out.println(gcdEW(6,18));
 	}
 }
