@@ -58,6 +58,7 @@ public class Stats {
 	*/
 	
 	//using while loop
+	/*
 	public static int gcdEW(int a, int b) {
 		int output = 0;
 		if (a == b) {
@@ -78,6 +79,28 @@ public class Stats {
 				}
 			}
 			output = b;
+		}
+		return output;
+	}
+	*/
+	
+	public static int gcdER(int a, int b) {
+		int output = 0;
+		int orig = 0;
+		if (a == b) {
+			return a;
+		} else if (a < b) {
+			orig = a;
+			while (b % a != 0 && orig % a != 0) {
+				a--;
+				output = a;
+			}
+		} else if (a > b) {
+			orig = b;
+			while (a % b!= 0 && orig % b != 0) {
+				b--;
+				output = b
+			}
 		}
 		return output;
 	}
