@@ -1,4 +1,5 @@
 public class Rof {
+	//fence using for loop, this works
 	public static String fenceF(int posts) {
 		String result = "|";
 		for (int postCounter = 1; postCounter < posts; postCounter++) {
@@ -6,7 +7,8 @@ public class Rof {
 		}
 		return result;
 	}
-
+	
+	//reversing string using for loop
 	public static String reverseF(String s) {
 		String result = "";
 		char[] ch = s.toCharArray();
@@ -18,6 +20,7 @@ public class Rof {
 		
 	}
 	
+	//reversing string using recursion, not working right now
 	/*
 	public static String reverseR(String s){
 		if (s.length()==1){
