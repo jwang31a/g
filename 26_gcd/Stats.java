@@ -61,7 +61,6 @@ public class Stats {
 		} else if (a < b) {
 			if (b % a == 0) {
 				output = a;
-				System.out.println(output);
 			} else {
 				gcdER(a-1, b);
 			}
