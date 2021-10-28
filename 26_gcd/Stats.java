@@ -99,6 +99,7 @@ public class Stats {
 			while (a % b!= 0 && orig % b != 0) {
 				b -= 1;
 				output = b;
+				System.out.println(a % b);
 			}
 		}
 		return output;
