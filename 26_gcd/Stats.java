@@ -14,7 +14,6 @@
 
 public class Stats {
 	//brute force method
-	/*
 	public static int gcd(int a, int b) {
 		int output = 1;
 		int d = 1;
@@ -23,14 +22,13 @@ public class Stats {
 			if (a % d == 0 && b % d == 0) {
 				output = d;
 			}
-			d += 1;
+			d = d + 1;
 		}
 		return output;
 	}
-	*/
+	
 	
 	public static void main(String[] args) {
-		//gcd(1,2);
-		System.out.println(1%1);
+		gcd(1,2);
 	}
 }
