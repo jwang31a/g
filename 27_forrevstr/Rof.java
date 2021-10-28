@@ -12,7 +12,11 @@ public class Rof {
 	public static String reverseF(String s) {
 		String result = "";
 		for (int character = s.length(); character>=0;character--){
-			result+=s.substring(character - 1,character);
+			if (character != 0){
+				result+=s.substring(character - 1,character);
+			} else {
+				break;
+			}
 		}
 		return result;
 		
