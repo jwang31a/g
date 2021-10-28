@@ -54,21 +54,23 @@ public class Stats {
 	*/
 	
 	public static int gcdER(int a, int b) {
+		int output = 0;
 		if (a == b) {
-			return(a);
+			output = a;
 		} else if (a < b) {
 			if (b % a == 0) {
-				return(a);
+				output = a;
 			} else {
 				gcdER(a-1, b);
 			}
 		} else if (b < a) {
 			if (a % b == 0) {
-				return(b);
+				output = b;
 			} else {
 				gcdER(a, b-1);
 			}
 		}
+		return(output);
 	}
 	
 	public static void main(String[] args) {
