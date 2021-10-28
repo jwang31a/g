@@ -60,21 +60,16 @@ public class Stats {
 	//using while loop
 	public static int gcdEW(int a, int b) {
 		int output = 0;
-		int orig = 0;
 		if (a == b) {
 			output = a;
 		} else if (a < b) {
-			orig = a;
-			while (b % a != 0 && orig % a != 0) {
-				output = a;
-				a--;
+			while (b % a != 0 && a % a != 0) {
+				a = a - 1
 			}
 			output = a;
 		} else if (b < a) {
-			orig = b;
-			while (a % b != 0 && orig % b != 0) {
-				output = b;
-				b--;
+			while (a % b != 0 && b % b != 0) {
+				b = b - 1;
 			}
 			output = b;
 		}
