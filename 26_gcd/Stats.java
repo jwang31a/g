@@ -15,6 +15,8 @@ ALGO:
 
 public class Stats {
 	//brute force method, using while loop
+	
+	
 	public static int gcd(int a, int b) {
 		int output = 1;
 		int d = 1;
@@ -28,31 +30,7 @@ public class Stats {
 		return output;
 	}
 	
-	//recursive method
-	/* 
-	public static int gcdER(int a, int b) {
-		int output = 0;
-		if (a == b) {
-			output = a;
-			return(output);
-		} else if (a < b) {
-			if (b % a == 0) {
-				output = a;
-				return(output);
-			} else {
-				gcdER(a-1, b);
-			}
-		} else if (b < a) {
-			if (a % b == 0 ) {
-				output = b;
-				return(output);
-			} else {
-				gcdER(a, b-1);
-			}
-		}
-	}
-	*/
-	
+	//recursive method (doesn't work)
 	public static int gcdER(int a, int b) {
 		int output = 0;
 		int orig = 0;
@@ -75,6 +53,22 @@ public class Stats {
 			}
 		}
 		return(output);
+	}
+	
+	//using while loop
+	public static int gcdEW(int a, int b) {
+		int output = 0;
+		int orig = 0;
+		if (a == b) {
+			output = a;
+		} else if (a < b) {
+			orig = a;
+			while (b % a != 0 && orig % a != 0) {
+				output = a;
+				a--;
+			}
+		}
+		return output;
 	}
 	
 	public static void main(String[] args) {
