@@ -14,6 +14,7 @@
 
 public class Stats {
 	//brute force method
+	/*
 	public static int gcd(int a, int b) {
 		int output = 1;
 		int d = 1;
@@ -26,9 +27,10 @@ public class Stats {
 		}
 		return output;
 	}
-	
+	*/
 	
 	public static void main(String[] args) {
-		gcd(1,2);
+		//gcd(1,2);
+		System.out.println(1%0)
 	}
 }
