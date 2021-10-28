@@ -29,6 +29,6 @@ public class Stats {
 	
 	
 	public static void main(String[] args) {
-		System.out.println(gcd(1,2));
+		System.out.println(gcd(6,8));
 	}
 }
