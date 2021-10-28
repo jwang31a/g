@@ -71,7 +71,7 @@ public class Stats {
 		} else if (b < a) {
 			while (a % b != 0 && b % b != 0) {
 				b = b - 1;
-				System.out.println(a);
+				System.out.println(b);
 			}
 			output = b;
 		}
