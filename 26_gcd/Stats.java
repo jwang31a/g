@@ -36,10 +36,14 @@ public class Stats {
 		if (a < b) {
 			if (b % a == 0) {
 				return(a);
+			} else {
+				gcdER(a-1, b);
 			}
 		} else {
 			if (a % b == 0 ) {
 				return(b);
+			} else {
+				gcdER(a, b-1);
 			}
 		}
 	}
