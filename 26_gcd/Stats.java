@@ -3,7 +3,7 @@ Team NBJ: Nada, Brian K., Jun Hong
 APCS PD6
 HW26: GCD Three Ways
 2021-10-27
-30 minutes as of 9:22
+2 hours
 
 DISCO:
 
