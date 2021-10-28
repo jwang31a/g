@@ -1,5 +1,5 @@
 public class Rof {
-	public String fenceF(int posts) {
+	public static String fenceF(int posts) {
 		String result = "|";
 		for (int postCounter = 1; postCounter < posts; postCounter++) {
 			result += "--|";
@@ -7,7 +7,7 @@ public class Rof {
 		return result;
 	}
 
-	public String reverseF(String s) {
+	public static String reverseF(String s) {
 		String result = "";
 		for (int character = s.length()-1; character>=0;character--){
 			result+=s[character];
@@ -16,7 +16,7 @@ public class Rof {
 		
 	}
 
-	public String reverseR(String s){
+	public static String reverseR(String s){
 		if (s.length()==1){
 			return s;
 		}
