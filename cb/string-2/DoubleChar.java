@@ -1,4 +1,5 @@
 public class DoubleChar {
+  //each letter in the string is repeated
   public String doubleChar(String str) {
     String output = "";
     for (int counter = 0; counter <= str.length() - 1; counter++) {
