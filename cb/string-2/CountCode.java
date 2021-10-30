@@ -12,8 +12,8 @@ public class CountCode {
   }
   
   public static void main(String[] args) {
-    countCode("aaacodebbb");
-    countCode("codexxcode");
-    countCode("cozexxcope");
+    Systen.out.println(countCode("aaacodebbb"));
+    Systen.out.println(countCode("codexxcode"));
+    Systen.out.println(countCode("cozexxcope"));
   }
 }
