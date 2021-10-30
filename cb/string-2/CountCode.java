@@ -3,7 +3,7 @@ public class CountCode {
   public static int countCode(String str) {
     int counter = 0;
     for (index = 0; index + 4 <= str.length(); index++) {
-      s = str.substring(index, index + 4);
+      String s = str.substring(index, index + 4);
       if (s.substring(0,3).equals("co") && s.substring(3,4).equals("e")) {
         counter++;
       }
