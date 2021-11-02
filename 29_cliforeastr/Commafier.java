@@ -19,12 +19,14 @@ In the recursive method, is there a way to keep the zeros?
 The method only works in the first digit of a set (so something like ",000" or ",010") isn't 0.
 However, the iterative one works perfectly fine.
 
+I'm not sure how to do the for each loop such that I can input via the command line.
+
 */
 
 public class Commafier {
   public static void main(String[] args) {
 
-    //explicit calls, comment this out
+    /*explicit calls, commented out
 
     System.out.println(commafyR(1));
     System.out.println(commafyR(10));
@@ -41,6 +43,13 @@ public class Commafier {
     System.out.println(commafyF(12345));
 
     System.out.println("\n");
+    */
+
+    int[] arg = {};
+    for (int i: arg) {
+      System.out.println(commafyR(i));
+      System.out.println(commafyF(i));
+    }
   }
 
   //recursive commafy, done slightly differently than the iterative one
@@ -66,7 +75,7 @@ public class Commafier {
       output = input.substring(0, 1) + ",";
       newInput = Integer.parseInt(input.substring(1));
       return output + commafyR(newInput);
-    } else if (input.length() % 3 == 0) {
+    } else if (input.length() % 3 == 0 && input.length() >= 3) {
       output = "," + input.substring(input.length() - 3, input.length());
       newInput = Integer.parseInt(input.substring(0));
       return commafyR(newInput) + output;
