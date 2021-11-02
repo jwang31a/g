@@ -8,17 +8,11 @@ Time Spent: (30 minutes on iterative method)
 DISCO:
 I have a much better understanding of recursion in java now.
 Instead of returning a recursive call only, we have to return something + a recursive call, so that when we reach the base case, we get all the outputs from before as well.
-I also found out that Integer.parseInt() isn't a perfect method, since it gets rid of leading zeros.
-For example, when I try Integer.parseInt("0000000000"), the zeros get removed, and it returns 0.
 I understand how to do a for each loop now so that I can input arguments via the command line.
 
 QCC:
 The code is definitely very inefficient, since I didn't really think about simplifiying the code.
 It would have probably been easier if I just thought about the method a little more before implementing it into Java.
-
-In the recursive method, is there a way to keep the zeros?
-The method only works in the first digit of a set (so something like ",000" or ",010") isn't 0.
-However, the iterative one works perfectly fine.
 
 I'm not sure how to do the for each loop such that I can input via the command line.
 This has been fixed now, I I understand this a lot more.
@@ -56,7 +50,7 @@ public class Commafier {
   //the problem here is that Integer.parseInt("000") returns 0, not 000. (this problem has been fixed)
   //Is there a way to convert from a String to int that preserves the 0?
   //I could write a helper method, but I'm not sure if that's allowed, or if it preserves the leading 0s.
-  //this is working now
+  //this is working now, the problems have been fixed
 
   public static String commafyR(int n) {
     String input = Integer.toString(n);
