@@ -16,10 +16,6 @@ QCC:
 The code is definitely very inefficient, since I didn't really think about simplifiying the code.
 It would have probably been easier if I just thought about the method a little more before implementing it into Java.
 
-In the recursive method, is there a way to keep the zeros?
-The method only works in the first digit of a set (so something like ",000" or ",010") isn't 0.
-However, the iterative one works perfectly fine.
-
 I'm not sure how to do the for each loop such that I can input via the command line.
 This has been fixed now, I I understand this a lot more.
 Since this is in the main method, the array args is a String array, so all inputs will be interpreted as Strings, so we have to convert it from a String into an int for the method to work.
