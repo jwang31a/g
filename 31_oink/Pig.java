@@ -3,7 +3,7 @@
  * APCS PD6
  * HW31 -- Pig Latin
  * 2021-11-04
- * time spent: _hrs
+ * time spent: 0.4 hrs
  *
  * class Pig
  * a Pig Latin translator
