@@ -205,11 +205,17 @@ public class Pig {
       post: hasPunc("cat.") -> true
             hasPunc("cat") -> false
       =====================================*/
-  /*
-  public static boolean hasPunc( String w ) {
 
+  public static boolean hasPunc( String w ) {
+    boolean output = false;
+    for (int i = 1; i <= w.length(); i++) {
+      if (PUNCS.indexOf(w, i) > 0) {
+        output = true;
+      }
+    }
+    return output;
   }
-  */
+
 
 
     /*=====================================
@@ -232,8 +238,10 @@ public class Pig {
       System.out.println( "countVowels \t" + countVowels(word) );
       System.out.println( "engToPig \t" + engToPig(word) );
       System.out.println( "---------------------" );
-      System.out.println(isUpperCase("T"));
     }
+    System.out.println(isUpperCase("T"));
+    System.out.println(hasPunc("T"));
+    System.out.println(hasPunc("T.;"));
 
   }//end main()
 
