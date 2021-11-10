@@ -26,7 +26,7 @@
 
 public class Pig {
 
-  private static final String VOWELS = "aeiouy";
+  private static final String VOWELS = "aeiouyAEIOUY";
   private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   private static final String PUNCS = ".,:;!?";
 
@@ -164,12 +164,22 @@ public class Pig {
   public static String engToPig( String w ) {
 
     String ans = "";
+    int vPos = w.indexOf( firstVowel(w) );
+
+    if (isPunc(w.substring(0,1))) {
+      String first = w.substring(0,1);
+      w = w.substring(1);
+      return(first + engToPig(w));
+    } else if (isPunc(w.substring(w.length() - 1, w.length()))) {
+      String first = w.substring(w.length() - 1, w.length());;
+      return(engToPig(w.substring(0, w.length() - 1)) + first);
+    }
+
     if (beginsWithUpper(w)) {
       if ( beginsWithVowel(w) ){
         ans = w + "way";
       }
       else {
-        int vPos = w.indexOf( firstVowel(w) );
         ans = w.substring(vPos, vPos + 1).toUpperCase() + w.substring(vPos + 1) + w.substring(0,vPos).toLowerCase() + "ay";
       }
     } else {
@@ -177,12 +187,14 @@ public class Pig {
       ans = w + "way";
     }
       else {
-        int vPos = w.indexOf( firstVowel(w) );
         ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
       }
     }
+
+
     return ans;
   }
+
 
 
 /*
@@ -252,13 +264,14 @@ public class Pig {
 
 
   public static void main( String[] args ) {
-
+    String output = "";
     for( String word : args ) {
-      System.out.println( "allVowels \t" + allVowels(word) );
-      System.out.println( "firstVowels \t" + firstVowel(word) );
-      System.out.println( "countVowels \t" + countVowels(word) );
-      System.out.println( "engToPig \t" + engToPig(word) );
-      System.out.println( "---------------------" );
+      //System.out.println( "allVowels \t" + allVowels(word) );
+      //System.out.println( "firstVowels \t" + firstVowel(word) );
+      //System.out.println( "countVowels \t" + countVowels(word) );
+      //System.out.println( "engToPig \t" + engToPig(word) );
+      //System.out.println( "---------------------" );
+      output += engToPig(word) + " ";
     }
     //System.out.println(isUpperCase("T"));
     //System.out.println(hasPunc("T"));
@@ -266,6 +279,7 @@ public class Pig {
     //System.out.println(beginsWithUpper("Upper"));
     //System.out.println(beginsWithUpper("not Upper"));
 
+    System.out.println(output);
   }//end main()
 
 }//end class Pig
