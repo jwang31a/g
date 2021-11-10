@@ -172,17 +172,15 @@ public class Pig {
         int vPos = w.indexOf( firstVowel(w) );
         ans = w.substring(vPos, vPos + 1).toUpperCase() + w.substring(vPos + 1) + w.substring(0,vPos).toLowerCase() + "ay";
       }
-
     } else {
-      if ( beginsWithVowel(w) )
+      if ( beginsWithVowel(w) ) {
       ans = w + "way";
-
+    }
       else {
         int vPos = w.indexOf( firstVowel(w) );
         ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
       }
     }
-
     return ans;
   }
 

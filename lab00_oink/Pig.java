@@ -22,6 +22,7 @@
  *      NEVER STRAY TOO FAR FROM COMPILABILITY/RUNNABILITY!
  ***/
 
+//only kind of works: it compiles, with extra functionality added, but not fully functional
 
 public class Pig {
 
@@ -59,7 +60,7 @@ public class Pig {
     precondition: letter.length() == 1
     **/
   public static boolean isAVowel( String letter ) {
-    return VOWELS.indexOf( letter ) != -1;
+    return VOWELS.indexOf( letter.toLowerCase() ) != -1;
   }
 
 
@@ -146,7 +147,7 @@ public class Pig {
     beginsWithVowel("strong") --> false
     **/
   public static boolean beginsWithVowel( String w ) {
-    return isAVowel( w.substring(0,1) );
+    return isAVowel( w.substring(0,1).toLowerCase() );
   }
 
 
@@ -171,17 +172,15 @@ public class Pig {
         int vPos = w.indexOf( firstVowel(w) );
         ans = w.substring(vPos, vPos + 1).toUpperCase() + w.substring(vPos + 1) + w.substring(0,vPos).toLowerCase() + "ay";
       }
-
     } else {
-      if ( beginsWithVowel(w) )
+      if ( beginsWithVowel(w) ) {
       ans = w + "way";
-
+    }
       else {
         int vPos = w.indexOf( firstVowel(w) );
         ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
       }
     }
-
     return ans;
   }
 
@@ -261,11 +260,11 @@ public class Pig {
       System.out.println( "engToPig \t" + engToPig(word) );
       System.out.println( "---------------------" );
     }
-    System.out.println(isUpperCase("T"));
-    System.out.println(hasPunc("T"));
-    System.out.println(hasPunc("T.;"));
-    System.out.println(beginsWithUpper("Upper"));
-    System.out.println(beginsWithUpper("not Upper"));
+    //System.out.println(isUpperCase("T"));
+    //System.out.println(hasPunc("T"));
+    //System.out.println(hasPunc("T.;"));
+    //System.out.println(beginsWithUpper("Upper"));
+    //System.out.println(beginsWithUpper("not Upper"));
 
   }//end main()
 
