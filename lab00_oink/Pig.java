@@ -157,23 +157,45 @@ public class Pig {
     engToPig("strong") --> "ongstray"
     engToPig("java")   --> "avajay"
     **/
+
+
+
   public static String engToPig( String w ) {
 
     String ans = "";
+    if (beginsWithUpper(w)) {
+      if ( beginsWithVowel(w) ){
+        ans = w + "way";
+      }
+      else {
+        int vPos = w.indexOf( firstVowel(w) );
+        ans = w.substring(vPos, vPos + 1).toUpperCase() + w.substring(vPos + 1) + w.substring(0,vPos).toLowerCase() + "ay";
+      }
 
-    if ( beginsWithVowel(w) )
+    } else {
+      if ( beginsWithVowel(w) )
       ans = w + "way";
 
-    else {
-      int vPos = w.indexOf( firstVowel(w) );
-      ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+      else {
+        int vPos = w.indexOf( firstVowel(w) );
+        ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+      }
     }
 
     return ans;
   }
 
 
+/*
+  public static String engtoPig(String w) {
+    String ans = "";
+    if (beginsWithUpper) {
 
+    } else {
+
+    }
+  }
+  */
 
 
     /*=====================================
@@ -209,7 +231,7 @@ public class Pig {
   public static boolean hasPunc( String w ) {
     boolean output = false;
     for (int i = 1; i <= w.length(); i++) {
-      if (PUNCS.indexOf(w, i) > 0) {
+      if (PUNCS.indexOf(w.substring(i - 1, i), i) > 0) {
         output = true;
       }
     }
@@ -224,11 +246,11 @@ public class Pig {
       post: beginsWithUpper("Apple") -> true
             beginsWithUpper("apple") -> false
       =====================================*/
-      /*
+
   public static boolean beginsWithUpper( String w ) {
 	  return isUpperCase(w.substring(0,1) );
   }
-*/
+
 
   public static void main( String[] args ) {
 
@@ -242,6 +264,8 @@ public class Pig {
     System.out.println(isUpperCase("T"));
     System.out.println(hasPunc("T"));
     System.out.println(hasPunc("T.;"));
+    System.out.println(beginsWithUpper("Upper"));
+    System.out.println(beginsWithUpper("not Upper"));
 
   }//end main()
 
