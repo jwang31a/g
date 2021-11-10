@@ -262,11 +262,11 @@ public class Pig {
       System.out.println( "engToPig \t" + engToPig(word) );
       System.out.println( "---------------------" );
     }
-    System.out.println(isUpperCase("T"));
-    System.out.println(hasPunc("T"));
-    System.out.println(hasPunc("T.;"));
-    System.out.println(beginsWithUpper("Upper"));
-    System.out.println(beginsWithUpper("not Upper"));
+    //System.out.println(isUpperCase("T"));
+    //System.out.println(hasPunc("T"));
+    //System.out.println(hasPunc("T.;"));
+    //System.out.println(beginsWithUpper("Upper"));
+    //System.out.println(beginsWithUpper("not Upper"));
 
   }//end main()
 
