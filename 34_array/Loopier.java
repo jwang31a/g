@@ -27,18 +27,15 @@ public class Loopier {
     return -1;
   }
 
+  /*
+  under construction
   public static int linSearchR(int[] a, int target) {
     int[] array = new int[a.length - 2];
-    if (a[a.length-1] == target){
-      return a.length-1;
-    }
-    else {
-      for (int i = 1; i <= a.length -2; i++) {
-        array[i] = a[i];
-      }
-      return linSearchR(array, target);
+    if (a[0] == target) {
+      return
     }
   }
+  */
 
   public static int freq(int[] a, int target) {
     int count = 0;
@@ -63,10 +60,10 @@ public class Loopier {
 
   public static void main(String[] args) {
     int[] a = new int[7];
-    int[] apple = {1,2,3,4,5,4,5,2,3,4,1,3};
+    int[] apple = {1,2,4,5,3,6,7,2,1};
     System.out.println(stringify(arrayGen(a)));
     System.out.println(linSearch(apple, 3));
-    System.out.println(linSearchR(apple, 3));
+    //System.out.println(linSearchR(apple, 5));
     System.out.println(freq(apple, 4));
   }
 }
