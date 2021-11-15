@@ -26,9 +26,7 @@ public class Loopier {
     }
     return -1;
   }
-
   public static int linSearchR(int[] a, int target) {
-    int index = a.length - 1;
     int[] array = new int[a.length - 1];
     if (a[a.length-1] != target && a.length > 1) {
       for (int i = array.length-1; i >0; i-=1){
@@ -36,12 +34,11 @@ public class Loopier {
       }
       return linSearchR(array, target);
     } else if (a[a.length-1] == target){
+      System.out.println("Hello!");
       for (int i = array.length-1; i >0; i-=1){
         array[i] = a[i];
       }
       return linSearchR(array, target);
-    } else if (index >= 0){
-      return index;
     } else {
       return -1;
     }
@@ -57,27 +54,39 @@ public class Loopier {
     return count;
   }
 
-  public static int[] freqR(int[] a, int target) {
-    int[] array = new int[a.length - 1];
-
-    for (int i = 0; i <= array.length - 1; i++) {
-      array[array.length - (1 + i)] = a[i];
+  public static int freqR(int[] a, int target) {
+    if (a.length > 0){
+      int[] array = new int[a.length-1];
+        for (int i = array.length-1; i > 0; i-=1){
+          array[i] = a[i];
+        }
+      if (a[a.length-1] == target) {
+        return freqR(array, target) + 1;
+      } else if (a[a.length-1] != target){
+        return freqR(array,target);
+      } else {
+        return 0;
+      }
+    } else{
+      return 0;
     }
-    return array;
-
-    //if (a[a.length - 1] == target) {
-
-    //}
   }
 
 
   public static void main(String[] args) {
     int[] a = new int[7];
-    int[] apple = {1,2,4,5,3,6,7,2,1};
+    int[] apple = {1,2,4,5,3,6,7,1,2};
+    int[] banana = {1,2,3,4,5};
     System.out.println(stringify(arrayGen(a)));
     System.out.println(linSearch(apple, 3));
     System.out.println(linSearchR(apple, 5));
+    System.out.println(linSearchR(apple, 8));
+    System.out.println(linSearchR(banana, 6));
+    System.out.println(linSearchR(apple, 1));
+    System.out.println(freqR(apple, 5));
+    System.out.println(freqR(apple, 2));
+    System.out.println(freqR(banana, 6));
     System.out.println(freq(apple, 4));
-    System.out.println(stringify(freqR(apple, 4)));
+    System.out.println(freqR(apple,1));
   }
 }
