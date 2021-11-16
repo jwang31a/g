@@ -17,6 +17,7 @@ public class Array2 {
 
   }
 
+  //counts # of even ints
   public int countEvens(int[] nums) {
     int counter = 0;
     for(int i = 0; i < nums.length; i ++){
@@ -27,10 +28,11 @@ public class Array2 {
     return counter;
   }
 
+  //given array length 1 or more, returns difference between largest and smallest values
   public int bigDiff(int[] nums) {
     int max = nums[0];
     int min = nums[0];
-    for (int i = 0; i< nums.length; i ++){
+    for (int i = 0; i < nums.length; i ++){
       if (nums[i] > max){
         max = nums[i];
       } else if(nums[i] < min) {
@@ -40,6 +42,8 @@ public class Array2 {
     return max - min;
   }
 
+  //returns centered average, or average without the largest and smallest values, using int division
+  //pre: array length >= 3
   public int centeredAverage(int[] nums) {
     int max = nums[0];
     int min = nums[0];
@@ -55,7 +59,22 @@ public class Array2 {
     return (counter - max - min)/ (nums.length -2) ;
   }
 
+  //returns sum of all numbers in array, but 13 and the number immediately after it does not count toward the sum
+  public int sum13(int[] nums) {
+    int counter = 0;
+    for (int i = 0; i < nums.length; i ++){
+      if (nums[i] == 13){
+        i += 1;
+      } else{
+        counter += nums[i];
+      }
+    }
+    return counter;
+  }
+
   /* broken code right now
+  //returns sum of numbers of array, except sections starting with 6 and ending with 7, returns 0 if no numbers
+  //pre: every 6 will be followed by at least one 7
   public int sum67(int[] nums) {
     int counter = 0;
     int index6 = 100;
