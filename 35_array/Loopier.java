@@ -62,7 +62,6 @@ public class Loopier {
       }
   }
   
-
   public static int freq(int[] a, int target) {
     int count = 0;
     for (int i = 0; i <= a.length - 1; i++) {
@@ -89,20 +88,24 @@ public class Loopier {
     }
   }
 
-
   public static void main(String[] args) {
     int[] a = new int[7];
     int[] apple = {1,2,4,5,3,6,7,2,2,2,2,2};
     int[] banana = {1,2,3,4,5};
+    //should return a random array
     System.out.println(stringify(arrayGen(a)));
+    //iterative call for linear search of array
     System.out.println(linSearch(apple, 3));
+    //recursive calls for linear search of array
     System.out.println(linSearchR(apple, 5));
     System.out.println(linSearchR(apple, 8));
     System.out.println(linSearchR(banana, 6));
     System.out.println(linSearchR(apple, 1));
+    //recursive calls for frequency of element in array
     System.out.println(freqR(apple, 5));
     System.out.println(freqR(apple, 2));
     System.out.println(freqR(banana, 6));
+    //iteratve call
     System.out.println(freq(apple, 4));
   }
 }
