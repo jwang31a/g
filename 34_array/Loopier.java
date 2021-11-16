@@ -1,3 +1,18 @@
+/*
+NIWWD: Kevin Xiao + Mr. Swag, Jun Hong Wang, Jomin Zhao
+APCS
+HW34 -- A Pirate's life for me
+2021-11-14
+time spent: 3 hours
+*/
+/*
+DISCO:
+- Helper function helps create more parameters to solve different test cases.
+- array[index] returns the value of the index of that array.
+QCC:
+- How would you compare arrays?
+- How would you use arrays to parse through websites? (We used lists to do this in python)
+*/
 public class Loopier {
   public static int[] arrayGen(int[] a) {
     for (int i = 0; i <= a.length - 1; i++) {
@@ -27,22 +42,28 @@ public class Loopier {
     return -1;
   }
   public static int linSearchR(int[] a, int target) {
-    int[] array = new int[a.length - 1];
-    if (a[a.length-1] != target && a.length > 1) {
-      for (int i = array.length-1; i >0; i-=1){
-        array[i] = a[i];
-      }
-      return linSearchR(array, target);
-    } else if (a[a.length-1] == target){
-      System.out.println("Hello!");
-      for (int i = array.length-1; i >0; i-=1){
-        array[i] = a[i];
-      }
-      return linSearchR(array, target);
-    } else {
-      return -1;
-    }
+      return helper(a, target, false,1);
   }
+  public static int helper(int[] a, int target, boolean condition,int counter){
+      if (a.length > 1 && condition == false){
+        int[] array = new int[a.length-1];
+          for (int i = 0; i < array.length-1 ; i+=1){
+            array[i] = a[i+1];
+          }
+        if (a[0] != target && a.length > 2) {
+          return helper(array,target,false, counter += 1) + 1;
+        } else if (a[0] == target){
+          return helper(array,target,true, counter);
+        } else{
+          return helper(array,target,false,counter);
+        }
+      } else if (a.length <= 1 && condition == false){
+        return -counter;
+      } else{
+        return 0;
+      }
+  }
+  
 
   public static int freq(int[] a, int target) {
     int count = 0;
@@ -62,10 +83,8 @@ public class Loopier {
         }
       if (a[a.length-1] == target) {
         return freqR(array, target) + 1;
-      } else if (a[a.length-1] != target){
-        return freqR(array,target);
       } else {
-        return 0;
+        return freqR(array,target);
       }
     } else{
       return 0;
@@ -75,7 +94,7 @@ public class Loopier {
 
   public static void main(String[] args) {
     int[] a = new int[7];
-    int[] apple = {1,2,4,5,3,6,7,1,2};
+    int[] apple = {1,2,4,5,3,6,7,2,2,2,2,2};
     int[] banana = {1,2,3,4,5};
     System.out.println(stringify(arrayGen(a)));
     System.out.println(linSearch(apple, 3));
@@ -87,6 +106,5 @@ public class Loopier {
     System.out.println(freqR(apple, 2));
     System.out.println(freqR(banana, 6));
     System.out.println(freq(apple, 4));
-    System.out.println(freqR(apple,1));
   }
 }
