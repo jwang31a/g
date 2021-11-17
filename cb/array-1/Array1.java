@@ -1,5 +1,5 @@
 /*
-Team Gamma Ray: Kevin Xiao + Mr. Swag, Jun Hong Wang, Jomin Zhao
+Team Gamma Ray: Kevin Xiao + Mr. Swag, Jun Hong Wang + Bob, Jomin Zhao + Chompsky
 APCS
 HW37: PPMP[]
 2021-11-16
