@@ -11,14 +11,39 @@ While putting test calls in the main method, I found that we can't put arrays li
 QCC:
 Why can't we put arrays of that format as an argument for methods?
 Instead, I have to make a variable with the array in it for it to work, otherwise it returns "illegal start of expression".
-
+Is there a built in array to string method? I feel that this would be really convenient.
 */
-
 // I had to change everything to static for the method calls from main to work
-
 public class Array1 {
   public static void main(String[] args) {
-
+    int[] a = {1,2,6};
+    int[] b = {1,6,1,1};
+    int[] c = {1,2,3,4,5,6};
+    int[] d = {3,2,1};
+    int[] e = {2,2};
+    int[] f = {0,0};
+    //some of these will print string representations of arrays, and won't be readable
+    System.out.println(firstLast6(a));
+    System.out.println(firstLast6(b));
+    System.out.println(sameFirstLast(a));
+    System.out.println(sameFirstLast(b));
+    System.out.println(makePi());
+    System.out.println(commonEnd(a, c));
+    System.out.println(commonEnd(a, b));
+    System.out.println(sum3(a));
+    System.out.println(rotateLeft3(a));
+    System.out.println(reverse3(a));
+    System.out.println(maxEnd3(a));
+    System.out.println(sum2(b));
+    System.out.println(middleWay(a, d));
+    System.out.println(makeEnds(c));
+    System.out.println(has23(e));
+    System.out.println(has23(f));
+    System.out.println(no23(e));
+    System.out.println(no23(f));
+    System.out.println(makeLast(c));
+    System.out.println(double23(e));
+    System.out.println(double23(f));
   }
 
   //true if 6 appears as first or last element, pre: array length >= 1
