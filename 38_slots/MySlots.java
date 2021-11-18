@@ -3,30 +3,26 @@ Team Gamma Ray: Kevin Xiao + Mr. Swag, Jun Hong Wang, Jomin Zhao
 APCS
 HW38- slots
 2021-11-17
-time spent:0.5 hours
-DISCO: You can use typecasting to force the machine to do what you want, makes your code much easier to produce.
+time spent: 0.5 hours
 
-QCC: Does a lottery machine have a set winning combo, or is any triplet of matching a jackpot?
-Why can you use the == sign when comparing the array indices to strings?
+DISCO:
+QCC:
+The reason why I have this file is because I worked in parallel with my group, the actual work is in Slots.java.
+Both will work, and this should pretty much be the exact same.
  *****************************************************/
 
-public class Slots {
+public class MySlots {
   //instance variable to represent master copy for slot machine
   private static final String[] FRUITS = {
     "lime", "lime", "lime",
     "lemon", "lemon", "lemon",
     "cherry", "cherry", "cherry",
-    /*
+
     "orange", "orange", "orange",
     "grapefruit", "grapefruit", "grapefruit",
     "tangerine", "tangerine", "tangerine",
     "ugli", "ugli", "ugli",
-    */
-    /*
-      add extra fruits until your heart is content...
-      Some suggestions:
 
-    */
     "peach", "peach", "peach"
   };
 
@@ -37,13 +33,13 @@ public class Slots {
     pre:  constant array FRUITS exists, has been initialized
     post: mutable array _fruits contains same elements as FRUITS
     =====================================*/
-  public Slots()
+  public MySlots()
   {
     //allocate memory for _fruits based on size of FRUITS:
-    _fruits = new String[FRUITS.length];
+    _fruits = new String[FRUITS.length - 1];
 
     //copy elements of FRUITS into _fruits:
-    for (int i = 0; i < FRUITS.length; i++) {
+    for (int i = 0; i < FRUITS.length - 1; i++) {
       _fruits[i] = FRUITS[i];
     }
   }
@@ -56,6 +52,8 @@ public class Slots {
   public String toString()
   {
     String zero = "";
+    String one = "";
+    String two = "";
     for (int i = 0; i < 3; i++) {
       zero += _fruits[i] + "\t";
     }
@@ -67,11 +65,13 @@ public class Slots {
     pre:  _fruits array exists
     post: elements at indices i, j are swapped
     =====================================*/
+
   private void swap( int i, int j )
   {
-  String er = _fruits[i];
-  _fruits[i] = _fruits[j];
-  _fruits[j] = er;
+    String a = _fruits[i];
+    String b = _fruits[j];
+    _fruits[i] = b;
+    _fruits[j] = a;
   }
 
   /*=====================================
@@ -79,15 +79,13 @@ public class Slots {
     pre:  _fruits array exists
     post: randomized order of elements in _fruits array
     =====================================*/
-
   public void spinOnce()
   {
     // A simple approach to shuffling:
     // iterate through the array, swapping
     // the val at each index with a randomly chosen other index
-    for(int i = 0; i < _fruits.length; i++){
-      int random = (int) (Math.random() * (_fruits.length-1));
-      swap(i,random);
+    for(int i = 0; i < _fruits.length; i++) {
+      swap(i, (int)(Math.random() * _fruits.length - 1));
     }
   }
 
@@ -97,11 +95,13 @@ public class Slots {
     post: returns true if first 3 slots represent winning combo,
     false otherwise
     =====================================*/
-
   public boolean jackpot()
   {
     boolean retBoo = false;
-    retBoo = _fruits[0] == ("lemon") && _fruits[1] == ("lemon") && _fruits[2] == ("lemon");
+    if (_fruits[0].equals("lemon") && _fruits[1].equals("lemon") && _fruits[2].equals("lemon")) {
+      retBoo = true;
+    }
+
     return retBoo;
   }
 
@@ -112,27 +112,45 @@ public class Slots {
     or if first 3 slots mutually distinct,
     false otherwise
     =====================================*/
-
   public boolean miniWin()
   {
     boolean retBoo = false;
-    retBoo = jackpot() == true || (_fruits[0] != _fruits[1] && _fruits[1] != _fruits[2] && _fruits[2] != _fruits[0]);
+    if (jackpot() == true || (!(_fruits[0].equals(_fruits[1])) && !(_fruits[1].equals(_fruits[2])) && !(_fruits[2].equals(_fruits[0])))) {
+      retBoo = true;
+    }
     return retBoo;
+  }
+  /*
+*/
+
+  //for testing purposes, can be commented out later
+  public String stringify(String[] a) {
+    String str = "";
+    for (int i = 0; i <= a.length - 1; i++) {
+      if (i != a.length - 1) {
+        str += a[i] + ",";
+      } else {
+        str += a[i];
+      }
+    }
+    return str;
   }
 
   //main() method for testing
   public static void main( String[] args ) {
     //usage: move bar below down 1 line at a time to test functionality...
-    Slots machine01 = new Slots();
-    Slots machine02 = new Slots();
-    System.out.println(machine01.toString());
+    MySlots machine01 = new MySlots();
+    MySlots machine02 = new MySlots();
 
     //test to verify slot machines function indepently
     System.out.println();
     System.out.println( "Machine01 initial state:\t" + machine01 );
     System.out.println( "Machine02 initial state:\t" + machine02 );
+
     System.out.println( "\nSpinning machine01...\n" );
+
     machine01.spinOnce();
+
     System.out.println();
     System.out.println( "Machine01 state:\t" + machine01 );
     System.out.println( "Machine02 state:\t" + machine02 );
@@ -148,19 +166,23 @@ public class Slots {
       System.out.println( "LOSE\n" );
       machine01.spinOnce();
     }
+
     System.out.println( "====================================" );
     System.out.println( "Your spin..." + "\t" + machine01 );
     System.out.println( "WIN\n" );
+
     System.out.println( "Preparing to spin until...jackpot! . . ." );
     System.out.println( "------------------------------------" );
+
     //if you haven't won, spin again until you win!
     while( machine01.jackpot() == false ) {
       System.out.println( "Your spin..." + "\t" + machine01 );
       System.out.println( "LOSE\n" );
       machine01.spinOnce();
     }
+
     System.out.println( "====================================" );
     System.out.println( "Your spin..." + "\t" + machine01 );
     System.out.println( "JACKPOT!\n" );
   }//end main
-}//end class Slots
+}//end class MySlots
