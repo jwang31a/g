@@ -79,7 +79,6 @@ public class Slots {
     pre:  _fruits array exists
     post: randomized order of elements in _fruits array
     =====================================*/
-
   public void spinOnce()
   {
     // A simple approach to shuffling:
@@ -97,7 +96,6 @@ public class Slots {
     post: returns true if first 3 slots represent winning combo,
     false otherwise
     =====================================*/
-
   public boolean jackpot()
   {
     boolean retBoo = false;
@@ -112,7 +110,6 @@ public class Slots {
     or if first 3 slots mutually distinct,
     false otherwise
     =====================================*/
-
   public boolean miniWin()
   {
     boolean retBoo = false;
