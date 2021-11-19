@@ -1,1 +1,55 @@
+Jun Hong Wang
+APCS PD6
+HW36- onup
+2021-11-18
+time spent:0.5 hours
 
+3 types of errors: compile-time, run-time, and logic
+-compile-time errors stop the compiler from compiling, syntax error
+-run-time errors are produced if something goes wrong while program is running, like infinite recursion
+-logic errors cause program to do wrong thing
+
+Compile-time errors:
+-just don't make these errors in the first place
+-incremental programming can help with producing less errors (or if an error pops up, we have a better idea of where it is)
+-compiler throwing many error messages does not mean there are that many errors, only the first error is really reliable
+-compiler errors will return useful information that might be hard to read, but we can at least tell where the error is
+-check for basic syntax
+-if we can't find the error, the compiler might not be looking at the same file, so make sure it's compiling the right file and the right version
+-bisectional debugging: backing up old code, deleting half of code, compile and fix errors, then add back code little by little
+-compiler errors only show that there is something wrong, but the solutions may not be correct (unreliable)
+ Run-time errors:
+ -program hangs, or is caught in infinite loop or recursion
+ -to fix this, use print statements to signify entering loop and exiting loop
+ -infinite recursion can also cause StackOverflowError
+ -flow of execution can help with this
+ -for loops, print the values of variables, as well as the value of the condition
+ -for recursion, there should be a base case that must be reached, print out parameters at beginning of method
+ -if there is an exception, look at the type of exception and where it happened
+ -NullPointerException: access instance variable or method on object that is NullPointerException
+ -ArrayIndexOutOfBoundsException: index is negative or greater than array.length - 1
+ -StackOverflowError
+ -FileNotFoundError: java didn't find file, may have to import or make sure file exists, path is correct
+ -ArithmeticException: something like divsion by zero
+ -remove unnecessary output print statements, combine, or format them to be more legible
+ -input simple things, this makes finding errors easier
+ -simplify code so it's more legible
+
+ Logic Errors:
+ -compiler and interpreter don't throw errors, since there isn't anything wrong with the syntax, or code itself, but program isn't doing what it's supposed to do
+ -mental model of what's happening vs what code does, test components individually, find discrepancy
+ -== vs .equals(), one tests for whether objects are identical, other checks for equivalence
+ -bad idea to use == with doubles, or if we do, make sure we allow for a margin of error
+ -simplify and break up large expressions to make it easier to read
+ -make sure order of operations is what we want
+ -use temporary variables so we can display things before returning
+ -use println, not print for error checking output
+ -take breaks from coding, we may be able to see a bug later, but not now
+ -bring another pair of eyes to look, but also think about what's happening: compile-time, run-time, or logic
+ -explain to someone how the code works
+ -or better yet, RUBBER DUCK DEBUGGING
+
+ After finding the bug:
+ -don't forget that the bug existed, instead, think about what caused the error, and what could be done next time to fix the error
+ -make sure that we can identify the error next time through a deeper understanding
+ -use this as a learning opportunity
