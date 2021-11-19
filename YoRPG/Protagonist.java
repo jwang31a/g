@@ -17,17 +17,17 @@ public class Protagonist {
 
   public void specialize() {
     if (Math.random() < 0.5) {
-      YoRPG.d1 = 30;
+
     }
   }
 
   public void normalize() {
     if (Math.random() >= 0.5) {
-      YoRPG.d1 = 15;
+
     }
   }
 
-  public void attack() {
-
+  public int attack() {
+    Monster.
   }
 }
