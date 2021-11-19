@@ -1,7 +1,7 @@
 public class Protagonist {
   public String proName = "";
   public int health = 100;
-  public boolean isAlive;
+  public boolean alive;
 
   public static void main(String[] args) {
 
@@ -27,7 +27,9 @@ public class Protagonist {
     }
   }
 
+  /*
   public int attack() {
     Monster.
   }
+  */
 }
