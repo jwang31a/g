@@ -1,35 +1,40 @@
 public class Protagonist {
-  public String proName = "";
-  public int health = 100;
-  public boolean alive;
-
-  public static void main(String[] args) {
-
+  public String name;
+  public int hp;
+  public int dmg;
+  public protagonist(){
+    hp = 50;
+    name = "pat";
   }
-
-  public Protagonist(String name) {
-    proName += name;
+  public protagonist(name){
+    hp = 50;
+    name = name;
   }
-
-  public boolean isAlive() {
-    return alive;
-  }
-
-  public void specialize() {
-    if (Math.random() < 0.5) {
-
+  public boolean isAlive(){
+    if (hp > 0){
+      return true;
+    }
+    else {
+      return false;
     }
   }
-
-  public void normalize() {
-    if (Math.random() >= 0.5) {
-
+  public String getName(){
+    return name;
+  }
+  public int specialize(){
+    if ((int) (Math.random() * 100) > 80){
+      dmg =  20;
     }
+    else {
+      dmg =  10;
+    }
+    return dmg;
   }
-
-  /*
-  public int attack() {
-    Monster.
+  public int normalize(){
+    dmg = 10;
+    return dmg;
   }
-  */
+  public int attack(monster){
+    monster.takeDMG(dmg);
+  }
 }
