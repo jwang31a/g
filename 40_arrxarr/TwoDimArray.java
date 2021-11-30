@@ -70,7 +70,11 @@ public class TwoDimArray
   public static int sum2( int [][] m )
   {
     // YOUR IMPLEMENTATION HERE
-    
+    int output = 0;
+    for (int i = 0; i < m.length; i++) {
+      output += sumRow;
+    }
+    return output;
   }
 
 
