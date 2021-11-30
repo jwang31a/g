@@ -35,16 +35,16 @@ public class TwoDimArray
     for (int[] x: a) {
       for (int y: x) {
         if (y == 0) {
-          output += x[y];
+          output += y;
         } else {
-          output += ", " + x[y];
+          output += ", " + y;
         }
+
       }
       output += "\n";
     }
     System.out.println(output);
   }
-
 
 
   //postcond: returns sum of all items in 2D int array a
