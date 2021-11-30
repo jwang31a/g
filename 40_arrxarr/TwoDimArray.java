@@ -72,7 +72,7 @@ public class TwoDimArray
     // YOUR IMPLEMENTATION HERE
     int output = 0;
     for (int i = 0; i < m.length; i++) {
-      output += sumRow;
+      output += sumRow(i, m);
     }
     return output;
   }
@@ -121,12 +121,10 @@ public class TwoDimArray
       System.out.println("sum m1 : " + sum1(m1));
       System.out.println("sum m2 : " + sum1(m2));
       System.out.println("sum m3 : " + sum1(m3));
-      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       System.out.print("testing sum2...\n");
       System.out.println("sum m1 : " + sum2(m1));
       System.out.println("sum m2 : " + sum2(m2));
       System.out.println("sum m3 : " + sum2(m3));
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     // your own custom test cases welcomed and encouraged
       System.out.println(sumRow(2,m3));
