@@ -9,7 +9,6 @@ public class TwoDimArray
 {
   //postcond: prints each row of 2D int array a on its own line
   //          uses a FOR loop
-  //why is this method void (originally)?
   public static void print1( int[][] a )
   {
     // YOUR IMPLEMENTATION HERE
@@ -29,7 +28,6 @@ public class TwoDimArray
 
   //postcond: prints each row of 2D int array a on its own line
   //          uses a FOREACH loop
-  //why is the return type also void?
   public static void print2( int[][] a )
   {
     // YOUR IMPLEMENTATION HERE
