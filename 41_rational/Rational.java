@@ -9,8 +9,14 @@ public class Rational {
   }
 
   public Rational(int p, int q) {
-    n = p;
-    d = q;
+    if (q == 0) {
+      n = 0;
+      q = 1;
+      System.out.println("Invalid denominator of 0, number's value set to 0/1.")
+    } else {
+      n = p;
+      d = q;
+    }
     r = (float)p / (float)q;
   }
 
