@@ -1,3 +1,18 @@
+/*
+Team GammaRay: Jun Hong Wang + Bob, Jomin Zhang + Chompsky, Kevin Xiao + Mr. Swag
+APCS pd6
+HW41 -- Be Rational
+2021-12-1
+Time Spent: 0.6 hours
+
+DISCO:
+Division by zero errors popped up not only when we were trying to set up a new instance of Rational, but also when we tried to divide two numbers.
+If the numerator of the input Rational was 0, then when we flipped the fraction, the denominator of the number would become zero.
+
+QCC:
+Is there any other way of accessing the numerator and denominator of Rational without using getValue() methods?
+*/
+
 public class Rational {
   private int n, d;
   private double r;
@@ -73,9 +88,7 @@ public class Rational {
     System.out.println(asdf.toString());
     System.out.println(asdf.getN());
     System.out.println(asdf.getD());
-
     asdf.divide(testing);
-
     System.out.println(asdf.floatValue());
     System.out.println(asdf.toString());
     System.out.println(asdf.getN());
