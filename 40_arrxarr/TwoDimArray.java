@@ -4,6 +4,19 @@
 // HW40 -- 2D arrays
 // 2021-11-30
 // Time Spent: 0.75 hours
+
+DISCO: 
+We relearned and discovered what for-each loops do.
+If there is an array, int[] a = {1,2,3,4,5}, a for each loop like for (int x: a) would iterate through each element of the array. 
+Unlike normal for loops, there is no counter, but x is the actual element of the array.
+Also, in the for each loop, the first part's type will be the base type of what we are iterating through. 
+For example, if we are iterating through int[][] a, the elements are int[], and if we are iterating through int[], the elements are int.
+We also figured out that we had to nest for loops for 2D arrays.
+
+QCC:
+What are the uses of 3D arrays?
+How would we represent 3D arrays?
+Are there any practical uses for >3D arrays?
 */
 
 public class TwoDimArray
