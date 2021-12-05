@@ -24,6 +24,7 @@ public class Rational {
   }
 
   public Rational(int p, int q) {
+    this();
     if (q == 0) {
       n = 0;
       d = 1;
