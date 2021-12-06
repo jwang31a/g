@@ -6,9 +6,11 @@ HW42 -- Be More Rational
 Time Spent:  hours
 
 DISCO:
+Floating point math in java is weird, since two numbers that should be the same might not be represented the same.
+For example, if we are comparing 0.333333 and 0.3333334, they're pretty similar (and in some cases just different representations of the same number), but java will think they're different.
 
 QCC:
-
+How can we make a functional version of compareTo?
 */
 
 public class Rational {
@@ -112,21 +114,23 @@ public class Rational {
 
   //doesn't work, missing return statement, not sure what's happening here
   //i'm thinking it could be something related to floating-point numbers and figuring out which is larger
+  //i think we shouldn't use floating points for this, because == means every digit has to be the same, and that might not be possible with floating point numbers
   public int compareTo(Rational input) {
-    if (this.r == input.r) {
+    //this part of the code doesn't work, since 2/3 and 6/9 are represented differently
+    if (this.r > input.r + 0.05 && this.r< input.r + 0.05) {
       return 0;
     } else if (this.r < input.r) {
-      return 1;
-    } else if (this.r > input.r) {
       return -1;
+    } else if (this.r > input.r) {
+      return 1;
     }
+    return(1234);
   }
   //end of new code
 
   public static void main(String[] args) {
-    //test cases copied from hw website
     Rational r = new Rational(2,3); //Stores the rational number 2/3
-    Rational s = new Rational(1,2); //Stores the rational number 1/2
+    Rational s = new Rational(6,9); //Stores the rational number 1/2
     Rational t = new Rational(4,18); //Stores the rational number 4/18
     r.add(s);  //Adds r to s, changes r to 7/6.  s remains 1/2
     System.out.println(r.toString());
@@ -139,6 +143,6 @@ public class Rational {
     t.reduce(); //Changes t to 2/9
     System.out.println(t.toString());
 
-    //System.out.println("\n" + r.compareTo(s));
+    System.out.println("\n" + r.compareTo(s));
   }
 }
