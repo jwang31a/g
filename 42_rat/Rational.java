@@ -127,7 +127,7 @@ public class Rational {
       return 1;
     }
     //this return statement has to be here because the if statement doesn't fully work
-    //the if else statements work, but not the if
+    //the else if statements work, but not the if
     return(0);
   }
   //end of new code
