@@ -3,16 +3,15 @@ Team GammaRay: Jun Hong Wang + Bob, Jomin Zhang + Chompsky, Kevin Xiao + Mr. Swa
 APCS pd6
 HW42 -- Be More Rational
 2021-12-4
-Time Spent:  hours
-
+Time Spent: 0.75 hours
 DISCO:
 Floating point math in java is weird, since two numbers that should be the same might not be represented the same.
 For example, if we are comparing 0.333333 and 0.3333334, they're pretty similar (and in some cases just different representations of the same number), but java will think they're different.
-We compared the rational numbers 2/3 and 6/9, and they were not equal (in the if statement).
-
+We compared the rational numbers 2/3 and 6/9, and they were not equal (in the if statement). So, we changed the method to subtracting one of the rationals from each other and 
+checking if that equals to 0.
 QCC:
-How can we make a more functional version of compareTo?
-It works right now, but we had to include a failsafe return statement, otherwise the code wouldn't compile.
+How can we deal with raising rationals to the power of?
+How would we raise integers to the power of rationals?
 */
 
 public class Rational {
@@ -76,6 +75,23 @@ public class Rational {
   //end of old code
 
   //beginning of new code
+  
+  public static int gcdER(int a, int b) {
+     // If a is our bigger number and both a and b are bigger than 0, we take the smaller number (b) and the bigger number (a) minus the smaller one (b)
+     if (a > b && b > 0){
+        return gcdER(b, (a - b));
+     // When b reaches 0, we return the other number (a)
+     }else if(b == 0){
+        return a;
+     }
+     // If a is our bigger number and both a and b are bigger than 0, we take the smaller number (b) and the bigger number (a) minus the smaller one (b)
+     else if (a < b && a > 0){
+        return gcdER(a, (b - a));
+     // Then a will reach 0 first, so we return b.
+     }else{
+        return b;
+     }
+  }
   public void add(Rational r) {
     n = (this.n * r.d) + (this.d * r.n);
     d = this.d * r.d;
@@ -113,22 +129,15 @@ public class Rational {
     this.n = this.n / g;
     this.d = this.d / g;
   }
-
-  //this method kind of works
-  //the last return statement shouldn't be there, but I have to include it otherwise the code will not compile
-  //it's kind of to cover the case where the two numbers are equal, since floating point math and comparisons are weird
+  
   public int compareTo(Rational input) {
-    //this part of the code doesn't work, since 2/3 and 6/9 are represented differently
-    if (this.r < input.r + 0.05 && this.r > input.r - 0.05) {
+    if (this.r - input.r == 0) {
       return 0;
     } else if (this.r < input.r) {
       return -1;
-    } else if (this.r > input.r) {
+    } else{
       return 1;
     }
-    //this return statement has to be here because the if statement doesn't fully work
-    //the else if statements work, but not the if
-    return(0);
   }
   //end of new code
 
@@ -136,6 +145,7 @@ public class Rational {
     Rational r = new Rational(2,3); //Stores the rational number 2/3
     Rational s = new Rational(1,2); //Stores the rational number 1/2
     Rational t = new Rational(4,18); //Stores the rational number 4/18
+    Rational p = new Rational(6,9);
     r.add(s);  //Adds r to s, changes r to 7/6.  s remains 1/2
     System.out.println(r.toString());
     r.subtract(s);
@@ -148,5 +158,6 @@ public class Rational {
     System.out.println(t.toString());
 
     System.out.println("\n" + r.compareTo(s)); //0 means the numbers are (approximately) equal, 1 means r is bigger, -1 means s is bigger
+    System.out.println("\n" + r.compareTo(p));
   }
 }
