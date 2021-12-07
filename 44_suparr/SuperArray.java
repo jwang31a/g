@@ -8,6 +8,9 @@ Time Spent : 0. hours
 DISCO:
 
 QCC:
+Not completely fixed, but the add (insert) method works now.
+Look at QAF for question: https://piazza.com/class/kue5pmk0w7n70n?cid=326
+I think this is a good question, since set(a,b) can present problems. 
 */
 
 public class SuperArray
@@ -68,6 +71,7 @@ public class SuperArray
   }
 
   //inserts an item at index
+  /*
   public void add( int index, int newVal )
   {
     for (int i = index+1; i < _size; i ++){
@@ -76,7 +80,15 @@ public class SuperArray
     _data[index] = newVal;
     _size += 1;
   }
+*/
 
+  public void add(int index, int newVal) {
+    for (int i = _size; i >= index; i--) {
+      _data[i] = _data[i-1];
+    }
+    _data[index] = newVal;
+    _size++;
+  }
 
   //removes the item at index
   //shifts elements left to fill in newly-empted slot
@@ -87,7 +99,6 @@ public class SuperArray
     }
     _size -= 1;
   }
-
 
   //return number of meaningful items in _data
   public int size()
@@ -103,7 +114,7 @@ public class SuperArray
       System.out.println( curtis );
 
       for( int i = 0; i < curtis._data.length; i++ ) {
-      curtis.set( i, i * 2 );
+        curtis.set( i, i * 2 );
       }
 
       System.out.println("Printing populated SuperArray curtis...");
