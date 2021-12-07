@@ -9,13 +9,13 @@
  * getting and setting element values.
  ***************************/
 
-public class SuperArray
+public class OldSuperArray
 {
   private int[] _data;  //underlying container
   private int _size;    //number of elements in this SuperArray
 
   //default constructor – initializes 10-item array
-  public SuperArray()
+  public OldSuperArray()
   {
     _data = new int[10];
     _size = 10;
@@ -66,7 +66,7 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-    SuperArray curtis = new SuperArray();
+    SuperArray curtis = new OldSuperArray();
     System.out.println( "Printing empty SuperArray curtis..." );
     System.out.println( curtis );
 
