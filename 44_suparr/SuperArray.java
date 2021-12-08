@@ -3,15 +3,14 @@ Team GammaRay: Jun Hong Wang + Bob, Jomin Zhang + Chompsky, Kevin Xiao + Mr. Swa
 APCS pd6
 HW 44- Array of Grade 316
 2021-12-08
-Time Spent : 0. hours
+Time Spent : 0.6 hours
 
 DISCO:
 
 QCC:
-
 QAF question: https://piazza.com/class/kue5pmk0w7n70n?cid=326
 I think this is a good question, since set(a,b) can present problems.
-It doesn't change the size, but it can still add meaningful values that we can't print. 
+It doesn't change the size, but it can still add meaningful values that we can't print.
 */
 
 public class SuperArray
