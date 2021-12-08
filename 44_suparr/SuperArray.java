@@ -3,15 +3,14 @@ Team GammaRay: Jun Hong Wang + Bob, Jomin Zhang + Chompsky, Kevin Xiao + Mr. Swa
 APCS pd6
 HW 44- Array of Grade 316
 2021-12-08
-Time Spent : 0.6 hours
+Time Spent : 0.5 hours
 
-DISCO:
-We can use _size to differentiate between empty, meaningless values and meaningful values with a value of 0.
+DISCO: When adding and shifting all of the values to the right of the addition to the right, our for loop needs to count backwards so that we don't lose the
+values of the ones closer to the index. I.e. if we want to add a 99 at index 3 and there is a 4 at index 3 already and a 5 at index 4, inserting the 99 will
+change both index 4 and 5 to 4 if we have a loop counting upwards from index. However, counting backwards will fix this error.
+We need to expand our array if the size of meaningful items in our array is the same as it.
 
 QCC:
-QAF question: https://piazza.com/class/kue5pmk0w7n70n?cid=326
-I think this is a good question, since set(a,b) can present problems.
-It doesn't change the size, but it can still add meaningful values that we can't print.
 */
 
 public class SuperArray
@@ -61,22 +60,33 @@ public class SuperArray
   {
     int temp = _data[index];
     _data[index] = newVal;
+    if (index > _size - 1){
+      _size ++;
+    }
     return temp;
   }
 
   //adds an item after the last item
   public void add( int newVal )
   {
+    if(_size == _data.length){
+      expand();
+    }
     _data[_size] = newVal;
     _size += 1;
   }
 
-  public void add(int index, int newVal) {
-    for (int i = _size; i >= index; i--) {
+  //inserts an item at index
+  public void add( int index, int newVal )
+  {
+    if (_size == _data.length){
+      expand();
+    }
+    for (int i = _size; i > index; i --){
       _data[i] = _data[i-1];
     }
     _data[index] = newVal;
-    _size++;
+    _size += 1;
   }
 
   //removes the item at index
@@ -98,53 +108,53 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-    SuperArray curtis = new SuperArray();
-    System.out.println( "Printing empty SuperArray curtis..." );
-    System.out.println( curtis );
+      SuperArray curtis = new SuperArray();
+      System.out.println( "Printing empty SuperArray curtis..." );
+      System.out.println( curtis );
 
-    for( int i = 0; i < curtis._data.length; i++ ) {
+      for( int i = 0; i < curtis._data.length; i++ ) {
       curtis.set( i, i * 2 );
-    }
+      }
 
-    System.out.println("Printing populated SuperArray curtis...");
-    System.out.println(curtis);
+      System.out.println("Printing populated SuperArray curtis...");
+      System.out.println(curtis);
 
-    for( int i = 0; i < 3; i++ ) {
+      for( int i = 0; i < 3; i++ ) {
       curtis.expand();
       System.out.println("Printing expanded SuperArray curtis...");
       System.out.println(curtis);
       System.out.println("new length of underlying array: "
       + curtis._data.length );
-    }
+      }
 
-    SuperArray mayfield = new SuperArray();
-    System.out.println("Printing empty SuperArray mayfield...");
-    System.out.println(mayfield);
+      SuperArray mayfield = new SuperArray();
+      System.out.println("Printing empty SuperArray mayfield...");
+      System.out.println(mayfield);
 
-    mayfield.add(5);
-    mayfield.add(4);
-    mayfield.add(3);
-    mayfield.add(2);
-    mayfield.add(1);
+      mayfield.add(5);
+      mayfield.add(4);
+      mayfield.add(3);
+      mayfield.add(2);
+      mayfield.add(1);
 
-    System.out.println("Printing populated SuperArray mayfield...");
-    System.out.println(mayfield);
+      System.out.println("Printing populated SuperArray mayfield...");
+      System.out.println(mayfield);
 
-    mayfield.remove(3);
-    System.out.println("Printing SuperArray mayfield post-remove...");
-    System.out.println(mayfield);
-    mayfield.remove(3);
-    System.out.println("Printing SuperArray mayfield post-remove...");
-    System.out.println(mayfield);
+      mayfield.remove(3);
+      System.out.println("Printing SuperArray mayfield post-remove...");
+      System.out.println(mayfield);
+      mayfield.remove(3);
+      System.out.println("Printing SuperArray mayfield post-remove...");
+      System.out.println(mayfield);
 
-    mayfield.add(3,99);
-    System.out.println("Printing SuperArray mayfield post-insert...");
-    System.out.println(mayfield);
-    mayfield.add(2,88);
-    System.out.println("Printing SuperArray mayfield post-insert...");
-    System.out.println(mayfield);
-    mayfield.add(1,77);
-    System.out.println("Printing SuperArray mayfield post-insert...");
-    System.out.println(mayfield);
+      mayfield.add(3,99);
+      System.out.println("Printing SuperArray mayfield post-insert...");
+      System.out.println(mayfield);
+      mayfield.add(2,88);
+      System.out.println("Printing SuperArray mayfield post-insert...");
+      System.out.println(mayfield);
+      mayfield.add(1,77);
+      System.out.println("Printing SuperArray mayfield post-insert...");
+      System.out.println(mayfield);
   }//end main()
 }//end class
