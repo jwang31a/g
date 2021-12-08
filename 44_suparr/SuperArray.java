@@ -6,6 +6,7 @@ HW 44- Array of Grade 316
 Time Spent : 0.6 hours
 
 DISCO:
+We can use _size to differentiate between empty, meaningless values and meaningful values with a value of 0.
 
 QCC:
 QAF question: https://piazza.com/class/kue5pmk0w7n70n?cid=326
@@ -97,53 +98,53 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-      SuperArray curtis = new SuperArray();
-      System.out.println( "Printing empty SuperArray curtis..." );
-      System.out.println( curtis );
+    SuperArray curtis = new SuperArray();
+    System.out.println( "Printing empty SuperArray curtis..." );
+    System.out.println( curtis );
 
-      for( int i = 0; i < curtis._data.length; i++ ) {
-        curtis.set( i, i * 2 );
-      }
+    for( int i = 0; i < curtis._data.length; i++ ) {
+      curtis.set( i, i * 2 );
+    }
 
-      System.out.println("Printing populated SuperArray curtis...");
-      System.out.println(curtis);
+    System.out.println("Printing populated SuperArray curtis...");
+    System.out.println(curtis);
 
-      for( int i = 0; i < 3; i++ ) {
+    for( int i = 0; i < 3; i++ ) {
       curtis.expand();
       System.out.println("Printing expanded SuperArray curtis...");
       System.out.println(curtis);
       System.out.println("new length of underlying array: "
       + curtis._data.length );
-      }
+    }
 
-      SuperArray mayfield = new SuperArray();
-      System.out.println("Printing empty SuperArray mayfield...");
-      System.out.println(mayfield);
+    SuperArray mayfield = new SuperArray();
+    System.out.println("Printing empty SuperArray mayfield...");
+    System.out.println(mayfield);
 
-      mayfield.add(5);
-      mayfield.add(4);
-      mayfield.add(3);
-      mayfield.add(2);
-      mayfield.add(1);
+    mayfield.add(5);
+    mayfield.add(4);
+    mayfield.add(3);
+    mayfield.add(2);
+    mayfield.add(1);
 
-      System.out.println("Printing populated SuperArray mayfield...");
-      System.out.println(mayfield);
+    System.out.println("Printing populated SuperArray mayfield...");
+    System.out.println(mayfield);
 
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
+    mayfield.remove(3);
+    System.out.println("Printing SuperArray mayfield post-remove...");
+    System.out.println(mayfield);
+    mayfield.remove(3);
+    System.out.println("Printing SuperArray mayfield post-remove...");
+    System.out.println(mayfield);
 
-      mayfield.add(3,99);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-      mayfield.add(2,88);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-      mayfield.add(1,77);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
+    mayfield.add(3,99);
+    System.out.println("Printing SuperArray mayfield post-insert...");
+    System.out.println(mayfield);
+    mayfield.add(2,88);
+    System.out.println("Printing SuperArray mayfield post-insert...");
+    System.out.println(mayfield);
+    mayfield.add(1,77);
+    System.out.println("Printing SuperArray mayfield post-insert...");
+    System.out.println(mayfield);
   }//end main()
 }//end class
