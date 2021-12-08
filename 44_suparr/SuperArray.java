@@ -8,9 +8,10 @@ Time Spent : 0. hours
 DISCO:
 
 QCC:
-Not completely fixed, but the add (insert) method works now.
-Look at QAF for question: https://piazza.com/class/kue5pmk0w7n70n?cid=326
-I think this is a good question, since set(a,b) can present problems. 
+
+QAF question: https://piazza.com/class/kue5pmk0w7n70n?cid=326
+I think this is a good question, since set(a,b) can present problems.
+It doesn't change the size, but it can still add meaningful values that we can't print. 
 */
 
 public class SuperArray
@@ -69,18 +70,6 @@ public class SuperArray
     _data[_size] = newVal;
     _size += 1;
   }
-
-  //inserts an item at index
-  /*
-  public void add( int index, int newVal )
-  {
-    for (int i = index+1; i < _size; i ++){
-      _data[i] = _data[i-1];
-    }
-    _data[index] = newVal;
-    _size += 1;
-  }
-*/
 
   public void add(int index, int newVal) {
     for (int i = _size; i >= index; i--) {
