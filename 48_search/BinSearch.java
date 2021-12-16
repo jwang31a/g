@@ -1,3 +1,15 @@
+/*
+Team GammaRay: Jun Hong Wang + Bob, Jomin Zhang + Chompsky, Kevin Xiao + Mr. Swag
+APCS pd6
+HW 48- Search
+2021-12-16
+Time Spent : 0.5 hours
+DISCO: Binary search is more efficient than linear search.
+QCC:
+How to compile with unchecked or unsafe operations?
+*/
+
+
 /**
    class BinSearch
    Binary search on array of Comparables
@@ -29,43 +41,52 @@ public class BinSearch
     int tPos = -1; //init return var to flag value -1
 
     int m = (lo + hi) / 2; //init mid pos var
-    if (m = target){
-      return target;
+    if (target.compareTo(a[m]) == 0) // Middle Number and target are the same. This is the base case.
+    {
+      return m;
     }
-    else if (m > target){
-      binSearchRec(a, target, lo, m);
+    else if (target.compareTo(a[m]) > 0) // Middle Number is smaller than target
+    {
+      return binSearchRec(a, target, m+1, hi);
     }
-    else {
-      binSearchRec(a, target, m, hi);
+    else // Middle Number is larger than target
+    {
+      return binSearchRec(a, target, lo, m-1);
     }
 
-
-    return tPos;
   }//end binSearchRec
 
 
-  public static int binSearchIter( Comparable[] a,
-                                   Comparable target,
-                                   int lo, int hi )
+
+public static int binSearchIter( Comparable[] a,   Comparable target, int lo, int hi )
   {
 
     int tPos = -1; //init return var to flag value -1
     int m = (lo + hi) / 2; //init mid pos var
 
-    while( /* ? */ ) { // run until lo & hi cross
-
+    while( lo < hi ) { // run until lo & hi cross
+	
       //update mid pos var
 
-      // target found
+	m = (lo + hi)/2;
 
+      // target found
+	if (target.compareTo(a[m]) == 0){
+		return m;
+	}
       // value at mid index higher than target
+	if (target.compareTo(a[m]) > 0){
+		lo = m + 1;
+	}
 
       // value at mid index lower than target
+	if (target.compareTo(a[m]) < 0){
+		hi = m - 1;
+	}
 
     }
     return tPos;
   }//end binSearchIter
-
 
 
   //tell whether an array is sorted in ascending order
@@ -102,9 +123,6 @@ public class BinSearch
   //minimal -- augment as necessary
   public static void main ( String[] args )
   {
-
-    /*----------------------------------------------------
-
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     System.out.println("\nNow testing binSearch on Comparable array...");
 
@@ -123,9 +141,13 @@ public class BinSearch
     }
 
     printArray( iArr3 );
-    System.out.println( "iArr3 sorted? -- " + isSorted(iArr2) );
+    System.out.println( "iArr3 sorted? -- " + isSorted(iArr3) );
 
     //search for 6 in array
+    System.out.println("testing: " + iArr2[2]);
+    System.out.println("testing compare: " + iArr2[2].compareTo(5)); // 6 > 5 = 1
+    System.out.println("testing compare: " + iArr2[2].compareTo(6)); // 6 = 6 = 0
+    System.out.println("testing compare: " + iArr2[2].compareTo(7)); // 6 < 7 = 1
     System.out.println( binSearch(iArr2,2) );
     System.out.println( binSearch(iArr2,4) );
     System.out.println( binSearch(iArr2,6) );
@@ -135,12 +157,11 @@ public class BinSearch
 
     //search for 43 in array
     System.out.println( binSearch(iArr2,43) );
-
+    /*----------------------------------------------------
     System.out.println( "now testing binSearch on iArr3..." );
     System.out.println( binSearch(iArr3,4) );
     System.out.println( binSearch(iArr3,8) );
     System.out.println( binSearch(iArr3,5) );
-
     //search for 43 in array
     System.out.println( binSearch(iArr3,43) );
     ====================================================*/
