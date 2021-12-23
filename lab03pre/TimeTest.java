@@ -15,6 +15,7 @@ public class TimeTest {
     //difference is only "1 millisecond" (or even sometimes 0?), but operation feels like it takes much longer than that.
     //using the same code, but instead of System.currentTimeMillis(), we can use System.nanoTime()
     //to get much more accurate time (4ms instead)
+    //on school computer, it also acts differently
     long z = System.nanoTime();
     System.out.println("epic games epic games epic games epic games");
     int uiop = 0;

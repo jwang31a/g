@@ -11,7 +11,7 @@ How can we deal with raising rationals to the power of?
 How would we raise integers to the power of rationals?
 */
 
-public class Rational {
+public class Rational implements Comparable{
   private int n, d;
   private double r;
 
