@@ -63,14 +63,18 @@ public class BubbleSort
     boolean measure =  false;
     int swap = 0;
     while (measure = false){
-      for (int i = data.length - 1; i > 0; i--) {
-        if (data[i - 1] > data[i]) {
-          Integer temp = data[i - 1];
-          data[i - 1] = data[i];
-          data[i] = temp;
+      for (int i = data.size() - 1; i > 0; i--) {
+        if ((Integer)data.get(i - 1) > (Integer)data.get(i)) {
+          Comparable temp = data.get(i - 1);
+          data.set(i - 1) = data.get(i);
+          data.set(i) = temp;
           swap += 1;
         }
       }
+      if (swap == 0){
+        measure = true;
+      }
+      swap = 0;
     }
     /* YOUR IMPLEMENTATION HERE */
   }
@@ -79,16 +83,16 @@ public class BubbleSort
   // ArrayList-returning bubbleSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
+  /*
   public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
   {
-    /* YOUR IMPLEMENTATION HERE */
-  }
 
+  }
+  */
 
   public static void main( String [] args )
   {
 
-    /*===============for VOID methods=============
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -103,6 +107,7 @@ public class BubbleSort
       System.out.println( "ArrayList coco before sorting:\n" + coco );
       bubbleSortV(coco);
       System.out.println( "ArrayList coco after sorting:\n" + coco );
+      /*===============for VOID methods=============
       ============================================*/
 
     /*==========for AL-returning methods==========
