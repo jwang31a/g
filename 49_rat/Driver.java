@@ -3,7 +3,10 @@ public class Driver{
     Rational x = new Rational(1,2);
     Rational y = new Rational(2,4);
     Rational z = new Rational(1,3);
+    Rational negative = new Rational(-1,3);
     Integer w = 12;
+    System.out.println(negative.compareTo(x));
+    System.out.println(x.compareTo(negative));
     System.out.println(x.compareTo(y)); // Equal
     System.out.println(y.compareTo(z));
     System.out.println(z.compareTo(y));
