@@ -8,9 +8,14 @@
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
  *
  * ALGO:
- *
+ * We iterate through an array from right to left
+   We compare the element at an index with the element at the previous index and swap if they are out of order (if element at previous index is bigger than element at current index)
+   After this swap, we add 1 to a counter variable.
+   We then repeat this with the next index, going down the array.
+   After the first pass, we go through it again, and if there are no swaps (from counter), then the array is sorted, boolean variable for sorted set to true, break out of loop
+   Depending on method, return AL or nothing.
  * DISCO
- *
+ * For ALs, the set method requires 2 parameters, the first one is for the index, and the second is for the element we want to set it to. 
  * QCC
  * q0: If a pass requires no swaps, what do you know?
  * a0: the array is sorted
