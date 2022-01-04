@@ -1,8 +1,8 @@
 // Team GammaRay: Jun Hong Wang + Bob, Jomin Zhang + Chompsky, Kevin Xiao + Mr. Swag
-// APCS pd6
-// HW51 -- implementing bubblesort
+// APCS PD6
+// HW51 -- Dat Bubbly Tho
 // 2022-01-04
-// time spent: hrs
+// time spent: 0.5 hrs
 
 /******************************
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
@@ -17,7 +17,7 @@
  * q1: After pass p, what do you know?
  * a1: the first p elements of the array are in the right position (assuming iteration from right to left)
  * q2: How many passes are necessary to completely sort?
- * a2:
+ * a2: the length of the array - 1 is the number of passes
  *
  ******************************/
 
