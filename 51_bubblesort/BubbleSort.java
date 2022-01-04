@@ -15,7 +15,7 @@
    After the first pass, we go through it again, and if there are no swaps (from counter), then the array is sorted, boolean variable for sorted set to true, break out of loop
    Depending on method, return AL or nothing.
  * DISCO
- * For ALs, the set method requires 2 parameters, the first one is for the index, and the second is for the element we want to set it to. 
+ * For ALs, the set method requires 2 parameters, the first one is for the index, and the second is for the element we want to set it to.
  * QCC
  * q0: If a pass requires no swaps, what do you know?
  * a0: the array is sorted
@@ -137,18 +137,18 @@ public class BubbleSort
       glen2.add(5);
       glen2.add(12);
       glen2.add(3);
-      System.out.println( "ArrayList glen before sorting:\n" + glen );
+      System.out.println( "ArrayList glen2 before sorting:\n" + glen );
       ArrayList glenSorted = bubbleSort( glen2 );
-      System.out.println( "sorted version of ArrayList glen:\n"
+      System.out.println( "sorted version of ArrayList glen2:\n"
       + glenSorted );
-      System.out.println( "ArrayList glen after sorting:\n" + glen );
+      System.out.println( "ArrayList glen2 after sorting:\n" + glen );
 
       ArrayList coco2 = populate( 10, 1, 1000 );
-      System.out.println( "ArrayList coco before sorting:\n" + coco2 );
+      System.out.println( "ArrayList coco2 before sorting:\n" + coco2 );
       ArrayList cocoSorted = bubbleSort( coco2 );
-      System.out.println( "sorted version of ArrayList coco:\n"
+      System.out.println( "sorted version of ArrayList coco2:\n"
       + cocoSorted );
-      System.out.println( "ArrayList coco after sorting:\n" + coco2 );
+      System.out.println( "ArrayList coco2 after sorting:\n" + coco2 );
       System.out.println( coco2 );
       /*==========for AL-returning methods==========
       ============================================*/
