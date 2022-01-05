@@ -1,5 +1,5 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Team Deltamath: Kevin Xiao + Mr. Swag, Jun Hong Wang + Bob
+// APCS pd6
 // HW53 -- implementing insertion sort
 // 2022-01-06r
 // time spent:  hrs
@@ -8,20 +8,25 @@
  * class InsertionSort -- implements InsertionSort algorithm
  *
  * ALGO:
- *
+ * We assume that the first element is "sorted".
+   There is a partition right after that element, and everything to the left of it is considered sorted.
+   We look at the next unsorted element (leftmost element outside of partition), and compare it with the rightmost element of the sorted partition, and swap if it is less than it.
+   We repeat that step, and once that element is greater than the element we are comparing it to, it is considred sorted, and we increase the partition size by 1.
+   We repeat the last 2 steps, until we iterate through all of the unsorted elements.
  * DISCO
  *
  * QCC
  * q0: How many passes to sort n elements?
- * a0:
+ * a0: length-1 passes
  * q1: What do you know after pass p?
- * a1:
+ * a1: It's not guaranteed that p elements are sorted, like in the two sorting algorithms.
+       However, p elements will be in ascending order.
  * q2: How will you know when sorted?
- * a2:
+ * a2: After we iterate through all the elements in the array, comparing and swapping it accordingly.
  * q3: What constitues a pass?
- * a3:
+ * a3: One pass will consist of comparisons and swaps.
  * q4: What must you track?
- * a4:
+ * a4: The partition size, as well as the element that we are moving. 
  ******************************/
 
 
