@@ -11,10 +11,13 @@
  * We search for the smallest value available, then swap it with the place that it's supposed to be in.
    So on swap 1, we swap the smallest element to position 1.
    On swap 2, we swap the next smallest element to position 2, etc.
-   After length-1 swaps, everything is sorted, and we can stop sorting. 
+   After length-1 swaps, everything is sorted, and we can stop sorting.
  * DISCO
  *
  * QCC
+   Out of the 2 sorting algorithms, which of them is faster?
+   Is one more memory efficient than the other?
+   Which one is preferred (and in what cases is one preferred over the other)?
  * q0: How many passes to sort n elements?(  ) {(  ) {
  * a0:
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
