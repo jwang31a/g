@@ -1,5 +1,5 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Team Deltamath: Kevin Xiao + Mr. Swag, Jun Hong Wang + Bob
+// APCS pd6
 // HW53 -- implementing insertion sort
 // 2022-01-06r
 // time spent:  hrs
@@ -8,22 +8,28 @@
  * class InsertionSort -- implements InsertionSort algorithm
  *
  * ALGO:
- *
+ * We assume that the first element is "sorted".
+   There is a partition right after that element, and everything to the left of it is considered sorted.
+   We look at the next unsorted element (leftmost element outside of partition), and compare it with the rightmost element of the sorted partition, and swap if it is less than it.
+   We repeat that step, and once that element is greater than the element we are comparing it to, it is considred sorted, and we increase the partition size by 1.
+   We repeat the last 2 steps, until we iterate through all of the unsorted elements.
  * DISCO
- *
+ * Because the worst case scenario requires n(n+1)/2 passes, this makes insertion sort more inefficient (in worst case scenario).
  * QCC
- * q0: How many passes to sort n elements?
- * a0:
- * q1: What do you know after pass p?
- * a1:
- * q2: How will you know when sorted?
- * a2:
- * q3: What constitues a pass?
- * a3:
- * q4: What must you track?
- * a4:
- ******************************/
+   Is there a benefit to using insertion sort over selection or bubble sort?
 
+ * q0: How many passes to sort n elements?
+ * a0: The best case scenario would be n passes, but the worst case scenario would be n(n+1)/2.
+ * q1: What do you know after pass p?
+ * a1: It's not guaranteed that p elements are sorted, like in the two other sorting algorithms.
+       However, p elements will be in ascending order.
+ * q2: How will you know when sorted?
+ * a2: After we iterate through all the elements in the array, comparing and swapping it accordingly.
+ * q3: What constitues a pass?
+ * a3: One pass will consist of comparisons and swaps.
+ * q4: What must you track?
+ * a4: The partition size, as well as the element that we are moving.
+ ******************************/
 
 import java.util.ArrayList;
 
@@ -54,7 +60,6 @@ public class InsertionSort
     }
   }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
   // VOID version of InsertionSort
   // Rearranges elements of input ArrayList
@@ -92,13 +97,10 @@ public class InsertionSort
     }
   }//end insertionSortV
 
-
   // ArrayList-returning insertionSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
-  /*
-  public static ArrayList<Comparable>
-    insertionSort( ArrayList<Comparable> input )
+  public static ArrayList<Comparable> insertionSort( ArrayList<Comparable> input )
   {
     //declare and initialize empty ArrayList for copying
     ArrayList<Comparable> data = new ArrayList<Comparable>();
@@ -113,8 +115,6 @@ public class InsertionSort
     //return working ArrayList
     return data;
   }//end insertionSort
-  */
-
 
   public static void main( String [] args )
   {
@@ -136,29 +136,27 @@ public class InsertionSort
       /*===============for VOID methods=============
       ============================================*/
 
-    /*==========for AL-returning methods==========
       System.out.println( "*** Testing non-void version... *** " );
-      ArrayList glen = new ArrayList<Integer>();
-      glen.add(7);
-      glen.add(1);
-      glen.add(5);
-      glen.add(12);
-      glen.add(3);
-      System.out.println( "\nArrayList glen before sorting:\n" + glen );
-      ArrayList glenSorted = insertionSort( glen );
-      System.out.println( "\nsorted version of ArrayList glen:\n"
+      ArrayList glen1 = new ArrayList<Integer>();
+      glen1.add(7);
+      glen1.add(1);
+      glen1.add(5);
+      glen1.add(12);
+      glen1.add(3);
+      System.out.println( "\nArrayList glen1 before sorting:\n" + glen1 );
+      ArrayList glenSorted = insertionSort( glen1 );
+      System.out.println( "\nsorted version of ArrayList glen1:\n"
       + glenSorted );
-      System.out.println( "\nArrayList glen after sorting:\n" + glen );
+      System.out.println( "\nArrayList glen1 after sorting:\n" + glen1 );
 
-      ArrayList coco = populate( 10, 1, 1000 );
-      System.out.println( "\nArrayList coco before sorting:\n" + coco );
-      ArrayList cocoSorted = insertionSort( coco );
-      System.out.println( "\nsorted version of ArrayList coco:\n"
+      ArrayList coco1 = populate( 10, 1, 1000 );
+      System.out.println( "\nArrayList coco1 before sorting:\n" + coco1 );
+      ArrayList cocoSorted = insertionSort( coco1 );
+      System.out.println( "\nsorted version of ArrayList coco1:\n"
       + cocoSorted );
-      System.out.println( "\nArrayList coco after sorting:\n" + coco );
-      System.out.println( coco );
+      System.out.println( "\nArrayList coco1 after sorting:\n" + coco1 );
+      System.out.println( coco1 );
+      /*==========for AL-returning methods==========
       ============================================*/
-
   }//end main
-
 }//end class InsertionSort
