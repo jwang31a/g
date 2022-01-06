@@ -73,9 +73,11 @@ public class InsertionSort
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
+
         if (i == data.size()) {
           break;
         }
+
         else if ( (Integer)data.get(i) < (Integer)data.get(i - 1)) {
 
           System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
