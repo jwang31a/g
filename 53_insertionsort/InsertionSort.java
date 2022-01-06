@@ -14,12 +14,14 @@
    We repeat that step, and once that element is greater than the element we are comparing it to, it is considred sorted, and we increase the partition size by 1.
    We repeat the last 2 steps, until we iterate through all of the unsorted elements.
  * DISCO
- *
+ * Because the worst case scenario requires n(n+1)/2 passes, this makes insertion sort more inefficient (in worst case scenario).
  * QCC
+   Is there a benefit to using insertion sort over selection or bubble sort?
+
  * q0: How many passes to sort n elements?
- * a0: length-1 passes
+ * a0: The best case scenario would be n passes, but the worst case scenario would be n(n+1)/2.
  * q1: What do you know after pass p?
- * a1: It's not guaranteed that p elements are sorted, like in the two sorting algorithms.
+ * a1: It's not guaranteed that p elements are sorted, like in the two other sorting algorithms.
        However, p elements will be in ascending order.
  * q2: How will you know when sorted?
  * a2: After we iterate through all the elements in the array, comparing and swapping it accordingly.
