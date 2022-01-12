@@ -1,3 +1,15 @@
+/*
+Team GammaRay: Jun Hong Wang + Bob, Jomin Zhang + Chompsky, Kevin Xiao + Mr. Swag
+APCS pd6
+HW54 -- One File to Bring Them All...
+2021-1-11
+Time Spent: 0.25 hours
+DISCO:
+We figured out that vanilla bubble sort and optimized bubble sort are not the same.
+Vanilla is always O(n^2), while optimized has a chance for O(n) if the AL is already sorted.
+QCC:
+*/
+
 import java.util.ArrayList;
 
 public class MySorts {
@@ -98,7 +110,7 @@ public class MySorts {
   This means that the first element of the AL will be assumed to be sorted.
   It will compare the first unsorted element to the elements in the sorted partition, and when it finds an element that it is greater than, it will insert (swap) that element to that place.
   The partition size will be increased by 1, and it will repeat those steps of comparing and swapping.
-  We iterate through the whole array once, since after length passes, all the elements are guaranteed to be sorted. 
+  We iterate through the whole array once, since after length passes, all the elements are guaranteed to be sorted.
   */
   public static void insertionSortV( ArrayList<Comparable> data )
   {
