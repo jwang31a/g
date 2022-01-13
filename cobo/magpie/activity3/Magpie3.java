@@ -1,18 +1,25 @@
 /**
  * A program to carry on conversations with a human user.
- * This version: 
+ * This version:
  * <ul><li>
- *    Uses advanced search for keywords 
- * </li></ul> 
- *    
+ *    Uses advanced search for keywords
+ * </li></ul>
+ *
  * @author Laurie White
  * @version April 2012
  */
+
+//tracing findKeyword("She's my sister.", "sister", 0);
+//iteration	psn	before	after
+//1					10	" "			" "
+//1 				10  " "			" " (after the if statements that set before and after)
+//1 				10 	" "			" " (after finding out if before and after are not letters)
+//return psn, or 10
 public class Magpie3
 {
 	/**
 	 * Get a default greeting
-	 * 
+	 *
 	 * @return a greeting
 	 */
 	public String getGreeting()
@@ -22,7 +29,7 @@ public class Magpie3
 
 	/**
 	 * Gives a response to a user statement
-	 * 
+	 *
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
@@ -40,10 +47,19 @@ public class Magpie3
 		}
 		else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
-				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
+				|| findKeyword(statement, "sister") >= 0)
 		{
 			response = "Tell me more about your family.";
+		} else if (findKeyword(statement, "brother") >= 0) {
+			response = "Tell me more about your brother.";
+		}
+		else if (findKeyword(statement, "Mr. Mykolyk") >= 0) {
+			response = "He seems like a great teacher!";
+		} else if (findKeyword(statement, "cat") >= 0
+			|| findKeyword(statement, "dog") >=) {
+				response = "Tell me more about your pet!";
+		} else if (findKeyword(statement, "why") >= 0) {
+			response = "Because why not?";
 		}
 		else
 		{
@@ -122,7 +138,7 @@ public class Magpie3
 	 * is not a substring of a longer string (so, for
 	 * example, "I know" does not contain "no"). The search
 	 * begins at the beginning of the string.
-	 * 
+	 *
 	 * @param statement
 	 *            the string to search
 	 * @param goal
@@ -137,7 +153,7 @@ public class Magpie3
 
 	/**
 	 * Pick a default response to use if nothing else fits.
-	 * 
+	 *
 	 * @return a non-committal string
 	 */
 	private String getRandomResponse()

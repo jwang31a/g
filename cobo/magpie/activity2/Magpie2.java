@@ -10,6 +10,14 @@
  * @author Laurie White
  * @version April 2012
  */
+
+//response to no becomes "why not?"
+//response to brother becomes "tell me more about your brother"
+//response to why becomes "because why not?"
+//added random noncommital responses: what does that mean?, and that's cool!
+//in the reply method, we could try to see which one comes first
+//with our current code, we can't tell if a keyword is inside another word, which could make our responses make no sense.
+//for example, the word no is in know, so we would get the answer for no instead of another answer
 public class Magpie2
 {
 	/**
@@ -31,21 +39,27 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.indexOf("no") >= 0)
+		if (statement.trim().length() == 0) {
+			response = "Say something, please.";
+		} else if (statement.indexOf("no") >= 0)
 		{
-			response = "Why so negative?";
+			response = "Why not?";
 		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+				|| statement.indexOf("sister") >= 0)
 		{
 			response = "Tell me more about your family.";
-		} else if (statement.indexOf("cat") >= 0
+		} else if (statement.indexOf("brother") >= 0) {
+			response = "Tell me more about your brother.";
+		}
+		else if (statement.indexOf("cat") >= 0
 				|| statement.indexOf("dog") >= 0){
 					response = "Tell me more about your pets.";
 		} else if (statement.indexOf("Mr. Mykolyk") >= 0) {
 			response = "He sounds like a good teacher!";
+		} else if (statement.indexOf("Why") >= 0) {
+			response = "Because why not?";
 		}
 		else
 		{
@@ -60,7 +74,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -80,6 +94,12 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4) {
+			response = "What does that mean?";
+		}
+		else if (whichResponse == 5) {
+			response = "That's cool!";
 		}
 
 		return response;
