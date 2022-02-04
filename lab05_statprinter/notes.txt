@@ -1,0 +1,26 @@
+Team Benjamin (Brian Wang, Jun Hong Wang, Nicole Zhou, Dolphin, Bob, Duck)
+APCS pd6
+L05 -- Stats on Stats
+2022-02-03r
+time spent: 2 hrs
+
+
+DISCO
+------------------------------------------------
+* Learned what a local mode is
+* Messy java short circuiting
+================================================
+
+
+QCC
+------------------------------------------------
+* What is the function of having a local mode?
+================================================
+
+
+MISC
+------------------------------------------------
+* Vague postconds regarding getLocalModes
+  What exactly are we supposed to return?
+  A list of the local modes with or without repetition?
+================================================
