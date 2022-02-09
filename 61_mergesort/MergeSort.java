@@ -21,7 +21,7 @@ Another big part of what I messed up was not devising a way to split the array i
 
 I believe mergesort is an nlogn sort in time complexity.
 How would it stack up with the n^2 sorts in terms of efficiency, given different input sizes?
-Splitting then merging again seems kind of inefficient, and I feel like adds extra steps. 
+Splitting then merging again seems kind of inefficient, and I feel like adds extra steps.
 */
 
 public class MergeSort
@@ -97,8 +97,8 @@ public class MergeSort
       int[] _hiSort = sort(_hi);
 
       int[] res = new int[arr.length];
-      //printArray(res);
       res = merge(_loSort, _hiSort);
+      printArray(res);
       return res;
     }
   }//end sort()

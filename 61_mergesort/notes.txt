@@ -1,0 +1,12 @@
+We did the mergesort algorithm recursively, since doing it iteratively seems kind of difficult.
+In the course of implementation, we ran into several (some significant) roadblocks.
+One of them was the creation of extra elements through declaration of the higher array, and that messed up the algorithm.
+Another roadblock we ran into was having arrays of length 2, and we don't know what really went wrong there.
+
+QCC:
+Part of the reason why it took me so long to finish this is because of some variable mess ups.
+Another big part of what I messed up was not devising a way to split the array into two halves, and I ran into the problem while implementing.
+
+I believe mergesort is an nlogn sort in time complexity.
+How would it stack up with the n^2 sorts in terms of efficiency, given different input sizes?
+Splitting then merging again seems kind of inefficient, and I feel like adds extra steps.
