@@ -6,6 +6,24 @@
 
   ***/
 
+/*
+Jun Hong Wang, Nicole Zhou
+APCS pd6
+2022-02-08
+HW61: Instructions so Simple...
+Time spent: 1.5 hrs
+
+DISCO:
+
+QCC:
+Part of the reason why it took me so long to finish this is because of some variable mess ups.
+Another big part of what I messed up was not devising a way to split the array into two halves, and I ran into the problem while implementing.
+
+I believe mergesort is an nlogn sort in time complexity.
+How would it stack up with the n^2 sorts in terms of efficiency, given different input sizes?
+Splitting then merging again seems kind of inefficient, and I feel like adds extra steps. 
+*/
+
 public class MergeSort
 {
   /******************************************************
@@ -32,16 +50,21 @@ public class MergeSort
       }
       mIndex++;
     }
-    if (aIndex == a.length - 1) {
-      while (bIndex < b.length - 1) {
+
+    if (aIndex >= a.length) {
+      while (bIndex < b.length) {
         _merged[mIndex] += b[bIndex];
         mIndex++;
+        bIndex++;
       }
-    } else {
-      while (aIndex < a.length - 1) {
+    } else if (bIndex >= b.length) {
+      while (aIndex < a.length) {
         _merged[mIndex] += a[aIndex];
         mIndex++;
+        aIndex++;
       }
+    } else {
+      return _merged;
     }
     return _merged;
   }//end merge()
@@ -52,12 +75,33 @@ public class MergeSort
    * Sorts input array using mergesort algorithm
    * Returns sorted version of input array (ascending)
    ******************************************************/
-   /*
+
   public static int[] sort( int[] arr )
   {
+    if (arr.length < 2) {
+      return arr;
+    }
+    else {
+      int _mi = arr.length / 2;
+      int[] _lo = new int[_mi];
+      int[] _hi = new int[arr.length - _mi];
+      for (int i = 0; i < _lo.length; i++) {
+        _lo[i] = arr[i];
+      }
+      for (int j = _mi; j < arr.length; j++) {
+        _hi[j - _mi] = arr[j];
+      }
+      //printArray(_lo);
+      //printArray(_hi);
+      int[] _loSort = sort(_lo);
+      int[] _hiSort = sort(_hi);
 
-  }
-  *///end sort()
+      int[] res = new int[arr.length];
+      //printArray(res);
+      res = merge(_loSort, _hiSort);
+      return res;
+    }
+  }//end sort()
 
 
 
@@ -91,6 +135,9 @@ public class MergeSort
       int[] arr6 = {9,42,17,63,0,512,23};
       int[] arr7 = {9,42,17,63,0,9,512,23,9};
 
+      int[] arr8 = {1,3,5,6,7,9,11};
+      int[] arr9 = {2,4,8,10};
+
       System.out.println("\nTesting mess-with-array method...");
       printArray( arr3 );
       mess(arr3);
@@ -102,12 +149,15 @@ public class MergeSort
       System.out.println("\nMerging arr4 and arr6: ");
       printArray( merge(arr4,arr6) );
 
-      /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
+      // System.out.println("Merging sorted arrays arr 8 and arr 9");
+      // printArray( merge(arr8, arr9));
+
       System.out.println("\nSorting arr4-7...");
       printArray( sort( arr4 ) );
       printArray( sort( arr5 ) );
       printArray( sort( arr6 ) );
       printArray( sort( arr7 ) );
+      /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
