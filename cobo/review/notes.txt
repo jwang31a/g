@@ -1,0 +1,45 @@
+TNPG: Benjamin (Jun Hong Wang, Brian Wang, Nicole Zhou)
+APCS pd6
+Lab010: Read/Review/Expand
+2022-02-10
+Time spent: hrs
+
+1a) public static double sentimentVal( String word )
+b) yes, it requires a parameter, and if the wrong parameter is inputted, it will have a runtime error.
+c) yes, it has a return value, it returns a double
+
+2)
+great      1.48
+lazy      -1.38
+horrific  -2.83
+
+3a) yes, since the input is a string
+b) no, since the input is a floating point number
+c) no, since it inputs 2 parameters instead of one
+
+1) wrote totalSentiment(String fileName) method
+
+2) called method, tested using Review1.txt, which had an expected value of -2.92, and returned -2.92
+
+3) created starRating(String fileName) using totalSentiment method we wrote previously
+
+4) totalSentiment uses the sentimentVal method that's given to us.
+However, sentimentVal can't work with a whole review, so we have to split the review up into an ArrayList (or array, but we opted for an ArrayList) of Strings, that are individual words.
+We use indexOf to determine where the words begin and end, and we put them into a words variable, which then get added into the ArrayList.
+Before the words get added to the AL, we remove the punctuation, then we make it all lowercase, so that when it's used for sentimentVal, the word matches exactly (just to foolproof our program)
+After we split the review up, we iterate through the AL, using sentimentVal on all of them, and adding them up into one variable, which is then outputted.
+
+5a) The rating for the first review makes sense, since the review is very negative, and a 2 star is about right.
+The second review was supposed to be the good review, but the totalSentiment seemed too low, and the star rating was only 3.
+This is probably because some words aren't included in the positive adjectives list, but also some words that are used in the review might have a negative connotation even if they are being used positively.
+The way we did the starRating method might also affect the star rating, since we chose somewhat arbitrary numbers.
+
+b) One way is to add more words to the positive and negative adjectives list, with more values associated with them.
+Another way would probably be to review the words already included, so that we can change the values around to more accurate values.
+
+6a) I don't know what the logical error is called, but in the order of the if and else if statements matter.
+If the totalSentiment is 0, for example, it should return 0, but it instead returns 4, since the first if statement will be true.
+All values less than 15 will return 4, simply because the first if statement is evaluated to true.
+
+b) This problem could be fixed by switching the order of the boolean expressions, with the totalSentiment < 0 in the first if statement, then < 5 in the next, then < 10, then < 15.
+This is so that the order of the boolean expressions is correct, and the intended star rating is returned. 
