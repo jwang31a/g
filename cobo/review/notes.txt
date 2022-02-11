@@ -1,9 +1,10 @@
 TNPG: Benjamin (Jun Hong Wang, Brian Wang, Nicole Zhou)
 APCS pd6
-Lab010: Read/Review/Expand
+Lab06: Read/Review/Expand
 2022-02-10
-Time spent: hrs
+Time spent: 1 hrs
 
+Activity 1:
 1a) public static double sentimentVal( String word )
 b) yes, it requires a parameter, and if the wrong parameter is inputted, it will have a runtime error.
 c) yes, it has a return value, it returns a double
@@ -17,6 +18,7 @@ horrific  -2.83
 b) no, since the input is a floating point number
 c) no, since it inputs 2 parameters instead of one
 
+Activity 2:
 1) wrote totalSentiment(String fileName) method
 
 2) called method, tested using Review1.txt, which had an expected value of -2.92, and returned -2.92
@@ -42,4 +44,17 @@ If the totalSentiment is 0, for example, it should return 0, but it instead retu
 All values less than 15 will return 4, simply because the first if statement is evaluated to true.
 
 b) This problem could be fixed by switching the order of the boolean expressions, with the totalSentiment < 0 in the first if statement, then < 5 in the next, then < 10, then < 15.
-This is so that the order of the boolean expressions is correct, and the intended star rating is returned. 
+This is so that the order of the boolean expressions is correct, and the intended star rating is returned.
+
+Activity 3:
+1) added 10 words to each of them, with a star at the end
+
+2) added stars to review
+
+3) indexOf will find the index of a specific input.
+for example, if we want to find the first occurrence of the letter e in a string, we can use indexOf("e"), and it will return the position of the first e.
+substring allows us to split a string up.
+These two methods are important for us to use because we can find where a space is, and divide the string by using substring.
+We have to add 1 to the position of the space while copying the remainder of the string because the substring method that we use requires 2 inputs: a beginning,
+which is inclusive, and an ending, which is exclusive.
+This can be tested by doing substring(0,0), and (0,1),
