@@ -58,3 +58,10 @@ These two methods are important for us to use because we can find where a space 
 We have to add 1 to the position of the space while copying the remainder of the string because the substring method that we use requires 2 inputs: a beginning,
 which is inclusive, and an ending, which is exclusive.
 This can be tested by doing substring(0,0), and (0,1),
+
+4) wrote method
+
+5) static methods are members of the class, and non-static methods are members of an instance
+an instance means it's a thing that has all the attributes and methods of that class, but editing one instance will not change another instance
+
+6) we could add another parameter to the method, a boolean, and depending on what the boolean is, true or false, we can add positive or negative adjectives to the review
