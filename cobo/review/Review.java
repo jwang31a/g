@@ -221,7 +221,7 @@ public class Review {
   }
 
   //precon: Review is not 0 length
-  public static String fakeReview(String fileName){
+  public static String fakeReview(String fileName, boolean goodOrBad){
     String review = textToString(fileName);
     while(review.indexOf("*") != -1){
       String beforeAdj = review.substring(0, review.indexOf("*"));
@@ -229,7 +229,7 @@ public class Review {
       beforeAdj = beforeAdj.strip();
       afterAdj = afterAdj.strip();
       ArrayList<String> wordsArray = new ArrayList();
-      if(Math.random() > 0.5){
+      if(goodOrBad == false){
         String descWords = textToString("negativeAdjectives.txt");
         while(descWords.indexOf("*") != -1){
           wordsArray.add(descWords.substring(0, descWords.indexOf("*")));
@@ -264,6 +264,6 @@ public class Review {
     System.out.println(totalSentiment("GoodReview.txt"));
     System.out.println(starRating("GoodReview.txt"));
 
-    System.out.println(fakeReview("SimpleReview.txt"));
+    System.out.println(fakeReview("SimpleReview.txt", false));
   }
 }
