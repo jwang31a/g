@@ -40,17 +40,18 @@ public class QueenBoard
    */
   private boolean solveH( int col )
   {
+    printSolution();
+    if (col == _board.length) {
+      return true;
+    }
     if (col < _board.length) {
       for (int row = 0; row < _board.length; row++) {
-        if (addQueen(row, col) == true) {
-          if (col + 1 < _board.length) {
-            return solveH(col + 1);
-          } else {
-            printSolution();
+        if (addQueen(row, col)) {
+          if (solveH(col + 1)) {
             return true;
+          } else {
+            removeQueen(row, col);
           }
-        } else {
-          return false;
         }
       }
     }
@@ -65,18 +66,7 @@ public class QueenBoard
   */
   public void printSolution()
   {
-    String result = "";
-    for (int i = 0; i < _board.length; i++) {
-      for (int j = 0; i < _board.length; j++) {
-        if (_board[i][j] <= 0) {
-          result += "_ ";
-        } else {
-          result += "Q ";
-        }
-      }
-      result += "\n";
-    }
-    System.out.println(result);
+    System.out.println(toString());
   }
 
 
