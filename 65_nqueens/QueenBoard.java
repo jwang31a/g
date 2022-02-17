@@ -1,3 +1,11 @@
+/*
+Team Benjamin: Jun Hong Wang, Brian Wang, Nicole Zhou
+APCS pd6
+HW65: How Many Queens Can a Thinker Place, If a Thinker Can Place Queens...
+2022-02-16
+Time Spent: 1.5 hrs
+*/
+
 /***
  * class QueenBoard
  * Generates solutions for N-Queens problem.
@@ -66,7 +74,19 @@ public class QueenBoard
   */
   public void printSolution()
   {
-    System.out.println(toString());
+    String ans = "";
+    for( int r = 0; r < _board.length; r++ ) {
+      for( int c = 0; c < _board[0].length; c++ ) {
+          if(_board[r][c] == 1){
+            ans += "Q\t";
+          }
+          else{
+            ans += "_\t";
+          }
+      }
+      ans += "\n";
+    }
+    System.out.println(ans);
   }
 
 
