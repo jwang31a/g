@@ -179,6 +179,12 @@ public class QueenBoard
 
     QueenBoard test = new QueenBoard(8);
     System.out.println(test.solve());
+
+    QueenBoard seven = new QueenBoard(7);
+    System.out.println(seven.solve());
+
+    QueenBoard nine = new QueenBoard(9);
+    System.out.println(nine.solve());
   }
 
 }//end class
