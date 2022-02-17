@@ -40,7 +40,7 @@ public class QueenBoard
    */
   private boolean solveH( int col )
   {
-    printSolution();
+    //printSolution();
     if (col == _board.length) {
       return true;
     }
