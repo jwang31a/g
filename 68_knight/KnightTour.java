@@ -27,7 +27,7 @@
  *
  * QCC
  * What would the time complexity of this algorithm be?
-   We have a hunch that it's O(n!) (or maybe exponential?), since the number of branches on a tree depends on the number of available moves a knight can make (8), and each increase in input size creates extra layers in the branch. 
+   We have a hunch that it's O(n!) (or maybe exponential?), since the number of branches on a tree depends on the number of available moves a knight can make (8), and each increase in input size creates extra layers in the branch.
  * Mean execution times for boards of size n*n:
  * n=5   0.1561s    across 10 executions
  * n=6   0.1923s    across 10 executions
@@ -72,8 +72,8 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    int startX = (int)(Math.random() * n);
-    int startY = (int)(Math.random() * n);
+    int startX = (int)(Math.random() * n) + 2;
+    int startY = (int)(Math.random() * n) + 2;
     tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -186,6 +186,7 @@ class TourFinder
       y < 2 ||
       y > _board.length - 3 ||
       _board[x][y] > 0) {
+        //can be simplified with != 0
       return;
     }
     //otherwise, mark current location
