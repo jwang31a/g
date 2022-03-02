@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
+// Team Benjamin: Jun Hong Wang + Brian Wang + Nicole Zhou
+// APCS pd6
 // HW68 -- recursively probing for a closed cycle
 // 2022-02-28m
-// time spent:  hrs
+// time spent: 1.0 hrs
 
 /***
  * SKELETON
@@ -15,16 +15,24 @@
  * $ java KnightTour [N]
  *
  * ALGO
- *
+ * We start with a knight at some location, then check one of the 8 locations by calling that method, with a different location and an incremented move counter.
+   If that method call reaches the solved base case, then we have found a knight's tour, and we display it to the user and return.
+   If the method reaches a tile that isn't available (explored or not in board), then we go back to the previous state, and try the next possible position of the knight.
+   If the location is available, then we move the knight there, and recursively call this method.
+
+   At the end, if all tiles are visited, then we display the board and return.
+   If there is no possible knight's tour, then we return.
+
  * DISCO
  *
  * QCC
- *
+ * What would the time complexity of this algorithm be?
+   We have a hunch that it's O(n!) (or maybe exponential?), since the number of branches on a tree depends on the number of available moves a knight can make (8), and each increase in input size creates extra layers in the branch. 
  * Mean execution times for boards of size n*n:
- * n=5   __s    across __ executions
- * n=6   __s    across __ executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   0.1561s    across 10 executions
+ * n=6   0.1923s    across 10 executions
+ * n=7   0.3568s    across 10 executions (mean time would be higher, but it seems that some runs weren't returning anything)
+ * n=8   1.73s    across 5 executions (mean time should be much higer, but I didn't count the ones that didn't return anything for a while. )
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -59,14 +67,14 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1 );
+    //tf.findTour( 2, 2, 1 );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = (int)(Math.random() * n)
-    //int startY = (int)(Math.random() * n)
-    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    int startX = (int)(Math.random() * n);
+    int startY = (int)(Math.random() * n);
+    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -187,7 +195,7 @@ class TourFinder
       //mark current cell with current move number
       _board[x][y] = moves;
 
-      System.out.println( this ); //refresh screen
+      //System.out.println( this ); //refresh screen
 
       //delay(1000); //uncomment to slow down enough to view
 
@@ -214,7 +222,7 @@ class TourFinder
       // (Overwrite number at this cell with a 0.)
       _board[x][y] -= moves;
 
-      System.out.println( this ); //refresh screen
+      //System.out.println( this ); //refresh screen
     }
 
   }//end findTour()
