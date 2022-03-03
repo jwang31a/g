@@ -1,0 +1,30 @@
+Jun Hong Wang, Ari Gurovich, Jing Yi Feng
+APCS pd6
+HW69: Making Sense
+2022-3-2
+Time Spent: 0.3 hrs
+
+q0) Not every position has an open tour. For example, when I run KnightTour with a chessboard of size 5, there isn't a guaranteed knight tour.
+Some positions return something, while others don't return anything.
+This is because certain board require a certain starting position, for example a maybe a corner, to complete a knight's tour.
+
+q1) Closed tours are tours such that the end of the tour is one knight's move away from the start, allowing for an infinite tour.
+However, not all positions have tours, and closed tours are rarer than tours in general.
+We found that while running KnightTour.java for boards of size 5, the last tile visited was always a corner, and the starting position was never a knight's move away from the end.
+
+q2) I think it's exponential with our algorithm, since each time the board size increases, the amount of layers we have in the tree increases.
+The knight has 8 possible moves every time, and as the board size increases, there are more tiles, which means more possible moves.
+O(8^n)?
+
+q3) If we could find a rule that dictates knight's tours, when we could optimize our code by checking to see if the inputted beginning coordinates follow that rule.
+We could also check the board size, since boards of side length < 5 don't work.
+We could divide the board up into smaller, solvable boards, then try to connect up the tours for those.
+There may also be an algorithm that dictates which move is best in a knight's tour.
+
+2) Hugging the left wall will always get us out of a maze (assuming there is an exit).
+If we did implement this, we would have to keep track of which way we're facing, and based on that, determine where left is.
+We keep going forward until the wall changes direction, then we try to figure out which way we need to face, and hug the left wall from there.
+
+We could also do a brute force approach, like the nqueens or kt problems.
+Since a maze can only have 4 directions, we recursively choose one of those directions to go to, and if it leads to a dead end, we backtrack and try something else.
+Eventually, we will have traversed the maze, and found an exit.
