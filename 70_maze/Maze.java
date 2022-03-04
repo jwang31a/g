@@ -30,7 +30,7 @@ import java.util.*;
 
 class MazeSolver
 {
-  final private int FRAME_DELAY = 50;
+  final private int FRAME_DELAY = 500;
 
   private char[][] _maze;
   private int h, w; // height, width of maze
@@ -130,29 +130,51 @@ class MazeSolver
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if (_solved == true ||
-    _maze[y][x] == EXIT) {
+    if (_maze[y][x] == EXIT) {
 	    System.exit(0);
     }
     //other base cases
-    else if () {
-
+    else if (_maze[y][x] != PATH) {
+      if (_maze[y][x] == )
       return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-	???
+	    _maze[y][x] = HERO;
       System.out.println( this ); //refresh screen
 
-???
+      // solve(x + 1, y);
+      // solve(x, y + 1);
+      // solve(x - 1, y);
+      // solve(x, y - 1);
+
+      if (_maze[y - 1][x] == HERO) {
+        solve(x + 1, y);
+        solve(x, y + 1);
+        solve(x - 1, y);
+      } else if (_maze[y + 1][x] == HERO) {
+        solve(x + 1, y);
+        solve(x - 1, y);
+        solve(x, y - 1);
+      } else if (_maze[y][x - 1] == HERO) {
+        solve(x, y - 1);
+        solve(x + 1, y);
+        solve(x, y + 1);
+      } else {
+        solve(x, y + 1);
+        solve(x - 1, y);
+        solve(x, y - 1);
+      }
+
+
       System.out.println( this ); //refresh screen
     }
   }
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-
+    return (_maze[y][x] == PATH);
   }
 
 }//end class MazeSolver
@@ -183,11 +205,17 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    //ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    //ms.solve( startX, startY );
+    int startX = 0;
+    int startY = 0;
+    while (ms.onPath(startX, startY) == false) {
+      startX = (int)(Math.random() * 25);
+      startY = (int)(Math.random() * 80);
+    }
+    ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
