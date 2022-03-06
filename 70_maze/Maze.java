@@ -22,11 +22,13 @@
    4) Otherwise, we set the character at the coordinates to a hero, and we recursively call the method for each of the 4 directions.
    5) At the end, if none of them return anything, the character at the coordinate becomes a visited path.
    6) Eventually, the method will either reach the base case of the maze being solved, or the maze is impossible.
-   7) If the maze is impossible (like in our 11.maze file), then the program will just return, and every tile will be visited. 
+   7) If the maze is impossible (like in our 11.maze file), then the program will just return, and every tile will be visited.
  * DISCO
- *
+ * System.exit(int a) will terminate the program.
+   if a is 0, the termination is successful, and if it isn't 0, then it isn't successful.
  * QCC
- *
+ * When the maze is solved, do we need to turn our heroes into visited paths?
+   What are the uses of System.exit(not 0)?
  ***/
 
 //enable file I/O
