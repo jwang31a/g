@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
-// HW69 -- maze solving (blind, depth-first)
+// Jun Hong Wang, Ari Gurovich, Jing Yi Feng
+// APCS pd6
+// HW70 -- maze solving (blind, depth-first)
 // 2022-03-03r
-// time spent:  hrs
+// time spent: 2 hrs
 
 /***
  * SKEELTON for
@@ -16,7 +16,13 @@
  *
  * ALGORITHM for finding exit from starting position:
  *  <INSERT YOUR SUMMARY OF ALGO HERE>
- *
+ * 1) We check if the maze is solved, by using the boolean variable.
+   2) We check if we are on the exit, and if we are, solved becomes true.
+   3) If the coordinates are not on a path, then we return (to backtrack).
+   4) Otherwise, we set the character at the coordinates to a hero, and we recursively call the method for each of the 4 directions.
+   5) At the end, if none of them return anything, the character at the coordinate becomes a visited path.
+   6) Eventually, the method will either reach the base case of the maze being solved, or the maze is impossible.
+   7) If the maze is impossible (like in our 11.maze file), then the program will just return, and every tile will be visited. 
  * DISCO
  *
  * QCC
@@ -30,7 +36,7 @@ import java.util.*;
 
 class MazeSolver
 {
-  final private int FRAME_DELAY = 500;
+  final private int FRAME_DELAY = 200;
 
   private char[][] _maze;
   private int h, w; // height, width of maze
@@ -130,12 +136,17 @@ class MazeSolver
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if (_maze[y][x] == EXIT) {
+    if (_solved) {
+      //SOP statement used to see if this was reached
+      //System.out.println(_solved);
 	    System.exit(0);
     }
     //other base cases
+    else if (_maze[y][x] == EXIT) {
+      _solved = true;
+      solve(x, y);
+    }
     else if (_maze[y][x] != PATH) {
-      if (_maze[y][x] == )
       return;
     }
     //otherwise, recursively solve maze from next pos over,
@@ -144,31 +155,29 @@ class MazeSolver
 	    _maze[y][x] = HERO;
       System.out.println( this ); //refresh screen
 
-      // solve(x + 1, y);
-      // solve(x, y + 1);
-      // solve(x - 1, y);
-      // solve(x, y - 1);
+      // if (_maze[y - 1][x] == PATH) {
+      //   solve(x, y - 1);
+      //   _maze[y - 1][x] = VISITED_PATH;
+      // } else if (_maze[y][x - 1] == PATH) {
+      //   solve(x - 1, y);
+      //   _maze[y][x - 1] = VISITED_PATH;
+      // } else if (_maze[y + 1][x] == PATH) {
+      //   solve(x, y + 1);
+      //   _maze[y + 1][x] = VISITED_PATH;
+      // } else if (_maze[y][x + 1] == PATH){
+      //   solve(x + 1, y);
+      //   _maze[y][x + 1] = VISITED_PATH;
+      // }
 
-      if (_maze[y - 1][x] == HERO) {
-        solve(x + 1, y);
-        solve(x, y + 1);
-        solve(x - 1, y);
-      } else if (_maze[y + 1][x] == HERO) {
-        solve(x + 1, y);
-        solve(x - 1, y);
-        solve(x, y - 1);
-      } else if (_maze[y][x - 1] == HERO) {
-        solve(x, y - 1);
-        solve(x + 1, y);
-        solve(x, y + 1);
-      } else {
-        solve(x, y + 1);
-        solve(x - 1, y);
-        solve(x, y - 1);
-      }
+      solve(x, y - 1);
+      solve(x - 1, y);
+      solve(x, y + 1);
+      solve(x + 1, y);
 
+      _maze[y][x] = VISITED_PATH;
 
       System.out.println( this ); //refresh screen
+      return;
     }
   }
 
