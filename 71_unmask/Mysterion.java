@@ -13,13 +13,26 @@ sometimes, it returns something that might make some sense, but other times, it 
 however, it seems like a will equal index of first element, b is index of last element, c is some point between the other 2 ints.
 We can assume that a = 0, and b = length - 1, since for all the arrays, only c is varied, and this pattern holds true.
 
+q1:
 One observation in class was that everything before c was lower than array[c], and everything after c was greater than array[c].
 Could this be used for quicksort?
 Quicksort uses pivot points, which c could be.
 However, does quicksort rely on this algorithm? (Is this even a sort?)
+
+q2:
+The mystery method seems to be O(n) time, since within the for loop, it only performs O(1) operations.
+The amount of times those operations are performed depends on the length of the array, since the loop iterates from a to b - 1, and those variables depend on the array length.
 */
 
 public class Mysterion {
+  /*
+  int[] array is the input array we are performing this method on
+  a = 0, or index of first element on array
+  b = array.length - 1
+  c = some pivot point?
+  As for the name, it's still a mystery for us, but we had a hypothesis that it could be related to quicksort in some way due to the pivot point.
+  However, we're still unsure about this. 
+  */
   public static int[] mystery(int[] array, int a, int b, int c) {
     int v = array[c];
     swap(array, c, b);
