@@ -11,7 +11,9 @@ QCC:
 currently not sure what this method does
 sometimes, it returns something that might make some sense, but other times, it seems to return gibberish
 however, it seems like a will equal index of first element, b is index of last element, c is some point between the other 2 ints.
+We can assume that a = 0, and b = length - 1, since for all the arrays, only c is varied, and this pattern holds true.
 
+One observation in class was that everything before c was lower than array[c], and everything after c was greater than array[c].
 Could this be used for quicksort?
 Quicksort uses pivot points, which c could be.
 However, does quicksort rely on this algorithm? (Is this even a sort?)
