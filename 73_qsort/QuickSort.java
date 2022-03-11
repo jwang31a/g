@@ -89,6 +89,8 @@ public class QuickSort
     }
 
     int pvt = d.length / 2;
+    //System.out.println(d[pvt]);
+
     //chooses a new partition based on what partition returns
     pvt = Partition.partition(d, 0, d.length - 1, pvt);
 
@@ -109,7 +111,8 @@ public class QuickSort
       return;
     }
 
-    int pvt = (int)(Math.random() * (right - left + 1)) + left;
+    int pvt = (right + left)/2;
+    //System.out.println(d[pvt]);
     pvt = Partition.partition(d, left, right, pvt);
 
 
@@ -123,6 +126,19 @@ public class QuickSort
   //main method for testing
   public static void main( String[] args )
   {
+    int [] best = {1,3,5,7,7,12};
+    System.out.println("Best case before sort: ");
+    printArr(best);
+    System.out.println("Best case after sort: ");
+    qsort(best);
+    printArr(best);
+
+    int [] worst = {3,7,7,12,1,5};
+    System.out.println("Worst case before sort: ");
+    printArr(worst);
+    System.out.println("Worst case after sort: ");
+    qsort(worst);
+    printArr(worst);
 
     //get-it-up-and-running, static test case:
     int [] arr1 = {7,1,5,12,3};
@@ -149,8 +165,8 @@ public class QuickSort
     System.out.println("arrN after sort: " );
     printArr(arrN);
     /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
     //get-it-up-and-running, static test case w/ dupes:
@@ -179,6 +195,7 @@ public class QuickSort
     System.out.println("arrMatey after sort: " );
     printArr(arrMatey);
     /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
+
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main
