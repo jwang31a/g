@@ -4,11 +4,17 @@
  *
  * Assumes local List.java (interface),
  *  overriding List interface from standard Java library
+
+ Plan:
+ run this as normal
+ find and replace all LLNodes,
+ then compile and run, see if everything works
+ then fix/add incrementally
  **/
 
 public class ListTester
 {
-  public static void main( String[] args ) 
+  public static void main( String[] args )
   {
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
