@@ -52,7 +52,9 @@ public class LList implements List //interface def must be in this dir
   traverse through array once, set temp node to everything after index
   then, do similar thing to what we did in add
   then iterate through the head until index - 1, then set everything after to temp
-  then
+
+  revised add method, special case for 0 to just add like normal
+  fewer temp variables now
   */
   public void add(int index, String newVal) {
     if ( index < 0 || index >= size() ) {
@@ -60,20 +62,19 @@ public class LList implements List //interface def must be in this dir
     }
 
     DLLNode temp = _head;
-    DLLNode tempAfter = _head;
 
-    for (int i = 0; i < index; i++) {
-      tempAfter = tempAfter.getNext();
+    if (index == 0) {
+      _head = new DLLNode(newVal, temp);
+      _size++;
+      return;
     }
-    DLLNode added = tempAfter;
-    tempAfter = new DLLNode(newVal, added);
 
-    for (int j = 0; j < index - 1; j++) {
+    for (int i = 0; i < index - 1; i++) {
       temp = temp.getNext();
     }
-    temp.setNext(tempAfter);
+
+    temp.setNext(new DLLNode(newVal, temp.getNext()));
     _size++;
-    //for (int j = 0; )
   }
 
   /*
@@ -81,6 +82,8 @@ public class LList implements List //interface def must be in this dir
   using similar idea to add at index, we get everything after index we want to remove, save that in temp node
   everything else will be saved in another node, and the last element - 1 will be set to point to after temp node
   node removed will be saved before deletion, and will be returned
+
+  optimised/refactored, fewer variables
   */
   public String remove(int index) {
     if ( index < 0 || index >= size() ) {
@@ -89,19 +92,14 @@ public class LList implements List //interface def must be in this dir
     String removed = "";
 
     DLLNode temp = _head;
-    DLLNode tempAfter = _head;
 
-    for (int i = 0; i < index; i++) {
-      tempAfter = tempAfter.getNext();
-    }
-    removed = tempAfter.getNext().getCargo();
-    tempAfter = tempAfter.getNext();
-
-    for (int j = 0; j < index - 1; j++) {
+    for (int i = 0; i < index - 1; i++) {
       temp = temp.getNext();
     }
-    temp.setNext(tempAfter);
-    //DLLNode removed =
+
+    removed = temp.getNext().getCargo();
+
+    temp.setNext(temp.getNext().getNext());
     _size--;
     return removed;
   }
@@ -207,6 +205,7 @@ public class LList implements List //interface def must be in this dir
     System.out.println( james );
     System.out.println( "size: " + james.size() );
 
+    //default string list
     System.out.println("New item, default LL");
     LList magic = new LList();
 
@@ -218,6 +217,14 @@ public class LList implements List //interface def must be in this dir
     System.out.println( "size: " + magic.size() );
 
     magic.add(3, "thluffy");
+    System.out.println( magic );
+    System.out.println( "size: " + magic.size() );
+
+    magic.add(2, "imposr");
+    System.out.println( magic );
+    System.out.println( "size: " + magic.size() );
+
+    magic.remove(2);
     System.out.println( magic );
     System.out.println( "size: " + magic.size() );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
