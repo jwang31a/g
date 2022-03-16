@@ -222,6 +222,20 @@ public class LList implements List //interface def must be in this dir
     james.remove(3);
     System.out.println( james );
     System.out.println( "size: " + james.size() );
+
+    System.out.println("New item, default LL");
+    LList magic = new LList();
+
+    magic.add("prongs");
+    magic.add("padfoot");
+    magic.add("wormtail");
+    magic.add("moony");
+    System.out.println( magic );
+    System.out.println( "size: " + magic.size() );
+
+    magic.add(3, "thluffy");
+    System.out.println( magic );
+    System.out.println( "size: " + magic.size() );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
