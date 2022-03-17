@@ -21,10 +21,11 @@ public class DLLNode
   private DLLNode _prevNode;
 
   // constructor
-  public DLLNode( String value, DLLNode next )
+  public DLLNode( String value, DLLNode next , DLLNode prev)
   {
     _cargo = value;
     _nextNode = next;
+    _prevNode = prev;
   }
 
 
@@ -37,6 +38,10 @@ public class DLLNode
   public DLLNode getNext()
   {
     return _nextNode;
+  }
+
+  public DLLNode getPrev() {
+    return _prevNode;
   }
   //--------------^  ACCESSORS  ^--------------
 
@@ -53,6 +58,12 @@ public class DLLNode
   {
     DLLNode foo = getNext();
     _nextNode = newNext;
+    return foo;
+  }
+
+  public DLLNode setPrev(DLLNode newPrev) {
+    DLLNode foo = getPrev();
+    _prevNode = newPrev;
     return foo;
   }
   //--------------^  MUTATORS  ^--------------
@@ -72,13 +83,13 @@ public class DLLNode
     //Below is an exercise in creating a linked list...
 
     //Create a node
-    DLLNode first = new DLLNode( "cat", null );
+    DLLNode first = new DLLNode( "cat", null , null);
 
     //Create a new node after the first
-    first.setNext( new DLLNode( "dog", null ) );
+    first.setNext( new DLLNode( "dog", null , null) );
 
     //Create a third node after the second
-    first.getNext().setNext( new DLLNode( "cow", null ) );
+    first.getNext().setNext( new DLLNode( "cow", null , null) );
 
     /* A naive list traversal, has side effects.... ??
        while( first != null ) {

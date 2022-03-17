@@ -1,8 +1,8 @@
 //Blonde Himbos: Hugo Jenkins + Boary, Micheal Kamela, Jun Hong Wang
 //APCS pd6
-//HW77 - Insert|Remove
-//2022-03-15t
-//time spent: 1.5h
+//HW78 - Double Up
+//2022-03-16w
+//time spent: 1.0h
 /***
  * class LList
  * Implements a linked list of DLLNodes, each containing String data
@@ -12,12 +12,15 @@
 DISCO:
 
 QCC:
-how can we make the algorithm more efficient, especially in terms of temp variables?
-we feel that the code looks clunky (even though it works)
+algo made more efficient
+what is the point of the _prevNode?
+what is _tail used for?
+
+possible circular linked list or doubly circular linked list?
 
 ALGO:
-algos in block comments above the add at index and remove methods
-they are both very similar
+Cleaned up add and remove from yesterday
+in block comments above the methods
  */
 
 public class LList implements List //interface def must be in this dir
@@ -25,13 +28,16 @@ public class LList implements List //interface def must be in this dir
 
   //instance vars
   private DLLNode _head;
+  private DLLNode _tail;
   private int _size;
 
   // constructor -- initializes instance vars
   public LList( )
   {
-    _head = new DLLNode(null,null);
+    _head = new DLLNode(null,null, null);
+
     _size = 0;
+    _tail = size;
     // YOUR CODE HERE
   }
 
@@ -39,22 +45,24 @@ public class LList implements List //interface def must be in this dir
   //--------------v  List interface methods  v--------------
 
   public boolean add( String newVal )
-  {
-    DLLNode temp = _head;
-    _head = new DLLNode(newVal,temp);
-    _size++;
-    return true;
-    // YOUR CODE HERE
-  }
+    {
+      DLLNode tempNode = new DLLNode(newVal, _head, null);
+      _head.setPrev(tempNode);
+      _head = tempNode;
+      _size++;
+      return true;
+
+      // YOUR CODE HERE
+    }
 
   /*
-  algo idea:
-  traverse through array once, set temp node to everything after index
-  then, do similar thing to what we did in add
-  then iterate through the head until index - 1, then set everything after to temp
+  algo:
+  set a temp variable to _head
+  special case if index == 0, we just do default add with string
 
-  revised add method, special case for 0 to just add like normal
-  fewer temp variables now
+  traverse through list, setting the temp to the node after it until index - 1
+  then we set the next of the temp to a new DLLNode with newVal, the next value of temp, and temp itself
+  then increment _size
   */
   public void add(int index, String newVal) {
     if ( index < 0 || index >= size() ) {
@@ -64,8 +72,7 @@ public class LList implements List //interface def must be in this dir
     DLLNode temp = _head;
 
     if (index == 0) {
-      _head = new DLLNode(newVal, temp);
-      _size++;
+      this.add(newVal);
       return;
     }
 
@@ -73,7 +80,7 @@ public class LList implements List //interface def must be in this dir
       temp = temp.getNext();
     }
 
-    temp.setNext(new DLLNode(newVal, temp.getNext()));
+    temp.setNext(new DLLNode(newVal, temp.getNext(), temp));
     _size++;
   }
 
@@ -82,6 +89,8 @@ public class LList implements List //interface def must be in this dir
   using similar idea to add at index, we get everything after index we want to remove, save that in temp node
   everything else will be saved in another node, and the last element - 1 will be set to point to after temp node
   node removed will be saved before deletion, and will be returned
+
+  at the end, get the next node of temp, then set the prev of that to temp
 
   optimised/refactored, fewer variables
   */
@@ -100,6 +109,7 @@ public class LList implements List //interface def must be in this dir
     removed = temp.getNext().getCargo();
 
     temp.setNext(temp.getNext().getNext());
+    temp.getNext().setPrev(temp);
     _size--;
     return removed;
   }

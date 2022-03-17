@@ -6,10 +6,10 @@
  *  overriding List interface from standard Java library
 
  Plan:
- run this as normal
- find and replace all LLNodes,
- then compile and run, see if everything works
- then fix/add incrementally
+ run this as normal (check)
+ find and replace all LLNodes, (check)
+ then compile and run, see if everything works (check)
+ then fix/add incrementally (in progress)
  **/
 
 public class ListTester
