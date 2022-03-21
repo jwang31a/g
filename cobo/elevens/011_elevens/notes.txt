@@ -74,5 +74,11 @@ The methods are general enough that they will work for any variation of this gam
 Also, the methods that are specific, like isLegal and anotherPlayIsPossible will vary between games, which is why they aren't filled in (and we assume they will be filled in their respective game file).
 
 Activity 9:
-1)
-implemented in ElevensBoard.java
+code implemented in ElevensBoard
+1) size will always return the length of the array of cards, which the constructor will set.
+It isn't a method that has code specific to each game, and is very general.
+2) Removal of cards depends on the game and its rules.
+In Elevens, we can either remove pairs of numbers or triplets of face cards at a time (assuming JQK).
+However, for 13s, we can also just remove K by itself, which is specific to that game only.
+3) Yes, this would also work as well, but we would have to implement the same methods within each game, which could be inconvenient.
+However, it still satisfies the rules of polymorphism, since the game is-a board.

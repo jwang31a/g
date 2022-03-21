@@ -68,6 +68,8 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		// method is supposed to be short, but i don't see how?
+		// also doesn't work
 		boolean pair = false;
 		List<Integer> boardLeft = cardIndexes();
 		if (boardLeft.size() == 2) {
@@ -94,10 +96,8 @@ public class ElevensBoard extends Board {
 
 					for (int card3 = 2; card3 < boardLeft.size(); card3++) {
 						tripletJQK.set(2, boardLeft.get(card3));
-						if (containsPairSum11(pairSum11)) {
-							pair = true;
-						} if (containsJQK(tripletJQK)) {
-							pair = true;
+						if (pair) {
+							pair = isLegal(pairSum11) || isLegal(tripletJQK);
 						}
 					}
 				}
