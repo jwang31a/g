@@ -1,3 +1,9 @@
+//Blonde Himbos: Hugo Jenkins + Boary, Micheal Kamela, Jun Hong Wang
+//APCS pd6
+//HW83 - Stacks on Stacks
+//2022-03-28
+//time spent: 0.8h
+
 /***
  * class Latkes
  * v1
@@ -9,7 +15,8 @@
     DISCO
 
     QCC
-
+    Should the stack expand when an element is added when the stack is full?
+    (so something like how ArrayLists automatically expand if we try to add something when list is full)
  **/
 
 
@@ -38,9 +45,15 @@ public class Latkes
   {
     if (!isFull()) {
       _stack[_stackSize] = s;
-      _stackSize++;
-      return;
+    } else if (isFull()) {
+      String[] newStack = new String[_stack.length * 2];
+      for (int i = 0; i < _stack.length; i++) {
+        newStack[i] = _stack[i];
+      }
+      newStack[_stackSize] = s;
+      _stack = newStack;
     }
+    _stackSize++;
     return;
     /* your
        SIMPLE
@@ -114,6 +127,9 @@ public class Latkes
     tastyStack.push("joo");
     tastyStack.push("coocoo");
     tastyStack.push("cachoo");
+    tastyStack.push("extra");
+    tastyStack.push("latkes");
+    tastyStack.push("pushin");
     for (int i = 0; i < tastyStack._stackSize; i++) {
       System.out.println(tastyStack._stack[i]);
     }
