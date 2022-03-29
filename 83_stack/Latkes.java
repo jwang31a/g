@@ -61,7 +61,7 @@ public class Latkes
        magicks
        here
     */
-  }// O(1)
+  }// O(1)/O(n) when allocating extra memory
 
 
   //means of removal
