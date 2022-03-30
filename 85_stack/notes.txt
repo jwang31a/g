@@ -1,0 +1,18 @@
+Blonde Himbos: Hugo Jenkins + Boary, Micheal Kamela, Jun Hong Wang
+APCS pd6
+HW85 - Leon Leonwood Stack
+2022-03-30
+time spent: h
+
+proposed initial algo for alstack:
+isEmpty() can check the size of the arraylist, if it's 0, then empty, if not, is not empty
+peekTop() can be implemented with get(size() - 1)
+pop() can create temp storage, get element at top index (using peekTop?) then using remove method of arraylist
+push(will check the size of the arraylist, then add the element using add-at-index)
+
+
+propsed algo for llstack:
+isempty() will check size, if size == 0, empty is true
+peekTop() would use getlast()
+pop() will use removeLast() and return it
+push will just add normally
