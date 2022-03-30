@@ -18,8 +18,12 @@ public class ALStack<PANCAKE> implements Stack<PANCAKE>{
 
   //prob could just return the output from that method
   public PANCAKE pop() {
-    PANCAKE popcorn = _stax.remove(_stax.size() - 1);
-    return popcorn;
+    if (isEmpty()) {
+      return null;
+    }
+    else {
+      return _stax.remove(_stax.size() - 1);
+    }
   }
 
   public void push(PANCAKE x) {

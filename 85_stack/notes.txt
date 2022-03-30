@@ -2,7 +2,7 @@ Blonde Himbos: Hugo Jenkins + Boary, Micheal Kamela, Jun Hong Wang
 APCS pd6
 HW85 - Leon Leonwood Stack
 2022-03-30
-time spent: h
+time spent: 0.6h
 
 proposed initial algo for alstack:
 isEmpty() can check the size of the arraylist, if it's 0, then empty, if not, is not empty
@@ -16,3 +16,9 @@ isempty() will check size, if size == 0, empty is true
 peekTop() would use getlast()
 pop() will use removeLast() and return it
 push will just add normally
+
+DISCO:
+
+QCC:
+The methods look noticeably simpler to implement with Lists than with arrays.
+What do stacks use for storage? (like if we imported a stack, what does it use for storage?)

@@ -16,7 +16,11 @@ public class LLStack<PANCAKE> implements Stack<PANCAKE> {
   }
 
   public PANCAKE pop() {
-    return _stax.removeLast();
+    if (isEmpty()) {
+      return null;
+    } else {
+      return _stax.removeLast();
+    }
   }
 
   public void push(PANCAKE x) {
