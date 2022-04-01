@@ -44,32 +44,26 @@ public class Scheme
   public static String evaluate( String expr )
   {
     String output = "";
+    String[] arr = expr.split("\\s");
     ALStack<String> numbers = new ALStack();
     ALStack<String> operations = new ALStack();
-    String[] arr = expr.split("\\s");
-    //toString(arr);
-    int i = 0;
-    while (numbers.size() > 1) {
-      if (isNumber(arr[i])) {
-        numbers.push(arr[i]);
-        i++;
-      } else if (arr[i] == "+" || arr[i] == "*" || arr[i] == "-") {
-        operations.push(arr[i]);
-        i++;
-      } else if (arr[i] == ")") {
+
+    for (int i = arr.length - 1; i >= 0; i--) {
+      if (arr[i].equals("(")) {
         String op = operations.pop();
-        if (op == "+") {
-          String evald = unload(1, numbers);
-          numbers.pop();
-          numbers.push(evald);
-        } else if (op == "-") {
-          String evald = unload(2, numbers);
-        } else {
-          String evald = unload(3, numbers);
+        if (op.equals("+")) {
+          numbers.push(unload(1, numbers));
+        } else if (op.equals("-")) {
+          numbers.push(unload(2, numbers));
+        } else if (op.equals("*")){
+          numbers.push(unload(3, numbers));
         }
+      } else if (arr[i].equals("+") || arr[i].equals("*") || arr[i].equals("-")) {
+        operations.push(arr[i]);
+      } else {
+        numbers.push(arr[i]);
       }
     }
-    //System.out.println(numbers.isEmpty());
     output = numbers.pop();
     return output;
   }//end evaluate()
@@ -84,31 +78,21 @@ public class Scheme
   //this method works
   public static String unload( int op, Stack<String> numbers )
   {
-    String output = "";
-    int combined = 0;
-    if (op == 1) {
-      while (isNumber(numbers.peekTop())) {
-        combined += Integer.parseInt(numbers.pop());
-      }
-    } else if (op == 2) {
-      ArrayList<Integer> storage = new ArrayList();
-      while (isNumber(numbers.peekTop())) {
-        storage.add((Integer)Integer.parseInt(numbers.pop()));
-      }
-      combined += storage.get(storage.size() - 1);
-      for (int i = storage.size() - 2; i >= 0; i--) {
-        combined = combined - storage.get(i);
-      }
-    } else if (op == 3) {
-      combined = 1;
-      while (isNumber(numbers.peekTop())) {
-        combined = combined * Integer.parseInt(numbers.pop());
+    int combined = Integer.parseInt(numbers.pop());
+    while (!(numbers.peekTop().equals(")"))) {
+      int next = Integer.parseInt(numbers.pop());
+      if (op == 1) {
+        combined = combined + next;
+      } else if (op == 2) {
+        combined = combined - next;
+      } else if (op == 3) {
+        combined = combined * next;
       }
     }
-    System.out.println(combined);
-    numbers.pop();
-    output = Integer.toString(combined);
-    return output;
+    if (numbers.peekTop().equals(")")) {
+      numbers.pop();
+    }
+    return combined + "";
   }//end unload()
 
 
@@ -126,10 +110,13 @@ public class Scheme
   */
 
   //toString method to test
-  public static void toString(String[] input) {
+  //do not use inside methods because it will break it
+  public static void toString(Stack input) {
+    ALStack<String> copy = new ALStack();
+    copy = input;
     String output = "";
-    for (int i = 0; i < input.length; i++) {
-      output += input[i] + ",";
+    while (!copy.isEmpty()) {
+      output += copy.pop() + ",";
     }
     System.out.println(output);
   }
@@ -137,18 +124,16 @@ public class Scheme
   //main method for testing
   public static void main( String[] args )
   {
-    ALStack<String> number = new ALStack();
-    number.push("3");
-    number.push("4");
-    number.push("5");
-    unload(2, number);
+    // ALStack<String> number = new ALStack();
+    // number.push("3");
+    // number.push("4");
+    // number.push("5");
+    // unload(2, number);
 
     String zoo1 = "( + 4 3 )";
-    evaluate(zoo1);
     System.out.println(zoo1);
     System.out.println("zoo1 eval'd: " + evaluate(zoo1) );
     //...7
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
     String zoo2 = "( + 4 ( * 2 5 ) 3 )";
     System.out.println(zoo2);
@@ -163,8 +148,9 @@ public class Scheme
     String zoo4 = "( - 1 2 3 )";
     System.out.println(zoo4);
     System.out.println("zoo4 eval'd: " + evaluate(zoo4) );
-    //...-4
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
     ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
+    //...-4
   }//main()
 
 }//end class Scheme
