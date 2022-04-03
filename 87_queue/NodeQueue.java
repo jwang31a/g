@@ -53,6 +53,48 @@ public class NodeQueue<QUASAR> {
     }
   }
 
+  private class LLNode<QUASAR>
+  {
+    //instance vars
+    private QUASAR _cargo;
+    private LLNode _nextNode;
+
+    // constructor
+    public LLNode( QUASAR value, LLNode next )
+    {
+      _cargo = value;
+      _nextNode = next;
+    }
+
+
+    //--------------v  ACCESSORS  v--------------
+    public QUASAR getCargo()
+    {
+      return _cargo;
+    }
+
+    public LLNode getNext()
+    {
+      return _nextNode;
+    }
+    //--------------^  ACCESSORS  ^--------------
+
+
+    //--------------v  MUTATORS  v--------------
+    public QUASAR setCargo( QUASAR newCargo )
+    {
+      QUASAR foo = getCargo();
+      _cargo = newCargo;
+      return foo;
+    }
+
+    public LLNode setNext( LLNode newNext )
+    {
+      LLNode foo = getNext();
+      _nextNode = newNext;
+      return foo;
+    }
+  }
   //main method with test cases:
   public static void main(String[] args) {
     NodeQueue<String> lemon = new NodeQueue();
