@@ -44,22 +44,6 @@ public class LList implements List //interface def must be in this dir
     _head = new LLNode(newVal,temp);
     _size++;
     return true;
-    /*
-    //old code, misunderstood what we had to do in add, instead of adding at the end, we add at the front
-    if (_head.getCargo() == null) {
-      temp.setCargo(newVal);
-      _size += 1;
-      return true;
-    } else {
-      while (temp.getNext() != null) {
-        temp = _head.getNext();
-      }
-      temp.setNext(new LLNode(newVal, null));
-      _size += 1;
-      return true;
-    }
-    */
-
     // YOUR CODE HERE
   }
 
@@ -117,7 +101,6 @@ public class LList implements List //interface def must be in this dir
       temp = temp.getNext();
     }
     temp.setNext(tempAfter);
-    //LLNode removed =
     _size--;
     return removed;
   }
