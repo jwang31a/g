@@ -1,23 +1,44 @@
-import core.data.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class covidCases {
    public static void main(String[] args) {
-      DataSource ds = DataSource.connect("https://www.kaggle.com/datasets/imdevskp/corona-virus-report").load();
-      ArrayList<covidCases> allstns = ds.fetchList("Country/Region", "Confirmed", "Recovered", "Deaths");
-      System.out.println("Total countries " + allstns.size());
+     ArrayList<covid> data = new ArrayList<>();
+         try {
+             Scanner input = new Scanner(new File("country_wise_latest.csv"));
+             input.nextLine();
+             while (input.hasNextLine()) {
+                 String[] temp = input.nextLine().split(",");
+
+                 String country = temp[0];
+                 int confirmed = Integer.parseInt(temp[1]);
+                 int recovered = Integer.parseInt(temp[3]);
+                 int deaths = Integer.parseInt(temp[2]);
+
+                 data.add(new covid(country, confirmed, recovered, deaths));
+             }
+             input.close();
+         } catch (Exception e) {
+             System.out.println("cannot find csv file");
+         }
+
 
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter a country: ");
       String userCountry = sc.next();
-      System.out.println("Number of confirmed cases in " + userCountry);
+
+      for (covid ws: data){
+        if (ws.getCountry().equals(userCountry)) {
+           System.out.println("Number of confirmed cases in " + userCountry);
+           System.out.println("  " + ws.getConfirmed());
+           System.out.println("Number of deaths due to covid in " + userCountry);
+           System.out.println("  " + ws.getDeaths());
+           System.out.println("Number of recovered cases in " + userCountry);
+           System.out.println("  " + ws.getRecovred());
+        }
+      }
 
 
-      for (covidCases ws : allstns) {
-         if (ws.getCountry().equals(userCountry)) {
-            System.out.println("  " + ws.getConfirmed());
-         }
-       }
      }// end main
 }
