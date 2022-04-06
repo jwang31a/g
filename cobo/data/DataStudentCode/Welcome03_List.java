@@ -1,4 +1,12 @@
 /*
+Team Elmo :: Courtney Huang, Jun Hong Wang, Raven (Ruiwen) Tang
+APCS pd6
+LAB08 -- America's Next Top Data Scientist / cobo data lab
+2022-04-06
+time spent: 2.0 hrs
+*/
+
+/*
  * Arrays of objects
  */
 
