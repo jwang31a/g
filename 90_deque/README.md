@@ -4,11 +4,6 @@ HW90 - Deque
 2022-04-11m
 time spent:  hr
 
-DISCO:
-
-QCC:
-We decided to use LinkedList because it seems like it would be easier to implement.
-
 Steps:
 1) Make interface
 2) Achieve compileability (gradually)
@@ -16,3 +11,5 @@ Steps:
 4) dequeue (removefirst, removelast)
 5) peek (peekfirst, peeklast)
 6) offer and poll can use add and remove
+
+After reading the API a little more, we decided that we would not implement offer, since there is no capacity built into our implementation of Deque. 

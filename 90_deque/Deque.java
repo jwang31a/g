@@ -3,11 +3,15 @@ public interface Deque<FORTNITE> {
 
   public void addLast(FORTNITE x);
 
-  public FORTNITE removeFirst(FORTNITE x);
+  public FORTNITE removeFirst();
 
-  public FORTNITE removeFirst(FORTNITE x);
+  public FORTNITE removeLast();
 
   public FORTNITE peekFirst();
 
   public FORTNITE peekLast();
+
+  public FORTNITE pollFirst();
+
+  public FORTNITE pollLast();
 }
