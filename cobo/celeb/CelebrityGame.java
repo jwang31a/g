@@ -1,3 +1,9 @@
+// Big Bird: Jun Hong Wang, Raven (Ruiwen) Tang, Michael Kamela
+// APCS pd6
+// L09: Some Folks Call It A Charades / working through the College Board Celebrity lab
+// 2022-04-27
+// time spent: 3.0 hrs
+
 package celeb;
 
 import java.util.ArrayList;
@@ -88,9 +94,22 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		Celebrity e = new Celebrity(name, guess);
-		if (validateCelebrity(name) && validateClue(guess, type)) {
-			celebGameList.add(e);
+		type = type.trim().toLowerCase();
+		if (type.equals("actor")) {
+			Actor e = new Actor(name, guess);
+			if (validateCelebrity(name) && validateClue(guess, type)) {
+				celebGameList.add(e);
+			}
+		} else if (type.equals("literature")) {
+			LiteratureCelebrity e = new LiteratureCelebrity(name, guess);
+			if (validateCelebrity(name) && validateClue(guess, type)) {
+				celebGameList.add(e);
+			}
+		} else {
+			Celebrity e = new Celebrity(name, guess);
+			if (validateCelebrity(name) && validateClue(guess, type)) {
+				celebGameList.add(e);
+			}
 		}
 	}
 
@@ -113,7 +132,13 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		return clue.trim().length() >= 10;
+		if (type.equalsIgnoreCase("literature")) {
+			return clue.trim().length() >= 20;
+		} else if (type.equals(("actor"))){
+			return clue.trim().length() >= 25;
+		} else {
+			return clue.trim().length() >= 10;
+		}
 	}
 
 	/**

@@ -27,9 +27,9 @@ Big Bird:
   * ~~Implementing validateClue method~~
   * ~~Implementing addCelebrity method for first 2 parameters~~
   * ~~Filling out play method~~
-  * ~~Implementing getCelebrityGameSize method~~
-  * ~~Implementing processGuess method, non-GUI aspects~~
-  * Implementing processGuess method, GUI aspect
+  * Implementing getCelebrityGameSize method
+  * Implementing processGuess method, non-GUI aspects
+  * Implementing processGuess mehtod, GUI aspect
   * Implementing sendClue method
   * Explaining which class handles interaction with Celebrity objects
   * Executing CelebrityRunner and checking for GUI window
