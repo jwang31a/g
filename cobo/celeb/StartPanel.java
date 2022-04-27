@@ -179,6 +179,14 @@ public class StartPanel extends JPanel
   private void setupPanel()
   {
     // Adds the RadioButtons to the group so only one can be selected.
+    this.add(clueLabel, panelLayout);
+    this.add(celebrityCountLabel, panelLayout);
+    this.add(answerField, panelLayout);
+    this.add(clueField, panelLayout);
+    this.add(addCelebrityButton, panelLayout);
+    this.add(startButton, panelLayout);
+    this.add(celebrityRadio, panelLayout);
+    this.add(literatureRadio, panelLayout);
 
   }
 
