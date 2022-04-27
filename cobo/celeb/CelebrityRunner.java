@@ -1,3 +1,5 @@
+package celeb;
+
 /**
  * Starts the Celebrity Game application
  * @author cody.henrichsen

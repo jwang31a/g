@@ -1,3 +1,5 @@
+package celeb;
+
 import java.util.ArrayList;
 
 /**
