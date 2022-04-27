@@ -1,4 +1,8 @@
-Big Bird:
+Big Bird: Jun Hong Wang, Raven (Ruiwen) Tang, Michael Kamela
+APCS pd6
+L09: Some Folks Call It A Charades / working through the College Board Celebrity lab
+2022-04-27
+time spent: 3.0 hrs
 
 ## Task List:
 * ~~Activity 1~~
@@ -46,14 +50,17 @@ Big Bird:
   * Testing Celebrity subclass
   * Updating processGuess method
   * Modifying addCelebrity method
-* Activity 5 (if time allows, but probably not)
+  * Updating validateClue method
+  * Updating validateCelebrity method
+  * Updating StartPanel class
+  * Explaining if method is overridden method
+  * Explaining how to send information from the subclass to the superclass
+  * Identifying keyword used in Java to identify inheritance
+  * Identifying method executed when ArrayList is made of superclass but stores subclass instance
+* Activity 5 
+  * Implementing Open-Ended Activity class
+  * Testing class
+  * Answering reflection questions about class
 
+## see DISCO, QCC in notes.txt
 
-## Q
-* As long as a clue doesn't mention the celebrity's name, it's valid?
-* Is there a length limit on a clue?
-* ~~How will we make the game have a reader and a guesser? Pass and play?~~
-  * The "reader" will input a celebrity using a constructor with both the name and the clue at the beginning, then the guesser will play the game.
-
-## CC
-* A "hat" object isn't necessarily needed since the hat could just be an array(list).
