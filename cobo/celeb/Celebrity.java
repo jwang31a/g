@@ -1,5 +1,3 @@
-package celeb; 
-
 /**
  * Celebrity base class for the Celebrity game.
  * @author cody.henrichsen
