@@ -1,7 +1,9 @@
 Big Bird:
 
 ## Task List:
+* ~~Planning Classes~~
 * ~~Activity 1~~
+* ~~Implementing Celebrity class~~
 
 ## Q
 * As long as a clue doesn't mention the celebrity's name, it's valid?

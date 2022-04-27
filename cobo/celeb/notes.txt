@@ -35,4 +35,18 @@ depending on if game is multiplayer, String clue might exist
 constructor with name and clue as parameters
 5) completed class
 6) made test cases
-7) 
+7) we only have a single constructor, but an additional constructor could be
+public Celebrity() {}
+which just declares the variables name and clue to a default value instead of user inputted values
+
+Activity 3:
+1) we chose the JComponent class
+if cursor is paused over a component, a string is displayed in a small window near the component
+when a key is pressed, the component will react
+the setBorder method can change the look of the component
+the setLookAndFeel method under UIManager can change the look and feel
+2) private ArrayList<Celebrity> celebGameList;
+3) the visibility of gameCelebrity should match that of celebGameList, as instance variables should be private (preferred)
+4) in file
+5) in file
+6) 
