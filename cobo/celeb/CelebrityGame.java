@@ -50,6 +50,15 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
+		guess = guess.trim();
+		if (guess.equalsIgnoreCase(gameCelebrity.getAnswer())) {
+			if (celebGameList.size() > 0) {
+				gameCelebrity = celebGameList.remove(0);
+			} else {
+				gameCelebrity = new Celebrity("","");
+			}
+			return true;
+		}
 		return false;
 	}
 
@@ -114,7 +123,7 @@ public class CelebrityGame
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return celebGameList.size();
 	}
 
 	/**

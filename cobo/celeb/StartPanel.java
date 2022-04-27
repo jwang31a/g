@@ -179,6 +179,7 @@ public class StartPanel extends JPanel
   private void setupPanel()
   {
     // Adds the RadioButtons to the group so only one can be selected.
+    
   }
 
   /**
