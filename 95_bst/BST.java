@@ -1,3 +1,9 @@
+// Big Bird :: Raven (Ruiwen) Tang, Jun Hong Wang, Michael Kamela
+// APCS pd6
+// HW95 -- Algorithm as Data Structure
+// 2022-05-06m
+// time spent: 1.0 hrs
+
 /**
  * class BST
  * v1:partial
@@ -39,20 +45,28 @@ public class BST
     /*** YOUR IMPLEMENTATION HERE ***/
     if (_root == null) {
       _root = newNode;
-    } else if (_root.getValue() > newVal) {
-      _root.setLeft(newNode);
     } else {
-      _root.setRight(newNode);
+      insert(_root, newNode);
     }
   }
   //recursive helper for insert(int)
   public void insert( TreeNode stRoot, TreeNode newNode )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
-    if (_root.getValue() > newVal) {
-      stRoot.setLeft(newNode);
-    } else {
-      stRoot.setRight(newNode);
+    if (stRoot == null) {
+      stRoot = newNode;
+    } else if (stRoot.getValue() < newNode.getValue()){
+      if (stRoot.getRight() != null) {
+        insert(stRoot.getRight(), newNode);
+      } else {
+        stRoot.setRight(newNode);
+      }
+    } else if (stRoot.getValue() > newNode.getValue()) {
+      if (stRoot.getLeft() != null) {
+        insert(stRoot.getLeft(), newNode);
+      } else {
+        stRoot.setLeft(newNode);
+      }
     }
   }//end insert()
 
@@ -73,26 +87,49 @@ public class BST
   public void preOrderTrav( TreeNode currNode )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    if (currNode == null) {
+      return;
+    } else {
+      System.out.println(currNode.getValue());
+      preOrderTrav(currNode.getLeft());
+      preOrderTrav(currNode.getRight());
+    }
   }
 
   //recurse left, process root, recurse right
   public void inOrderTrav()
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    inOrderTrav(_root);
   }
   public void inOrderTrav( TreeNode currNode )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    if (currNode == null) {
+      return;
+    } else {
+      inOrderTrav(currNode.getLeft());
+      System.out.println(currNode.getValue());
+      inOrderTrav(currNode.getRight());
+    }
   }
 
   //recurse left, recurse right, process root
   public void postOrderTrav()
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    postOrderTrav(_root);
   }
   public void postOrderTrav( TreeNode currNode )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    if (currNode == null) {
+      return;
+    } else {
+      postOrderTrav(currNode.getLeft());
+      postOrderTrav(currNode.getRight());
+      System.out.println(currNode.getValue());
+    }
   }
 
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
@@ -102,7 +139,6 @@ public class BST
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
 
       BST arbol = new BST();
 
@@ -128,6 +164,7 @@ public class BST
       arbol.postOrderTrav();
 
       System.out.println( "\n-----------------------------");
+      /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }
 
