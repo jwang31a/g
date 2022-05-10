@@ -1,8 +1,8 @@
 // Big Bird :: Raven (Ruiwen) Tang, Jun Hong Wang, Michael Kamela
 // APCS pd6
-// HW95 -- Algorithm as Data Structure
-// 2022-05-06m
-// time spent: 1.0 hrs
+// HW96 -- BSTs is the Perfect Place for Shade
+// 2022-05-10t
+// time spent: 0.8 hrs
 
 /**
  * class TreeNode

@@ -1,8 +1,8 @@
 // Big Bird :: Raven (Ruiwen) Tang, Jun Hong Wang, Michael Kamela
 // APCS pd6
-// HW95 -- Algorithm as Data Structure
-// 2022-05-06m
-// time spent: 1.0 hrs
+// HW96 -- BSTs is the Perfect Place for Shade
+// 2022-05-10t
+// time spent: 0.8 hrs
 
 /**
  * class BST
@@ -145,6 +145,28 @@ public class BST
   public TreeNode search( int target )
   {
   	/*** YOUR IMPLEMENTATION HERE ***/
+    if (_root == null) {
+      return null;
+    } else if (_root.getValue() == target) {
+      return _root;
+    } else if (_root.getValue() > target && _root.getLeft() != null) {
+      return search(_root.getLeft(), target);
+    } else if (_root.getValue() < target && _root.getRight() != null) {
+      return search(_root.getRight(), target);
+    }
+    return null;
+  }
+
+  public TreeNode search(TreeNode currNode, int target) {
+    if (currNode == null) {
+      return null;
+    } else if (currNode.getValue() == target) {
+      return currNode;
+    } else if (currNode.getValue() > target && currNode.getLeft() != null) {
+      return search(currNode.getLeft(), target);
+    } else if (currNode.getValue() < target && currNode.getRight() != null) {
+      return search(currNode.getRight(), target);
+    }
     return null;
   }
 
@@ -174,7 +196,7 @@ public class BST
     }
     return rHeight;
   }
-
+  //helper method for height using a node as param
   public int height(TreeNode currNode) {
     int lHeight = 0;
     int rHeight = 0;
@@ -201,7 +223,37 @@ public class BST
   public int numLeaves()
   {
   	/*** YOUR IMPLEMENTATION HERE ***/
-    return 0;
+    int lLeaves = 0;
+    int rLeaves = 0;
+    if (_root == null) {
+      return 0;
+    } else if (_root.getLeft() == null && _root.getRight() == null) {
+      return 1;
+    }
+    if (_root.getLeft() != null) {
+      lLeaves = numLeaves(_root.getLeft());
+    }
+    if (_root.getRight() != null){
+      rLeaves = numLeaves(_root.getRight());
+    }
+    return lLeaves + rLeaves;
+  }
+  //helper method for numLeaves using node as param
+  public int numLeaves(TreeNode currNode) {
+    int lLeaves = 0;
+    int rLeaves = 0;
+    if (currNode == null) {
+      return 0;
+    } else if (currNode.getLeft() == null && currNode.getRight() == null) {
+      return 1;
+    }
+    if (currNode.getLeft() != null) {
+      lLeaves = numLeaves(currNode.getLeft());
+    }
+    if (currNode.getRight() != null) {
+      rLeaves = numLeaves(currNode.getRight());
+    }
+    return lLeaves + rLeaves;
   }
 
 
@@ -209,38 +261,56 @@ public class BST
   public static void main( String[] args )
   {
 
-      BST arbol = new BST();
+    BST arbol = new BST();
 
-      //PROTIP: sketch state of tree after each insertion
-      //        ...BEFORE executing these.
-      arbol.insert( 4 );
-      arbol.insert( 2 );
-      arbol.insert( 5 );
-      arbol.insert( 6 );
-      arbol.insert( 1 );
-      arbol.insert( 3 );
+    //PROTIP: sketch state of tree after each insertion
+    //        ...BEFORE executing these.
+    arbol.insert( 4 );
+    arbol.insert( 2 );
+    arbol.insert( 5 );
+    arbol.insert( 6 );
+    arbol.insert( 1 );
+    arbol.insert( 3 );
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "pre-order traversal:" );
-      arbol.preOrderTrav();
+    System.out.println( "\n-----------------------------");
+    System.out.println( "pre-order traversal:" );
+    arbol.preOrderTrav();
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "in-order traversal:" );
-      arbol.inOrderTrav();
+    System.out.println( "\n-----------------------------");
+    System.out.println( "in-order traversal:" );
+    arbol.inOrderTrav();
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "post-order traversal:" );
-      arbol.postOrderTrav();
+    System.out.println( "\n-----------------------------");
+    System.out.println( "post-order traversal:" );
+    arbol.postOrderTrav();
 
-      System.out.println( "\n-----------------------------");
-      /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    System.out.println( "\n-----------------------------");
+    /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-      //extra test cases:
+    //extra test cases:
+    System.out.println("before 0 inserted:" + arbol.height());
+    arbol.insert( 0 );
+    System.out.println("after 0 inserted:" + arbol.height() + "\n");
 
-      System.out.println("before 0 inserted:" + arbol.height());
-      arbol.insert( 0 );
-      System.out.println("after 0 inserted:" + arbol.height());
+    //how many leaves? (3 expected)
+    System.out.println("there are " + arbol.numLeaves() + " leaves in arbol");
+    arbol.insert( 8 );
+    arbol.insert( 7 );
+    System.out.println("there are " + arbol.numLeaves() + " leaves in arbol"); //3 expected
+
+    //testing search method by finding out if the left and right children are right
+    TreeNode two = arbol.search(2);
+    System.out.println(two.getLeft().getValue()); //should print 1
+    System.out.println(two.getRight().getValue() + "\n"); //should print 3
+
+    TreeNode three = arbol.search(3);
+    //System.out.println(three.getLeft().getValue()); //should print null (or give nullpointerexception)
+    //System.out.println(three.getRight().getValue() + "\n"); //should print null (or give nullpointerexception)
+
+    TreeNode four = arbol.search(4);
+    System.out.println(four.getLeft().getValue()); //should print 2
+    System.out.println(four.getRight().getValue()); //should print 5
   }
 
 }//end class
