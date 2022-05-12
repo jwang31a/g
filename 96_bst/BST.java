@@ -311,6 +311,8 @@ public class BST
     TreeNode four = arbol.search(4);
     System.out.println(four.getLeft().getValue()); //should print 2
     System.out.println(four.getRight().getValue()); //should print 5
+
+    System.out.println("height:" + arbol.height());
   }
 
 }//end class

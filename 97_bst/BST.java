@@ -1,7 +1,7 @@
 // Big Bird :: Raven (Ruiwen) Tang, Jun Hong Wang, Michael Kamela
 // APCS pd6
 // HW97 -- Prune Your Tree
-// 2022-05-10t
+// 2022-05-11w
 // time spent: 0.8 hrs
 
 /**
@@ -212,7 +212,7 @@ public class BST
     if (lHeight > rHeight) {
       return lHeight;
     }
-    return rHeight;
+    return rHeight - 1;
   }
 
 
@@ -262,10 +262,13 @@ public class BST
   2 vars, one for parent, one for child (named differently)
   traverse the child node down to what we want to remove
   check how many children the child has:
+    first step in each case is to check if searcher is root by checking follower == null
+    if so, we point root to parent's child
     no children:
     point parent's child node to null, which removes the child, freeing it up using the jgc
 
     1 child:
+    check which child it is
     point parent's child node to child's child node
 
     2 children:
@@ -277,33 +280,76 @@ public class BST
     TreeNode retVal;
     TreeNode follower = null;
     TreeNode searcher = _root;
-    // if (target == _root.getValue()) {
-    //   if (_root.getLeft() == null && _root.getRight() == null) {
-    //     retVal = _root;
-    //     _root = null;
-    //     return retVal;
-    //   }
-    // } else {
-    // }
+    TreeNode tempF;
+    TreeNode tempS;
     while (searcher.getValue() != target) {
       if (searcher.getValue() < target) {
         follower = searcher;
         searcher = searcher.getRight();
       } else {
         follower = searcher;
-        searcher = searcher.getRight();
+        searcher = searcher.getLeft();
       }
     }
+    retVal = searcher;
     if (searcher.getLeft() == null && searcher.getRight() == null) {
-      if (follower.getLeft().equals(searcher)) {
+      if (follower == null) {
+        _root = null;
+      }
+      else if (follower.getLeft().equals(searcher)) {
         follower.setLeft(null);
+      } else {
+        follower.setRight(null);
+      }
+    } else if (searcher.getLeft() != null && searcher.getRight() != null) {
+      tempF = searcher;
+      tempS = searcher.getLeft();
+      while (tempS.getRight() != null) {
+        tempF = tempS;
+        tempS = tempS.getRight();
+      }
+      if (tempS.getLeft() == null) {
+        searcher.setValue(tempS.getValue());
+        tempF.setRight(null);
+      } else {
+        searcher.setValue(tempS.getValue());
+        tempF.setRight(tempS.getLeft());
+      }
+    } else if (searcher.getLeft() != null) {
+      if (follower == null) {
+        _root = _root.getLeft();
+      }
+      else if (follower.getLeft().equals(searcher)) {
+        follower.setLeft(searcher.getLeft());
+      } else {
+        follower.setRight(searcher.getLeft());
+      }
+    } else {
+      if (follower == null) {
+        _root = _root.getRight();
+      }
+      else if (follower.getLeft().equals(searcher)) {
+        follower.setLeft(searcher.getRight());
+      } else {
+        follower.setRight(searcher.getRight());
       }
     }
+    return retVal;
   }
 
+  /*
   public TreeNode removeSearch(TreeNode follower, TreeNode searcher, int target) {
 
   }
+  */
+
+  //toSting method
+  /*
+  public String toString() {
+    String output = "";
+
+  }
+  */
 
   //main method for testing
   public static void main( String[] args ) {
@@ -344,34 +390,42 @@ public class BST
 
   	System.out.println();
   	System.out.println( arbol );
+    arbol.inOrderTrav();
 
   	arbol.remove(6);
   	System.out.println();
-  	System.out.println( arbol );
+    arbol.inOrderTrav();
+  	//System.out.println( arbol );
 
   	arbol.remove(5);
   	System.out.println();
-  	System.out.println( arbol );
+    arbol.inOrderTrav();
+  	//System.out.println( arbol );
 
   	arbol.remove(4);
   	System.out.println();
-  	System.out.println( arbol );
+    arbol.inOrderTrav();
+  	//System.out.println( arbo );
 
   	arbol.remove(3);
   	System.out.println();
-  	System.out.println( arbol );
+    arbol.inOrderTrav();
+  	//System.out.println( arbol );
 
   	arbol.remove(2);
   	System.out.println();
-  	System.out.println( arbol );
+    arbol.inOrderTrav();
+  	//System.out.println( arbol );
 
   	arbol.remove(1);
   	System.out.println();
-  	System.out.println( arbol );
+    arbol.inOrderTrav();
+  	//System.out.println( arbol );
 
   	arbol.remove(0);
   	System.out.println();
-  	System.out.println( arbol );
+    arbol.inOrderTrav();
+  	//System.out.println( arbol );
   }
 
 }//end class
