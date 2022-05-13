@@ -277,11 +277,13 @@ public class BST
     point child node above next greatest node to child
   */
   public TreeNode remove(int target) {
+    //variables
     TreeNode retVal;
     TreeNode follower = null;
     TreeNode searcher = _root;
     TreeNode tempF;
     TreeNode tempS;
+    //navigating to thing we want to remove
     while (searcher.getValue() != target) {
       if (searcher.getValue() < target) {
         follower = searcher;
@@ -292,7 +294,9 @@ public class BST
       }
     }
     retVal = searcher;
+    //no children
     if (searcher.getLeft() == null && searcher.getRight() == null) {
+      //checking if root
       if (follower == null) {
         _root = null;
       }
