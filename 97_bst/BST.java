@@ -281,37 +281,49 @@ public class BST
     TreeNode retVal;
     TreeNode follower = null;
     TreeNode searcher = _root;
+    //temp follower and searchers not initialized because they come after the searcher
     TreeNode tempF;
     TreeNode tempS;
     //navigating to thing we want to remove
     while (searcher.getValue() != target) {
+      //checking which side it is
+      //going right
       if (searcher.getValue() < target) {
         follower = searcher;
         searcher = searcher.getRight();
+        //going left
       } else {
         follower = searcher;
         searcher = searcher.getLeft();
       }
     }
+    //setting the return value
     retVal = searcher;
+    //3 cases for removed node
     //no children
     if (searcher.getLeft() == null && searcher.getRight() == null) {
       //checking if root
       if (follower == null) {
         _root = null;
       }
+      //checking which side the node we want to remove is on
       else if (follower.getLeft().equals(searcher)) {
         follower.setLeft(null);
       } else {
         follower.setRight(null);
       }
+    //two children
     } else if (searcher.getLeft() != null && searcher.getRight() != null) {
+      //init of temps because we know where the searcher is
+      //we only use it in this case of 2 children
       tempF = searcher;
       tempS = searcher.getLeft();
+      //getting the max mode because the largest node will always be on the right
       while (tempS.getRight() != null) {
         tempF = tempS;
         tempS = tempS.getRight();
       }
+      //checking if temp has children (can only have left child because while loop will always go right)
       if (tempS.getLeft() == null) {
         searcher.setValue(tempS.getValue());
         tempF.setRight(null);
@@ -319,19 +331,25 @@ public class BST
         searcher.setValue(tempS.getValue());
         tempF.setRight(tempS.getLeft());
       }
+    //1 child, pt 1
     } else if (searcher.getLeft() != null) {
+      //checking if root
       if (follower == null) {
         _root = _root.getLeft();
       }
+      //checking which side node we want to remove is
       else if (follower.getLeft().equals(searcher)) {
         follower.setLeft(searcher.getLeft());
       } else {
         follower.setRight(searcher.getLeft());
       }
+    //1 child, pt 2
     } else {
+      //checking if root
       if (follower == null) {
         _root = _root.getRight();
       }
+      //checking which side searcher is on
       else if (follower.getLeft().equals(searcher)) {
         follower.setLeft(searcher.getRight());
       } else {
