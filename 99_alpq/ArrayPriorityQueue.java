@@ -1,5 +1,8 @@
-//temp solution if the size is 0, returning null instead of exception
-//will figure out
+// Big Bird :: Raven (Ruiwen) Tang, Jun Hong Wang, Michael Kamela
+// APCS pd6
+// HW99 -- Some Are More Equal Than Others, Codified
+// 2022-05-15m
+// time spent: 0.8 hrs
 
 import java.util.ArrayList;
 
@@ -10,10 +13,13 @@ public class ArrayPriorityQueue implements PriorityQueue {
     pq = new ArrayList();
   }
 
-  public void add(Integer x) {
-    pq.add(x);
+  //O(1) runtime because it just adds to the arraylist
+  //could also be O(n) if arraylist is full
+  public void add(int x) {
+    pq.add((Integer)x);
   }
 
+  //O(1), because it just checks the size of the arraylist
   public boolean isEmpty() {
     if (pq.size() != 0) {
       return false;
@@ -21,34 +27,38 @@ public class ArrayPriorityQueue implements PriorityQueue {
     return true;
   }
 
-  public Integer peekMin() {
-    Integer min = (Integer)pq.get(0);
+  //O(1) if the size of the AL is 0 or 1
+  //O(n) if the al does not contain 0 or 1 element
+  public int peekMin() {
     if (pq.size() == 0) {
-      return null;
+      throw new RuntimeException();
     }
+    //initializes int for return
+    int min = pq.get(0);
     if (pq.size() == 1) {
       return min;
     }
     for (int i = 1; i < pq.size(); i++) {
-      if (min.compareTo((Integer)pq.get(i)) == 1) {
-        min = (Integer)pq.get(i);
+      if (min > pq.get(i)) {
+        min = pq.get(i);
       }
     }
     return min;
   }
 
-  public Integer removeMin() {
-    Integer min = (Integer)pq.get(0);
-    int minInd = 0;
+  public int removeMin() {
     if (pq.size() == 0) {
-      return null;
+      throw new RuntimeException();
     }
+    int min = pq.get(0);
+    int minInd = 0;
     if (pq.size() == 1) {
+      pq.remove(0);
       return min;
     }
     for (int i = 1; i < pq.size(); i++) {
-      if (min.compareTo((Integer)pq.get(i)) == 1) {
-        min = (Integer)pq.get(i);
+      if (min > pq.get(i)) {
+        min = pq.get(i);
         minInd = i;
       }
     }
@@ -59,8 +69,11 @@ public class ArrayPriorityQueue implements PriorityQueue {
   //for easier viewing, not sure if this is the best toString
   public String toString() {
     String output = "";
-    for (int i = 0; i < pq.size(); i++) {
+    for (int i = 0; i < pq.size() - 1; i++) {
       output += pq.get(i) + ", ";
+    }
+    if (pq.size() > 0) {
+      output += pq.get(pq.size() - 1);
     }
     return output;
   }
