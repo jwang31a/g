@@ -54,9 +54,8 @@ public class Heapsort
           break;
         //if i am > least child, swap with that child
         else {
-          minChildPos = minChildPos(pos, lastLeaf, data);
-          swap(pos, minChildPos, data);
-          pos = minChildPos;
+          swap(pos, minChildPos(0, lastLeaf, data), data);
+          pos = maxChildPos;
         }
       }
 
@@ -81,7 +80,9 @@ public class Heapsort
       int addValPos = i; //val to add is next non-heap element
 
       //now must percolate up
-      while( addValPos > -1 ) { //potentially swap until reach root
+      while( addValPos > -1 ) {
+        //potentially swap until reach root
+        swap(addValPos, (addValPos - 1) / 2, a);
 
         //pinpoint parent
         int parentPos = (addValPos - 1) / 2;
@@ -106,7 +107,9 @@ public class Heapsort
       int addValPos = i; //val to add is next non-heap element
 
       //now must percolate up
-      while( addValPos > -1 ) { //potentially swap until reach root
+      while( addValPos > -1 ) {
+        //potentially swap until reach root
+        //swap(addValPos, (addValPos - 1) / 2, a);
 
         //pinpoint parent
         int parentPos = (addValPos - 1) / 2;
@@ -126,21 +129,22 @@ public class Heapsort
   //return position of child with least value in input array
   private int minChildPos( int pos, int last, int[] a )
   {
-    int retVal;
+    int retVal = 0;
     int lc = 2*pos + 1; //index of left child
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if ( pos >= last)
+    if ( pos >= last || lc > a.length && rc > a.length)
       retVal = -1;
     //if no right child, then left child is only option for min
     else if ( rc > last )
       retVal = lc;
     //have 2 children, so compare to find least
-    else if ( lc <= last && rc <= last ) {
-      retVal = minOf(a[lc], a[rc]);
+    else if ( minOf(rc, lc) == lc ) {
+      retVal = lc;
+    } else if (minOf(rc, lc) == rc) {
+      retVal = rc;
     }
-    else
 
     return retVal;
   }
@@ -150,26 +154,22 @@ public class Heapsort
   //return position of child with greatest value in input array
   private int maxChildPos( int pos, int last, int[] a )
   {
-    int retVal;
+    int retVal = 0;
     int lc = 2*pos + 1; //index of left child
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if ( pos >= last)
+    if ( pos >= last || lc > a.length && rc > a.length)
       retVal = -1;
     //if no right child, then left child is only option for max
     else if ( rc > last )
       retVal = lc;
     //have 2 children, so compare to find greater
-    else if ( lc <= last && rc <= last ) {
-      if (a[lc] > a[rc]) {
-        retVal = a[lc];
-      }
-      else {
-        retVal = a[rc];
-      }
+    else if ( minOf(rc, lc) == lc ) {
+      retVal = rc;
+    } else if ( minOf(rc, lc) == rc) {
+      retVal = lc;
     }
-    else
 
     return retVal;
   }
