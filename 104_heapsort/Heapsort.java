@@ -33,8 +33,9 @@ public class Heapsort
       //set aside root val
       int tmp = data[0];
 
-      //swap last leaf (rightmost on bottom level) into root pos
-      swap(0, lastLeaf, data);
+      //swap last leaf (rightmost on bottom level) into root pos (don't actually swap? potentially misleading)
+      //swap(0, lastLeaf, data);
+      data[0] = data[lastLeaf];
 
       //walk now-out-of-place root node down the tree...
       int pos = 0;
@@ -50,11 +51,12 @@ public class Heapsort
         if ( maxChildPos == -1 )
           break;
         //if i am greater than my greatest child, i've walked far enough
-        else if ( data[pos] > data[maxChildPos] )
+        else if ( data[pos] >= data[maxChildPos] )
           break;
         //if i am > least child, swap with that child
+        //type, should be < greatest child
         else {
-          swap(pos, minChildPos(0, lastLeaf, data), data);
+          swap(pos, maxChildPos, data);
           pos = maxChildPos;
         }
       }
@@ -82,7 +84,7 @@ public class Heapsort
       //now must percolate up
       while( addValPos > -1 ) {
         //potentially swap until reach root
-        swap(addValPos, (addValPos - 1) / 2, a);
+        //swap(addValPos, (addValPos - 1) / 2, a);
 
         //pinpoint parent
         int parentPos = (addValPos - 1) / 2;
@@ -134,15 +136,15 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if ( pos >= last || lc > a.length && rc > a.length)
+    if ( pos >= last || lc > last)
       retVal = -1;
     //if no right child, then left child is only option for min
     else if ( rc > last )
       retVal = lc;
     //have 2 children, so compare to find least
-    else if ( minOf(rc, lc) == lc ) {
+    else if ( minOf(a[rc], a[lc]) == a[lc] ) {
       retVal = lc;
-    } else if (minOf(rc, lc) == rc) {
+    } else if (minOf(a[rc], a[lc]) == a[rc]) {
       retVal = rc;
     }
 
@@ -159,15 +161,15 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if ( pos >= last || lc > a.length && rc > a.length)
+    if ( pos >= last || lc > last)
       retVal = -1;
     //if no right child, then left child is only option for max
     else if ( rc > last )
       retVal = lc;
     //have 2 children, so compare to find greater
-    else if ( minOf(rc, lc) == lc ) {
+    else if ( minOf(a[rc], a[lc]) == a[lc] ) {
       retVal = rc;
-    } else if ( minOf(rc, lc) == rc) {
+    } else if ( minOf(a[rc], a[lc]) == a[rc]) {
       retVal = lc;
     }
 
