@@ -1,3 +1,9 @@
+// Big Bird :: Raven (Ruiwen) Tang, Jun Hong Wang, Michael Kamela
+// APCS pd6
+// HW104 -- Heaping Piles of Sordidness
+// 2022-05-19th
+// time spent: 2.5 hrs
+
 /**
  * class Heapsort
  * SKELETON
