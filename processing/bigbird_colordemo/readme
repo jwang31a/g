@@ -1,0 +1,23 @@
+Big Bird: Jun Hong Wang, Raven (Ruiwen) Tang, Michael Kamela
+APCS pd6
+HW105: 'Tis Hard to Search for 'Processing' -- familiarizing selves with Processing
+2022-05-23
+time spent: 1.0 hr
+
+WHAT THIS DEMO SHOWS
+* How to display text, with line breaks and concatenated strings with ints
+* How to create a font and reference it when displaying text
+* How to center/align text
+* How to keep track of a counter variable and display updated values
+* How to generate random colors
+* How to display text/shapes at position of user's mouse
+* How to add/average colors ? not sure about this one, may go out of 255 bounds
+* How to fill shapes with different colors
+
+WHY YOU CARE
+* Displaying text in an easy (easier than swing set) and aesthetic way, with many different options, can be very useful if you're creating any program in general. It's almost like CSS, because you can play around with so many settings.
+* It's clear from this demo how positioning/axes work in Processing. The origin is at the top left corner, and coordinates are ordered x-cor, y-cor. Text is positioned by its 2nd and 3rd parameters, which indicate the bottom left corner of the text box, unless textAlign() is used. textALign(CENTER) will place the center of the text box at the coordinates.
+* It's also demonstrated by this program that once you call a formatting method like textAlign() or fill(), its effects are in place until you call the method again. All text that is displayed after you call textAlign(CENTER) will be centered until you call textAlign() again.
+* Processing Strings and text can handle line breaks and concatenation with variables, like ints!
+* Counter variables seem to work in Processing, and their updated values can be checked!
+* If you want to make a program with mouse + key inputs, it seems pretty easy to do in Processing.
